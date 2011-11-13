@@ -167,6 +167,8 @@
 		} else {
 			[TUITooltipWindow updateTooltip:nil delay:_hoverView.toolTipDelay];
 		}
+	} else {
+		[_hoverView mouseMoved:event];
 	}
 }
 

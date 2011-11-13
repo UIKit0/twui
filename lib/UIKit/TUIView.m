@@ -58,10 +58,10 @@ CGRect(^TUIViewCenteredLayout)(TUIView*) = nil;
 @implementation TUIView
 
 @synthesize subviews = _subviews;
-@synthesize drawRect;
 @synthesize layout;
 @synthesize toolTip;
 @synthesize toolTipDelay;
+@synthesize drawQueue;
 
 - (void)setSubviews:(NSArray *)s
 {
@@ -279,26 +279,41 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 	CA_COLOR_OVERLAY_DEBUG \
 	TUIImage *image = TUIGraphicsGetImageFromCurrentImageContext(); \
 	layer.contents = (id)image.CGImage; \
-	TUIGraphicsPopContext();
-	
+	TUIGraphicsPopContext(); \
+	if(self.drawInBackground) [CATransaction flush];
+
 	CGRect rectToDraw = self.bounds;
 	if(!CGRectEqualToRect(_context.dirtyRect, CGRectZero)) {
 		rectToDraw = _context.dirtyRect;
 		_context.dirtyRect = CGRectZero;
 	}
 	
-	if(drawRect) {
-		// drawRect is implemented via a block
-		PRE_DRAW
-		drawRect(self, rectToDraw);
-		POST_DRAW
-	} else if((drawRectIMP != dontCallThisBasicDrawRectIMP) && ![self _disableDrawRect]) {
-		// drawRect is overridden by subclass
-		PRE_DRAW
-		drawRectIMP(self, drawRectSEL, rectToDraw);
-		POST_DRAW
+	void (^drawBlock)(void) = ^{
+		if(drawRect) {
+			// drawRect is implemented via a block
+			PRE_DRAW
+			drawRect(self, rectToDraw);
+			POST_DRAW
+		} else if((drawRectIMP != dontCallThisBasicDrawRectIMP) && ![self _disableDrawRect]) {
+			// drawRect is overridden by subclass
+			PRE_DRAW
+			drawRectIMP(self, drawRectSEL, rectToDraw);
+			POST_DRAW
+		} else {
+			// drawRect isn't overridden by subclass, don't call, let the CA machinery just handle backgroundColor (fast path)
+		}
+	};
+	
+	if(self.drawInBackground) {
+		layer.contents = nil;
+		
+		if(self.drawQueue != nil) {
+			[self.drawQueue addOperationWithBlock:drawBlock];
+		} else {
+			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), drawBlock);
+		}
 	} else {
-		// drawRect isn't overridden by subclass, don't call, let the CA machinery just handle backgroundColor (fast path)
+		drawBlock();
 	}
 }
 
@@ -324,9 +339,81 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 	[self _blockLayout];
 }
 
+- (BOOL)drawInBackground
+{
+	return _viewFlags.drawInBackground;
+}
+
+- (void)setDrawInBackground:(BOOL)drawInBackground
+{
+	_viewFlags.drawInBackground = drawInBackground;
+}
+
 - (NSTimeInterval)toolTipDelay
 {
 	return toolTipDelay;
+}
+
+- (TUIViewContentMode)contentMode
+{
+	if(_layer.contentsGravity == kCAGravityCenter) {
+		return TUIViewContentModeCenter;
+	} else if(_layer.contentsGravity == kCAGravityTop) {
+		return TUIViewContentModeTop;
+	} else if(_layer.contentsGravity == kCAGravityBottom) {
+		return TUIViewContentModeBottom;
+	} else if(_layer.contentsGravity == kCAGravityLeft) {
+		return TUIViewContentModeLeft;
+	} else if(_layer.contentsGravity == kCAGravityRight) {
+		return TUIViewContentModeRight;
+	} else if(_layer.contentsGravity == kCAGravityTopLeft) {
+		return TUIViewContentModeTopLeft;
+	} else if(_layer.contentsGravity == kCAGravityTopRight) {
+		return TUIViewContentModeTopRight;
+	} else if(_layer.contentsGravity == kCAGravityBottomLeft) {
+		return TUIViewContentModeBottomLeft;
+	} else if(_layer.contentsGravity == kCAGravityBottomRight) {
+		return TUIViewContentModeBottomRight;
+	} else if(_layer.contentsGravity == kCAGravityResize) {
+		return TUIViewContentModeScaleToFill;
+	} else if(_layer.contentsGravity == kCAGravityResizeAspect) {
+		return TUIViewContentModeScaleAspectFit;
+	} else if(_layer.contentsGravity == kCAGravityResizeAspectFill) {
+		return TUIViewContentModeScaleAspectFill;
+	} else {
+		return TUIViewContentModeScaleToFill;
+	}
+}
+
+- (void)setContentMode:(TUIViewContentMode)contentMode
+{
+	if(contentMode == TUIViewContentModeCenter) {
+		_layer.contentsGravity = kCAGravityCenter;
+	} else if(contentMode == TUIViewContentModeTop) {
+		_layer.contentsGravity = kCAGravityTop;
+	} else if(contentMode == TUIViewContentModeBottom) {
+		_layer.contentsGravity = kCAGravityBottom;
+	} else if(contentMode == TUIViewContentModeLeft) {
+		_layer.contentsGravity = kCAGravityLeft;
+	} else if(contentMode == TUIViewContentModeRight) {
+		_layer.contentsGravity = kCAGravityRight;
+	} else if(contentMode == TUIViewContentModeTopLeft) {
+		_layer.contentsGravity = kCAGravityTopLeft;
+	} else if(contentMode == TUIViewContentModeTopRight) {
+		_layer.contentsGravity = kCAGravityTopRight;
+	} else if(contentMode == TUIViewContentModeBottomLeft) {
+		_layer.contentsGravity = kCAGravityBottomLeft;
+	} else if(contentMode == TUIViewContentModeBottomRight) {
+		_layer.contentsGravity = kCAGravityBottomRight;
+	} else if(contentMode == TUIViewContentModeScaleToFill) {
+		_layer.contentsGravity = kCAGravityResize;
+	} else if(contentMode == TUIViewContentModeScaleAspectFit) {
+		_layer.contentsGravity = kCAGravityResizeAspect;
+	} else if(contentMode == TUIViewContentModeScaleAspectFill) {
+		_layer.contentsGravity = kCAGravityResizeAspectFill;
+	} else {
+		NSAssert1(NO, @"%lu is not a valid contentMode.", contentMode);
+	}
 }
 
 @end
@@ -718,6 +805,11 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 	CGContextRef ctx = TUIGraphicsGetCurrentContext();
 	[self.backgroundColor set];
 	CGContextFillRect(ctx, self.bounds);
+}
+
+- (TUIViewDrawRect)drawRect
+{
+	return drawRect;
 }
 
 - (void)setDrawRect:(TUIViewDrawRect)d

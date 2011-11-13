@@ -28,6 +28,14 @@ typedef enum {
 	TUITextSelectionAffinityParagraph = 3,
 } TUITextSelectionAffinity;
 
+typedef enum {
+	TUITextVerticalAlignmentTop = 0,
+	// Note that TUITextVerticalAlignmentMiddle and TUITextVerticalAlignmentBottom both have a performance hit because they have to create the CTFrame twice: once to find its height and then again to shift it to match the alignment and height.
+	// Also note that text selection doesn't work properly with anything but TUITextVerticalAlignmentTop.
+	TUITextVerticalAlignmentMiddle,
+	TUITextVerticalAlignmentBottom,
+} TUITextVerticalAlignment;
+
 @protocol TUITextRendererDelegate;
 
 @interface TUITextRenderer : TUIResponder
@@ -51,10 +59,18 @@ typedef enum {
 	CGFloat shadowBlur;
 	TUIColor *shadowColor;
 	
+	TUITextVerticalAlignment verticalAlignment;
+	
 	struct {
 		unsigned int drawMaskDragSelection:1;
 		unsigned int backgroundDrawingEnabled:1;
 		unsigned int preDrawBlocksEnabled:1;
+		
+		unsigned int delegateActiveRangesForTextRenderer:1;
+		unsigned int delegateWillBecomeFirstResponder:1;
+		unsigned int delegateDidBecomeFirstResponder:1;
+		unsigned int delegateWillResignFirstResponder:1;
+		unsigned int delegateDidResignFirstResponder:1;
 	} _flags;
 }
 
@@ -65,6 +81,8 @@ typedef enum {
 @property (nonatomic, assign) CGSize shadowOffset;
 @property (nonatomic, assign) CGFloat shadowBlur;
 @property (nonatomic, strong) TUIColor *shadowColor; // default = nil for no shadow
+
+@property (nonatomic, assign) TUITextVerticalAlignment verticalAlignment;
 
 // These are both advanced features that carry with them a potential performance hit.
 @property (nonatomic, assign) BOOL backgroundDrawingEnabled; // default = NO

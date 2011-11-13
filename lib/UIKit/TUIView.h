@@ -42,6 +42,21 @@ typedef enum {
 	TUIViewAnimationTransitionNone,
 } TUIViewAnimationTransition;
 
+typedef enum {
+    TUIViewContentModeCenter,
+    TUIViewContentModeTop,
+    TUIViewContentModeBottom,
+    TUIViewContentModeLeft,
+    TUIViewContentModeRight,
+    TUIViewContentModeTopLeft,
+    TUIViewContentModeTopRight,
+    TUIViewContentModeBottomLeft,
+    TUIViewContentModeBottomRight,
+	TUIViewContentModeScaleToFill,
+    TUIViewContentModeScaleAspectFit,
+    TUIViewContentModeScaleAspectFill,
+} TUIViewContentMode;
+
 @class TUIView;
 @class TUINSView;
 @class TUINSWindow;
@@ -96,6 +111,7 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 		unsigned int pasteboardDraggingIsDragging:1;
 		unsigned int dragDistanceLock:1;
 		unsigned int clearsContextBeforeDrawing:1;
+		unsigned int drawInBackground:1;
 		
 		unsigned int delegateMouseEntered:1;
 		unsigned int delegateMouseExited:1;
@@ -108,6 +124,7 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 	NSString *accessibilityValue;
 	TUIAccessibilityTraits accessibilityTraits;
 	CGRect accessibilityFrame;
+	NSOperationQueue *drawQueue;
 }
 
 /**
@@ -140,11 +157,6 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 @property (nonatomic,readonly,strong) CALayer *layer;
 
 /**
- Supply a block as an alternative to subclassing and overriding -drawRect:
- */
-@property (nonatomic, copy) TUIViewDrawRect drawRect;
-
-/**
  Supply a block as an alternative to overriding -layoutSubviews
  */
 @property (nonatomic, copy) TUIViewLayout layout;
@@ -166,6 +178,22 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
  Default is 1.5s
  */
 @property (nonatomic, assign) NSTimeInterval toolTipDelay;
+
+@property (nonatomic, assign) TUIViewContentMode contentMode;
+
+/**
+ If YES, drawing will be done in a background queue. If `drawQueue` is nil, it will be performed in the DISPATCH_QUEUE_PRIORITY_DEFAULT global queue. Note that `-viewWillDisplayLayer:` will still be called on the main thread.
+ 
+ Defaults to NO.
+ */
+@property (nonatomic, assign) BOOL drawInBackground;
+
+/**
+ The queue in which drawing should be performed. Only used if `drawInBackground` is YES.
+ 
+ Defaults to nil.
+ */
+@property (nonatomic, retain) NSOperationQueue *drawQueue;
 
 /**
  Make this view the first responder. Returns NO if it fails.
@@ -223,6 +251,8 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 - (CGSize)sizeThatFits:(CGSize)size;
 - (void)sizeToFit;                       // calls sizeThatFits: with current view bounds and changes bounds size.
 
+- (NSArray *)sortedSubviews;
+
 @end
 
 @interface TUIView (TUIViewHierarchy)
@@ -279,6 +309,11 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 @end
 
 @interface TUIView (TUIViewRendering)
+
+/**
+ Supply a block as an alternative to subclassing and overriding -drawRect:
+ */
+@property (nonatomic, copy) TUIViewDrawRect drawRect;
 
 /**
  Forces an immediate update of the backing view's layer.contents. May be inside an animation block to cross-fade.

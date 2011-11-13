@@ -19,12 +19,14 @@
 #import "TUITextViewEditor.h"
 #import "TUITextRenderer+Event.h"
 
-@interface TUITextView ()
+@interface TUITextView () <TUITextRendererDelegate>
 - (void)_checkSpelling;
 - (void)_replaceMisspelledWord:(NSMenuItem *)menuItem;
+- (CGRect)_cursorRect;
 
 @property (nonatomic, strong) NSArray *lastCheckResults;
 @property (nonatomic, strong) NSTextCheckingResult *selectedTextCheckingResult;
+@property (nonatomic, strong) NSMutableDictionary *autocorrectedResults;
 @end
 
 @implementation TUITextView
@@ -41,6 +43,7 @@
 @synthesize lastCheckResults;
 @synthesize selectedTextCheckingResult;
 @synthesize autocorrectionEnabled;
+@synthesize autocorrectedResults;
 
 - (void)_updateDefaultAttributes
 {
@@ -67,6 +70,7 @@
 		self.backgroundColor = [TUIColor clearColor];
 		
 		renderer = [[[self textEditorClass] alloc] init];
+		renderer.delegate = self;
 		self.textRenderers = [NSArray arrayWithObject:renderer];
 		
 		cursor = [[TUIView alloc] initWithFrame:CGRectZero];
@@ -74,13 +78,14 @@
 		cursor.backgroundColor = [TUIColor linkColor];
 		[self addSubview:cursor];
 		
+		self.autocorrectedResults = [NSMutableDictionary dictionary];
+		
 		self.font = [TUIFont fontWithName:@"HelveticaNeue" size:12];
 		self.textColor = [TUIColor blackColor];
 		[self _updateDefaultAttributes];
 	}
 	return self;
 }
-
 
 - (id)forwardingTargetForSelector:(SEL)sel
 {
@@ -106,6 +111,10 @@
 	delegate = d;
 	_textViewFlags.delegateTextViewDidChange = [delegate respondsToSelector:@selector(textViewDidChange:)];
 	_textViewFlags.delegateDoCommandBySelector = [delegate respondsToSelector:@selector(textView:doCommandBySelector:)];
+	_textViewFlags.delegateWillBecomeFirstResponder = [delegate respondsToSelector:@selector(textViewWillBecomeFirstResponder:)];
+	_textViewFlags.delegateDidBecomeFirstResponder = [delegate respondsToSelector:@selector(textViewDidBecomeFirstResponder:)];
+	_textViewFlags.delegateWillResignFirstResponder = [delegate respondsToSelector:@selector(textViewWillResignFirstResponder:)];
+	_textViewFlags.delegateDidResignFirstResponder = [delegate respondsToSelector:@selector(textViewDidResignFirstResponder:)];
 }
 
 - (TUIResponder *)initialFirstResponder
@@ -169,9 +178,6 @@ static CAAnimation *ThrobAnimation()
 	b.origin.y += contentInset.bottom;
 	b.size.width -= contentInset.left + contentInset.right;
 	b.size.height -= contentInset.bottom + contentInset.top;
-	if([self singleLine]) {
-		b.size.width = 2000; // big enough
-	}
 	return b;
 }
 
@@ -189,23 +195,55 @@ static CAAnimation *ThrobAnimation()
 
 - (void)drawRect:(CGRect)rect
 {
+	static const CGFloat singleLineWidth = 20000.0f;
+	
 	CGContextRef ctx = TUIGraphicsGetCurrentContext();
 	
 	if(drawFrame)
 		drawFrame(self, rect);
 	
 	BOOL singleLine = [self singleLine];
-	BOOL doMask = singleLine;
-	
 	CGRect textRect = [self textRect];
-	if(!CGRectEqualToRect(textRect, _lastTextRect)) {
-		renderer.frame = textRect;
-		_lastTextRect = textRect;
+	CGRect rendererFrame = textRect;
+	if(singleLine) {
+		rendererFrame.size.width = singleLineWidth;
 	}
 	
+	renderer.frame = rendererFrame;
+	
+	BOOL showCursor = [self _isKey] && [renderer selectedRange].length == 0;
+	if(showCursor) {
+		cursor.hidden = NO;
+		[cursor.layer removeAnimationForKey:@"opacity"];
+		[cursor.layer addAnimation:ThrobAnimation() forKey:@"opacity"];
+	} else {
+		cursor.hidden = YES;
+	}
+	
+	// Single-line text views scroll horizontally with the cursor.
+	CGRect cursorFrame = [self _cursorRect];
+	CGFloat offset = 0.0f;
+	if(singleLine) {
+		if(CGRectGetMaxX(cursorFrame) > CGRectGetWidth(textRect)) {
+			offset = CGRectGetMinX(cursorFrame) - CGRectGetWidth(textRect);
+			rendererFrame = CGRectMake(-offset, rendererFrame.origin.y, CGRectGetWidth(rendererFrame), CGRectGetHeight(rendererFrame));
+			cursorFrame = CGRectOffset(cursorFrame, -offset - CGRectGetWidth(cursorFrame) - 5.0f, 0.0f);
+			
+			renderer.frame = rendererFrame;
+		}
+	}
+	
+	if(showCursor) {
+		[TUIView setAnimationsEnabled:NO block:^{
+			cursor.frame = cursorFrame;
+		}];
+	}
+	
+	BOOL doMask = singleLine;
 	if(doMask) {
 		CGContextSaveGState(ctx);
-		CGContextClipToRoundRect(ctx, self.bounds, floor(rect.size.height / 2));
+		CGFloat radius = floor(rect.size.height / 2);
+		CGContextClipToRoundRect(ctx, CGRectInset(textRect, 0.0f, -radius), radius);
 	}
 	
 	[renderer draw];
@@ -213,45 +251,35 @@ static CAAnimation *ThrobAnimation()
 	if(doMask) {
 		CGContextRestoreGState(ctx);
 	}
-	
-	BOOL key = [self _isKey];
-	NSRange selection = [renderer selectedRange];
-	if(key && selection.length == 0) {
-		cursor.hidden = NO;
-		
-		BOOL fakeMetrics = ([[renderer backingStore] length] == 0);
-		
-		if(fakeMetrics) {
-			// setup fake stuff - fake character with font
-			TUIAttributedString *fake = [TUIAttributedString stringWithString:@"M"];
-			fake.font = self.font;
-			renderer.attributedString = fake;
-			selection = NSMakeRange(0, 0);
-		}
+}
 
-		// Ugh. So this seems to be a decent approximation for the height of the cursor. It doesn't always match the native cursor but what ev.
-		CGRect r = CGRectIntegral([renderer firstRectForCharacterRange:ABCFRangeFromNSRange(selection)]);
-		r.size.width = 2.0f;
-		CGRect fontBoundingBox = CTFontGetBoundingBox(self.font.ctFont);
-		r.size.height = round(fontBoundingBox.origin.y + fontBoundingBox.size.height);
-		r.origin.y += floor(self.font.leading);
-//		NSLog(@"ascent: %f, descent: %f, leading: %f, cap height: %f, x-height: %f, bounding: %@", self.font.ascender, self.font.descender, self.font.leading, self.font.capHeight, self.font.xHeight, NSStringFromRect(CTFontGetBoundingBox(self.font.ctFont)));
-		
-		[TUIView setAnimationsEnabled:NO block:^{
-			cursor.frame = r;
-		}];
-		
-		if(fakeMetrics) {
-			// restore
-			renderer.attributedString = [renderer backingStore];
-		}
-		
-		[cursor.layer removeAnimationForKey:@"opacity"];
-		[cursor.layer addAnimation:ThrobAnimation() forKey:@"opacity"];
-		
-	} else {
-		cursor.hidden = YES;
+- (CGRect)_cursorRect
+{
+	BOOL fakeMetrics = ([[renderer backingStore] length] == 0);
+	NSRange selection = [renderer selectedRange];
+	
+	if(fakeMetrics) {
+		// setup fake stuff - fake character with font
+		TUIAttributedString *fake = [TUIAttributedString stringWithString:@"M"];
+		fake.font = self.font;
+		renderer.attributedString = fake;
+		selection = NSMakeRange(0, 0);
 	}
+	
+	// Ugh. So this seems to be a decent approximation for the height of the cursor. It doesn't always match the native cursor but what ev.
+	CGRect r = CGRectIntegral([renderer firstRectForCharacterRange:ABCFRangeFromNSRange(selection)]);
+	r.size.width = 2.0f;
+	CGRect fontBoundingBox = CTFontGetBoundingBox(self.font.ctFont);
+	r.size.height = round(fontBoundingBox.origin.y + fontBoundingBox.size.height);
+	r.origin.y += floor(self.font.leading);
+	//NSLog(@"ascent: %f, descent: %f, leading: %f, cap height: %f, x-height: %f, bounding: %@", self.font.ascender, self.font.descender, self.font.leading, self.font.capHeight, self.font.xHeight, NSStringFromRect(CTFontGetBoundingBox(self.font.ctFont)));
+	
+	if(fakeMetrics) {
+		// restore
+		renderer.attributedString = [renderer backingStore];
+	}
+	
+	return r;
 }
 
 - (void)_textDidChange
@@ -265,13 +293,18 @@ static CAAnimation *ThrobAnimation()
 }
 
 - (void)_checkSpelling
-{	
-	lastCheckToken = [[NSSpellChecker sharedSpellChecker] requestCheckingOfString:self.text range:NSMakeRange(0, [self.text length]) types:NSTextCheckingTypeSpelling options:nil inSpellDocumentWithTag:0 completionHandler:^(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount) {
+{
+	NSTextCheckingType checkingTypes = NSTextCheckingTypeSpelling;
+	if(autocorrectionEnabled) checkingTypes |= NSTextCheckingTypeCorrection;
+	
+	lastCheckToken = [[NSSpellChecker sharedSpellChecker] requestCheckingOfString:self.text range:NSMakeRange(0, [self.text length]) types:checkingTypes options:nil inSpellDocumentWithTag:0 completionHandler:^(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount) {
 		// This needs to happen on the main thread so that the user doesn't enter more text while we're changing the attributed string.
 		dispatch_async(dispatch_get_main_queue(), ^{
 			// we only care about the most recent results, ignore anything older
 			if(sequenceNumber != lastCheckToken) return;
-						
+			
+			if([self.lastCheckResults isEqualToArray:results]) return;
+			
 			[[renderer backingStore] beginEditing];
 			
 			NSRange wholeStringRange = NSMakeRange(0, [self.text length]);
@@ -279,13 +312,26 @@ static CAAnimation *ThrobAnimation()
 			[[renderer backingStore] removeAttribute:(id)kCTUnderlineStyleAttributeName range:wholeStringRange];
 			
 			NSRange selectionRange = [self selectedRange];
+			NSMutableArray *autocorrectedResultsThisRound = [NSMutableArray array];
 			for(NSTextCheckingResult *result in results) {
-				// Don't spell check the word they're typing, otherwise we're constantly marking it as misspelled and that's lame.
-				BOOL isActiveWord = (result.range.location + result.range.length == selectionRange.location) && selectionRange.length == 0;
+				// Don't check the word they're typing. It's just annoying.
+				BOOL isActiveWord = selectionRange.location - (result.range.location + result.range.length) < 1 && selectionRange.length == 0;
 				if(isActiveWord) continue;
 				
-				[[renderer backingStore] addAttribute:(id)kCTUnderlineColorAttributeName value:(id)[TUIColor redColor].CGColor range:result.range];
-				[[renderer backingStore] addAttribute:(id)kCTUnderlineStyleAttributeName value:[NSNumber numberWithInteger:kCTUnderlineStyleThick | kCTUnderlinePatternDot] range:result.range];
+				if(result.resultType == NSTextCheckingTypeCorrection) {
+					[self.autocorrectedResults setObject:[[[renderer backingStore] string] substringWithRange:result.range] forKey:result];
+					[[renderer backingStore] replaceCharactersInRange:result.range withString:result.replacementString];
+					[autocorrectedResultsThisRound addObject:result];
+				} else if(result.resultType == NSTextCheckingTypeSpelling) {
+					[[renderer backingStore] addAttribute:(id)kCTUnderlineColorAttributeName value:(id)[TUIColor redColor].CGColor range:result.range];
+					[[renderer backingStore] addAttribute:(id)kCTUnderlineStyleAttributeName value:[NSNumber numberWithInteger:kCTUnderlineStyleThick | kCTUnderlinePatternDot] range:result.range];
+				}
+			}
+			
+			// We need to go back and remove any misspelled markers from the results that we autocorrected.
+			for(NSTextCheckingResult *result in autocorrectedResultsThisRound) {
+				[[renderer backingStore] removeAttribute:(id)kCTUnderlineColorAttributeName range:result.range];
+				[[renderer backingStore] removeAttribute:(id)kCTUnderlineStyleAttributeName range:result.range];
 			}
 			
 			[[renderer backingStore] endEditing];
@@ -308,9 +354,27 @@ static CAAnimation *ThrobAnimation()
 		}
 	}
 	
+	if(selectedTextCheckingResult == nil) {
+		for(NSTextCheckingResult *result in self.autocorrectedResults) {
+			if(stringIndex >= result.range.location && stringIndex <= result.range.location + result.range.length) {
+				self.selectedTextCheckingResult = result;
+				break;
+			}
+		}
+	}
+	
 	if(selectedTextCheckingResult == nil) return nil;
 		
 	NSMenu *menu = [[NSMenu alloc] initWithTitle:@""];
+	if(selectedTextCheckingResult.resultType == NSTextCheckingTypeCorrection) {
+		NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:NSLocalizedString(@"Change Back to \"%@\"", @""), [self.autocorrectedResults objectForKey:selectedTextCheckingResult]] action:@selector(_replaceAutocorrectedWord:) keyEquivalent:@""];
+		[menuItem setTarget:self];
+		[menuItem setRepresentedObject:selectedTextCheckingResult];
+		[menu addItem:menuItem];
+		
+		[menu addItem:[NSMenuItem separatorItem]];
+	}
+	
 	NSArray *guesses = [[NSSpellChecker sharedSpellChecker] guessesForWordRange:selectedTextCheckingResult.range inString:[self text] language:nil inSpellDocumentWithTag:0];
 	if(guesses.count > 0) {
 		for(NSString *guess in guesses) {
@@ -334,6 +398,21 @@ static CAAnimation *ThrobAnimation()
 	[[renderer backingStore] removeAttribute:(id)kCTUnderlineColorAttributeName range:selectedTextCheckingResult.range];
 	[[renderer backingStore] removeAttribute:(id)kCTUnderlineStyleAttributeName range:selectedTextCheckingResult.range];
 	[[renderer backingStore] replaceCharactersInRange:self.selectedTextCheckingResult.range withString:replacement];
+	[[renderer backingStore] endEditing];
+	[renderer reset];
+	
+	[self _textDidChange];
+	
+	self.selectedTextCheckingResult = nil;
+}
+
+- (void)_replaceAutocorrectedWord:(NSMenuItem *)menuItem
+{
+	NSTextCheckingResult *result = [menuItem representedObject];
+	[[renderer backingStore] beginEditing];
+	[[renderer backingStore] removeAttribute:(id)kCTUnderlineColorAttributeName range:selectedTextCheckingResult.range];
+	[[renderer backingStore] removeAttribute:(id)kCTUnderlineStyleAttributeName range:selectedTextCheckingResult.range];
+	[[renderer backingStore] replaceCharactersInRange:self.selectedTextCheckingResult.range withString:[self.autocorrectedResults objectForKey:result]];
 	[[renderer backingStore] endEditing];
 	[renderer reset];
 	
@@ -379,6 +458,29 @@ static CAAnimation *ThrobAnimation()
 	}
 	
 	return NO;
+}
+
+
+#pragma mark TUITextRendererDelegate
+
+- (void)textRendererWillBecomeFirstResponder:(TUITextRenderer *)textRenderer
+{
+	if(_textViewFlags.delegateWillBecomeFirstResponder) [delegate textViewWillBecomeFirstResponder:self];
+}
+
+- (void)textRendererDidBecomeFirstResponder:(TUITextRenderer *)textRenderer
+{
+	if(_textViewFlags.delegateDidBecomeFirstResponder) [delegate textViewDidBecomeFirstResponder:self];
+}
+
+- (void)textRendererWillResignFirstResponder:(TUITextRenderer *)textRenderer
+{
+	if(_textViewFlags.delegateWillResignFirstResponder) [delegate textViewWillResignFirstResponder:self];
+}
+
+- (void)textRendererDidResignFirstResponder:(TUITextRenderer *)textRenderer
+{
+	if(_textViewFlags.delegateDidResignFirstResponder) [delegate textViewDidResignFirstResponder:self];
 }
 
 @end

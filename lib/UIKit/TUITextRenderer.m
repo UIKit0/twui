@@ -30,13 +30,10 @@
 @synthesize shadowColor;
 @synthesize shadowOffset;
 @synthesize shadowBlur;
+@synthesize verticalAlignment;
 
-- (void)_resetFramesetter
+- (void)_resetFrame
 {
-	if(_ct_framesetter) {
-		CFRelease(_ct_framesetter);
-		_ct_framesetter = NULL;
-	}
 	if(_ct_frame) {
 		CFRelease(_ct_frame);
 		_ct_frame = NULL;
@@ -47,19 +44,59 @@
 	}
 }
 
+- (void)_resetFramesetter
+{
+	if(_ct_framesetter) {
+		CFRelease(_ct_framesetter);
+		_ct_framesetter = NULL;
+	}
+	
+	[self _resetFrame];
+}
+
 - (void)dealloc
 {
 	[self _resetFramesetter];
+}
+
+- (void)_buildFrameWithEffectiveFrame:(CGRect)effectiveFrame
+{
+	_ct_path = CGPathCreateMutable();
+	CGPathAddRect((CGMutablePathRef)_ct_path, NULL, effectiveFrame);
+	_ct_frame = CTFramesetterCreateFrame(_ct_framesetter, CFRangeMake(0, 0), _ct_path, NULL);
+}
+
+- (void)_buildFrame
+{
+	if(!_ct_path) {
+		[self _buildFrameWithEffectiveFrame:frame];
+		
+		// TUITextVerticalAlignmentTop is easy since that's how Core Text always draws. For Middle and Bottom we have to shift the CTFrame down.
+		if(verticalAlignment != TUITextVerticalAlignmentTop) {
+			CGRect effectiveFrame = frame;
+			
+			CGSize size = AB_CTFrameGetSize(_ct_frame);
+			if(verticalAlignment == TUITextVerticalAlignmentMiddle) {
+				effectiveFrame.origin.y = size.height/2 - frame.size.height/2;
+			} else if(verticalAlignment == TUITextVerticalAlignmentBottom) {
+				effectiveFrame.origin.y = size.height;
+			}
+			
+			effectiveFrame = CGRectIntegral(effectiveFrame);
+			
+			[self _resetFrame];
+			[self _buildFrameWithEffectiveFrame:effectiveFrame];
+		}
+	}
 }
 
 - (void)_buildFramesetter
 {
 	if(!_ct_framesetter) {
 		_ct_framesetter = CTFramesetterCreateWithAttributedString((__bridge CFAttributedStringRef)attributedString);
-		_ct_path = CGPathCreateMutable();
-		CGPathAddRect((CGMutablePathRef)_ct_path, NULL, frame);
-		_ct_frame = CTFramesetterCreateFrame(_ct_framesetter, CFRangeMake(0, 0), _ct_path, NULL);
 	}
+	
+	[self _buildFrame];
 }
 
 - (CTFramesetterRef)ctFramesetter
@@ -280,8 +317,19 @@
 - (CGSize)sizeConstrainedToWidth:(CGFloat)width
 {
 	if(attributedString) {
-		// height needs to be something big but not CGFLOAT_MAX big
-		return [attributedString ab_sizeConstrainedToSize:CGSizeMake(width, 1000000.0f)];
+		CTFrameRef oldCTFrame = _ct_frame != NULL ? CFRetain(_ct_frame) : NULL;
+		CGPathRef oldCGPath = _ct_path != NULL ? CGPathRetain(_ct_path) : NULL;
+		
+		CGRect oldFrame = frame;
+		self.frame = CGRectMake(0.0f, 0.0f, width, 1000000.0f);
+
+		CGSize size = [self size];
+		
+		frame = oldFrame;
+		_ct_frame = oldCTFrame;
+		_ct_path = oldCGPath;
+		
+		return size;
 	}
 	return CGSizeZero;
 }
@@ -296,7 +344,7 @@
 - (void)setFrame:(CGRect)f
 {
 	frame = f;
-	[self _resetFramesetter];
+	[self _resetFrame];
 }
 
 - (void)reset
@@ -347,6 +395,15 @@
 - (void)setPreDrawBlocksEnabled:(BOOL)enabled
 {
 	_flags.preDrawBlocksEnabled = enabled;
+}
+
+- (void)setVerticalAlignment:(TUITextVerticalAlignment)alignment
+{
+	if(verticalAlignment == alignment) return;
+	
+	verticalAlignment = alignment;
+	
+	[self _resetFrame];
 }
 
 @end

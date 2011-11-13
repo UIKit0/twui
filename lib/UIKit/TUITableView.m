@@ -924,6 +924,8 @@ static NSInteger SortCells(TUITableViewCell *a, TUITableViewCell *b, void *ctx)
   if(self.delegate != nil && [self.delegate respondsToSelector:@selector(tableViewWillReloadData:)]){
     [self.delegate tableViewWillReloadData:self];
   }
+	
+	_selectedIndexPath = nil; // should already be nil
   
 	// need to recycle all visible cells, have them be regenerated on layoutSubviews
 	// because the same cells might have different content
@@ -985,6 +987,16 @@ static NSInteger SortCells(TUITableViewCell *a, TUITableViewCell *b, void *ctx)
 	} else {
 //		NSLog(@"trying to nest...");
 	}
+}
+
+- (void)reloadLayout
+{
+	_sectionInfo = nil; // will be regenerated on next layout
+	
+	[self _preLayoutCells];
+	[super layoutSubviews]; // this will munge with the contentOffset
+	[self _layoutSectionHeaders:YES];
+	[self _layoutCells:YES];
 }
 
 - (void)scrollToRowAtIndexPath:(TUIFastIndexPath *)indexPath atScrollPosition:(TUITableViewScrollPosition)scrollPosition animated:(BOOL)animated
@@ -1062,10 +1074,9 @@ static NSInteger SortCells(TUITableViewCell *a, TUITableViewCell *b, void *ctx)
 		[cell setNeedsDisplay];
 		
 		// only notify when the selection actually changes
-    if([self.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]){
-      [self.delegate tableView:self didSelectRowAtIndexPath:indexPath];
-    }
-		
+		if([self.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]){
+		  [self.delegate tableView:self didSelectRowAtIndexPath:indexPath];
+		}
 	}
 
   NSResponder *firstResponder = [self.nsWindow firstResponder];
