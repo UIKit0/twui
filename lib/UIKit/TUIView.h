@@ -77,7 +77,7 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 	CALayer		*_layer;
 	NSInteger	 _tag;
 	NSArray		*_textRenderers;
-	id			 _currentTextRenderer; // weak
+	__weak id   _currentTextRenderer; // weak
 	
 	CGPoint		startDrag;
 	
