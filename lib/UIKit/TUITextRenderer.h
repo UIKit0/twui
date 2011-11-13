@@ -16,6 +16,7 @@
 
 #import "TUIResponder.h"
 #import "ABActiveRange.h"
+#import "CoreText+Additions.h"
 
 @class TUIColor;
 @class TUIFont;
@@ -59,6 +60,8 @@ typedef enum {
 	CGFloat shadowBlur;
 	TUIColor *shadowColor;
 	
+	NSMutableDictionary *lineRects;
+	
 	TUITextVerticalAlignment verticalAlignment;
 	
 	struct {
@@ -100,6 +103,7 @@ typedef enum {
 
 - (CGRect)firstRectForCharacterRange:(CFRange)range;
 - (NSArray *)rectsForCharacterRange:(CFRange)range;
+- (NSArray *)rectsForCharacterRange:(CFRange)range aggregationType:(AB_CTLineRectAggregationType)aggregationType;
 
 @property (nonatomic, strong) id<ABActiveTextRange> hitRange;
 

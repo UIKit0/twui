@@ -21,6 +21,10 @@
 #import "TUIKit.h"
 #import "CoreText+Additions.h"
 
+@interface TUITextRenderer ()
+@property (nonatomic, retain) NSMutableDictionary *lineRects;
+@end
+
 @implementation TUITextRenderer
 
 @synthesize attributedString;
@@ -31,6 +35,7 @@
 @synthesize shadowOffset;
 @synthesize shadowBlur;
 @synthesize verticalAlignment;
+@synthesize lineRects;
 
 - (void)_resetFrame
 {
@@ -42,6 +47,8 @@
 		CGPathRelease(_ct_path);
 		_ct_path = NULL;
 	}
+	
+	lineRects = nil;
 }
 
 - (void)_resetFramesetter
@@ -216,13 +223,18 @@
 				
 				CGContextSaveGState(context);
 				
-				CFIndex rectCount = 100;
+				AB_CTLineRectAggregationType aggregationType = (AB_CTLineRectAggregationType) [[self.attributedString attribute:TUIAttributedStringBackgroundFillStyleName atIndex:range.location effectiveRange:NULL] integerValue];
+				NSArray *rectsArray = [self rectsForCharacterRange:CFRangeMake(range.location, range.length) aggregationType:aggregationType];
+				
+				CFIndex rectCount = rectsArray.count;
 				CGRect rects[rectCount];
-				CFRange r = {range.location, range.length};
-				AB_CTFrameGetRectsForRangeWithAggregationType(f, r, (AB_CTLineRectAggregationType)[[self.attributedString attribute:TUIAttributedStringBackgroundFillStyleName atIndex:range.location effectiveRange:NULL] integerValue], rects, &rectCount);
+				for(NSUInteger i = 0; i < rectCount; i++) {
+					rects[i] = [[rectsArray objectAtIndex:i] rectValue];
+				}
+				
 				TUIAttributedStringPreDrawBlock block = value;
 				block(self.attributedString, range, rects, rectCount);
-				
+					
 				CGContextRestoreGState(context);
 			}];
 		}
@@ -236,10 +248,15 @@
 				CGColorRef color = (__bridge CGColorRef) value;
 				CGContextSetFillColorWithColor(context, color);
 				
-				CFIndex rectCount = 100;
+				AB_CTLineRectAggregationType aggregationType = (AB_CTLineRectAggregationType) [[self.attributedString attribute:TUIAttributedStringBackgroundFillStyleName atIndex:range.location effectiveRange:NULL] integerValue];
+				NSArray *rectsArray = [self rectsForCharacterRange:CFRangeMake(range.location, range.length) aggregationType:aggregationType];
+				
+				CFIndex rectCount = rectsArray.count;
 				CGRect rects[rectCount];
-				CFRange r = {range.location, range.length};
-				AB_CTFrameGetRectsForRangeWithAggregationType(f, r, (AB_CTLineRectAggregationType)[[self.attributedString attribute:TUIAttributedStringBackgroundFillStyleName atIndex:range.location effectiveRange:NULL] integerValue], rects, &rectCount);
+				for(NSUInteger i = 0; i < rectCount; i++) {
+					rects[i] = [[rectsArray objectAtIndex:i] rectValue];
+				}
+				
 				for(CFIndex i = 0; i < rectCount; ++i) {
 					CGRect r = rects[i];
 					r = CGRectInset(r, -2, -1);
@@ -365,16 +382,32 @@
 
 - (NSArray *)rectsForCharacterRange:(CFRange)range
 {
-	CFIndex rectCount = 100;
-	CGRect rects[rectCount];
-	AB_CTFrameGetRectsForRange([self ctFrame], range, rects, &rectCount);
-	
-	NSMutableArray *wrappedRects = [NSMutableArray arrayWithCapacity:rectCount];
-	for(CFIndex i = 0; i < rectCount; i++) {
-		[wrappedRects addObject:[NSValue valueWithRect:rects[i]]];
+	return [self rectsForCharacterRange:range aggregationType:AB_CTLineRectAggregationTypeInline];
+}
+
+- (NSArray *)rectsForCharacterRange:(CFRange)range aggregationType:(AB_CTLineRectAggregationType)aggregationType
+{
+	if(self.lineRects == nil) {
+		self.lineRects = [NSMutableDictionary dictionary];
 	}
 	
-	return [wrappedRects copy];
+	NSValue *cacheKey = [NSValue valueWithRange:NSMakeRange(range.location, range.length)];
+	NSArray *cachedRects = [self.lineRects objectForKey:cacheKey];
+	if(cachedRects == nil) {
+		CFIndex rectCount = 100;
+		CGRect rects[rectCount];
+		AB_CTFrameGetRectsForRangeWithAggregationType([self ctFrame], range, aggregationType, rects, &rectCount);
+		
+		NSMutableArray *wrappedRects = [NSMutableArray arrayWithCapacity:rectCount];
+		for(CFIndex i = 0; i < rectCount; i++) {
+			[wrappedRects addObject:[NSValue valueWithRect:rects[i]]];
+		}
+		
+		[self.lineRects setObject:wrappedRects forKey:cacheKey];
+		cachedRects = wrappedRects;
+	}
+	
+	return cachedRects;
 }
 
 - (BOOL)backgroundDrawingEnabled
