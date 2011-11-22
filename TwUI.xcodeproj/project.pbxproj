@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E6183E8147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; };
+		1E6183E9147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; };
+		1E6183EA147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; };
+		1E6183EB147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
+		1E6183EC147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
+		1E6183ED147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
+		1E6183FC147B6B9900E57256 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E6183F7147B6B8C00E57256 /* Velvet.framework */; };
 		5E6ECEB313BE791600109598 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE9839C13BE7650005F430D /* ApplicationServices.framework */; };
 		5E6ECEB413BE791600109598 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5E31B613BE6F49004B7899 /* QuartzCore.framework */; };
 		5E6ECEB613BE791C00109598 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE9839C13BE7650005F430D /* ApplicationServices.framework */; };
@@ -256,6 +263,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1E6183F6147B6B8C00E57256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6183F1147B6B8C00E57256 /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC01147851A80095AB35;
+			remoteInfo = Velvet;
+		};
+		1E6183F8147B6B8C00E57256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6183F1147B6B8C00E57256 /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC19147851A80095AB35;
+			remoteInfo = VelvetTests;
+		};
+		1E6183FA147B6B9600E57256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E6183F1147B6B8C00E57256 /* Velvet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFFC00147851A80095AB35;
+			remoteInfo = Velvet;
+		};
 		CB5B266513BE6DA300579B1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB5B264213BE6DA200579B1E /* Project object */;
@@ -266,6 +294,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E6183E6147B6B3900E57256 /* VELTUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VELTUIView.h; sourceTree = "<group>"; };
+		1E6183E7147B6B3900E57256 /* VELTUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VELTUIView.m; sourceTree = "<group>"; };
+		1E6183F1147B6B8C00E57256 /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = ../Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
 		5EE9839C13BE7650005F430D /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		5EE983B713BE7809005F430D /* libtwui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtwui.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8819794213E26E0200AA39EB /* TUIView+Accessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TUIView+Accessibility.h"; sourceTree = "<group>"; };
@@ -406,6 +437,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E6183FC147B6B9900E57256 /* Velvet.framework in Frameworks */,
 				CB5E327F13BE710C004B7899 /* Cocoa.framework in Frameworks */,
 				CB5E31B713BE6F49004B7899 /* QuartzCore.framework in Frameworks */,
 				5E6ECEB613BE791C00109598 /* ApplicationServices.framework in Frameworks */,
@@ -435,6 +467,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E6183F2147B6B8C00E57256 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E6183F7147B6B8C00E57256 /* Velvet.framework */,
+				1E6183F9147B6B8C00E57256 /* VelvetTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CB5B264013BE6DA200579B1E = {
 			isa = PBXGroup;
 			children = (
@@ -460,6 +501,7 @@
 		CB5B264E13BE6DA200579B1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E6183F1147B6B8C00E57256 /* Velvet.xcodeproj */,
 				5EE9839C13BE7650005F430D /* ApplicationServices.framework */,
 				CB5B264F13BE6DA200579B1E /* Cocoa.framework */,
 				CB5E31B613BE6F49004B7899 /* QuartzCore.framework */,
@@ -529,6 +571,8 @@
 		CBB74C3813BE6E1900C85CB5 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				1E6183E6147B6B3900E57256 /* VELTUIView.h */,
+				1E6183E7147B6B3900E57256 /* VELTUIView.m */,
 				CBB74C3913BE6E1900C85CB5 /* ABActiveRange.h */,
 				CBB74C3A13BE6E1900C85CB5 /* ABActiveRange.m */,
 				CBB74C3B13BE6E1900C85CB5 /* CoreText+Additions.h */,
@@ -661,6 +705,7 @@
 				88EFFB5313F417E200CF91A9 /* TUITextViewEditor.h in Headers */,
 				88D25F5713F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
 				887F272E13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */,
+				1E6183EA147B6B3900E57256 /* VELTUIView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +763,7 @@
 				88EFFB5113F417E200CF91A9 /* TUITextViewEditor.h in Headers */,
 				88D25F5513F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
 				88A4AFDE145A16CA0071CF22 /* TUITextRenderer+Accessibility.h in Headers */,
+				1E6183E8147B6B3900E57256 /* VELTUIView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +779,7 @@
 				88EFFB5213F417E200CF91A9 /* TUITextViewEditor.h in Headers */,
 				88D25F5613F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
 				887F272D13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */,
+				1E6183E9147B6B3900E57256 /* VELTUIView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,6 +815,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1E6183FB147B6B9600E57256 /* PBXTargetDependency */,
 			);
 			name = TwUI;
 			productName = TwUI;
@@ -828,6 +876,12 @@
 			mainGroup = CB5B264013BE6DA200579B1E;
 			productRefGroup = CB5B264D13BE6DA200579B1E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1E6183F2147B6B8C00E57256 /* Products */;
+					ProjectRef = 1E6183F1147B6B8C00E57256 /* Velvet.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CB5B264B13BE6DA200579B1E /* TwUI */,
@@ -837,6 +891,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1E6183F7147B6B8C00E57256 /* Velvet.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Velvet.framework;
+			remoteRef = 1E6183F6147B6B8C00E57256 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1E6183F9147B6B8C00E57256 /* VelvetTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VelvetTests.octest;
+			remoteRef = 1E6183F8147B6B8C00E57256 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB5B264A13BE6DA200579B1E /* Resources */ = {
@@ -933,6 +1004,7 @@
 				88EFFB5613F417E200CF91A9 /* TUITextViewEditor.m in Sources */,
 				88D25F5A13F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */,
 				887F273113F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */,
+				1E6183ED147B6B3900E57256 /* VELTUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -995,6 +1067,7 @@
 				88D25F5813F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */,
 				887F272F13F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */,
 				88A4AFDF145A16CA0071CF22 /* TUITextRenderer+Accessibility.m in Sources */,
+				1E6183EB147B6B3900E57256 /* VELTUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,12 +1138,18 @@
 				88EFFB5513F417E200CF91A9 /* TUITextViewEditor.m in Sources */,
 				88D25F5913F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */,
 				887F273013F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */,
+				1E6183EC147B6B3900E57256 /* VELTUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1E6183FB147B6B9600E57256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Velvet;
+			targetProxy = 1E6183FA147B6B9600E57256 /* PBXContainerItemProxy */;
+		};
 		CB5B266613BE6DA300579B1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB5B264B13BE6DA200579B1E /* TwUI */;
@@ -1123,6 +1202,7 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "../Velvet/build/$(CONFIGURATION)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -1135,6 +1215,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../Velvet/build/$(CONFIGURATION)/Velvet.framework";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1152,6 +1233,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "../Velvet/build/$(CONFIGURATION)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1162,6 +1244,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LLVM_LTO = YES;
+				HEADER_SEARCH_PATHS = "../Velvet/build/$(CONFIGURATION)/Velvet.framework";
 				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
