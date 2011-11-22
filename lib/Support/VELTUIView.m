@@ -10,6 +10,7 @@
 #import <Velvet/VELContext.h>
 #import <Velvet/NSVelvetView.h>
 #import <Velvet/dispatch+SynchronizationAdditions.h>
+#import "TUIView.h"
 
 @implementation VELTUIView
 @synthesize TUIView = m_TUIView;

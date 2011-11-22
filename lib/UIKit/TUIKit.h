@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CoreText+Additions.h"
 #import "TUIResponder.h"
 #import "TUIFont.h"
 #import "TUIColor.h"
@@ -39,7 +40,7 @@
 #import "TUIStringDrawing.h"
 #import "TUIViewController.h"
 #import "TUICGAdditions.h"
-#import "CoreText+Additions.h"
+#import "VELTUIView.h"
 
 extern CGContextRef TUIGraphicsGetCurrentContext(void);
 extern void TUIGraphicsPushContext(CGContextRef context);

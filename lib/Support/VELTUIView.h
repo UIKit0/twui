@@ -7,8 +7,8 @@
 //
 
 #import <Velvet/VELView.h>
-#import <TwUI/TUIKit.h>
 
+@class TUIView;
 @interface VELTUIView : VELView
 
 /*

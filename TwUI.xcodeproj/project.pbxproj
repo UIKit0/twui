@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E6183E8147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; };
+		1E6183E8147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E6183E9147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; };
 		1E6183EA147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; };
 		1E6183EB147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
@@ -755,6 +755,7 @@
 				CBB74CE413BE6E1900C85CB5 /* TUIViewController.h in Headers */,
 				CBB74CE613BE6E1900C85CB5 /* TUIViewNSViewContainer.h in Headers */,
 				887F272C13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */,
+				1E6183E8147B6B3900E57256 /* VELTUIView.h in Headers */,
 				886EBA7F13D64393006DE018 /* TUIControl+Private.h in Headers */,
 				8819794413E26E0200AA39EB /* TUIView+Accessibility.h in Headers */,
 				8819794C13E26E5800AA39EB /* TUINSView+Accessibility.h in Headers */,
@@ -763,7 +764,6 @@
 				88EFFB5113F417E200CF91A9 /* TUITextViewEditor.h in Headers */,
 				88D25F5513F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
 				88A4AFDE145A16CA0071CF22 /* TUITextRenderer+Accessibility.h in Headers */,
-				1E6183E8147B6B3900E57256 /* VELTUIView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
