@@ -262,6 +262,12 @@
 		CBB74CE513BE6E1900C85CB5 /* TUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C8E13BE6E1900C85CB5 /* TUIViewController.m */; };
 		CBB74CE613BE6E1900C85CB5 /* TUIViewNSViewContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB74C8F13BE6E1900C85CB5 /* TUIViewNSViewContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBB74CE713BE6E1900C85CB5 /* TUIViewNSViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C9013BE6E1900C85CB5 /* TUIViewNSViewContainer.m */; };
+		D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; };
+		D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; };
+		D0B8DFEC148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
+		D0B8DFED148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
+		D0B8DFEE148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -451,6 +457,8 @@
 		D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D0B5CF20148B28FB00989BE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D0B8DFE7148B314700F611CA /* TUIVelvetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVelvetView.h; sourceTree = "<group>"; };
+		D0B8DFE8148B314700F611CA /* TUIVelvetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVelvetView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -789,6 +797,8 @@
 		D0F7EC71148B2D7600698197 /* Velvet Bridge */ = {
 			isa = PBXGroup;
 			children = (
+				D0B8DFE7148B314700F611CA /* TUIVelvetView.h */,
+				D0B8DFE8148B314700F611CA /* TUIVelvetView.m */,
 				1E6183E6147B6B3900E57256 /* VELTUIView.h */,
 				1E6183E7147B6B3900E57256 /* VELTUIView.m */,
 			);
@@ -812,6 +822,7 @@
 				88D25F5713F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
 				887F272E13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */,
 				1E6183EA147B6B3900E57256 /* VELTUIView.h in Headers */,
+				D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,6 +881,7 @@
 				88EFFB5113F417E200CF91A9 /* TUITextViewEditor.h in Headers */,
 				88D25F5513F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
 				88A4AFDE145A16CA0071CF22 /* TUITextRenderer+Accessibility.h in Headers */,
+				D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,6 +898,7 @@
 				88D25F5613F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
 				887F272D13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */,
 				1E6183E9147B6B3900E57256 /* VELTUIView.h in Headers */,
+				D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1113,6 +1126,7 @@
 				88D25F5A13F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */,
 				887F273113F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */,
 				1E6183ED147B6B3900E57256 /* VELTUIView.m in Sources */,
+				D0B8DFEE148B314700F611CA /* TUIVelvetView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1176,6 +1190,7 @@
 				887F272F13F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */,
 				88A4AFDF145A16CA0071CF22 /* TUITextRenderer+Accessibility.m in Sources */,
 				1E6183EB147B6B3900E57256 /* VELTUIView.m in Sources */,
+				D0B8DFEC148B314700F611CA /* TUIVelvetView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1247,6 +1262,7 @@
 				88D25F5913F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */,
 				887F273013F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */,
 				1E6183EC147B6B3900E57256 /* VELTUIView.m in Sources */,
+				D0B8DFED148B314700F611CA /* TUIVelvetView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
