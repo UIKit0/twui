@@ -1440,6 +1440,82 @@
 			};
 			name = Release;
 		};
+		D0B5CF21148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF11148B28FB00989BE2 /* Profile.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)/Velvet.framework";
+				LLVM_LTO = YES;
+				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+			};
+			name = Profile;
+		};
+		D0B5CF22148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
+				INFOPLIST_FILE = "Resources/TwUI-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
+				PRODUCT_NAME = TwUI;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Profile;
+		};
+		D0B5CF23148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = libtwui;
+			};
+			name = Profile;
+		};
+		D0B5CF24148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
+				PRODUCT_NAME = twui;
+			};
+			name = Profile;
+		};
+		D0B5CF25148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PREFIX_HEADER = "TwUI/TwUI-Prefix.pch";
+				INFOPLIST_FILE = "TwUITests/TwUITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Profile;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1448,6 +1524,7 @@
 			buildConfigurations = (
 				5EE983BD13BE7809005F430D /* Debug */,
 				5EE983BE13BE7809005F430D /* Release */,
+				D0B5CF24148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1457,6 +1534,7 @@
 			buildConfigurations = (
 				CB5B267213BE6DA300579B1E /* Debug */,
 				CB5B267313BE6DA300579B1E /* Release */,
+				D0B5CF21148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1466,6 +1544,7 @@
 			buildConfigurations = (
 				CB5B267513BE6DA300579B1E /* Debug */,
 				CB5B267613BE6DA300579B1E /* Release */,
+				D0B5CF22148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1475,6 +1554,7 @@
 			buildConfigurations = (
 				CB5B267813BE6DA300579B1E /* Debug */,
 				CB5B267913BE6DA300579B1E /* Release */,
+				D0B5CF25148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1484,6 +1564,7 @@
 			buildConfigurations = (
 				CB5E321913BE7099004B7899 /* Debug */,
 				CB5E321A13BE7099004B7899 /* Release */,
+				D0B5CF23148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
