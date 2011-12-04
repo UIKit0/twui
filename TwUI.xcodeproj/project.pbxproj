@@ -598,6 +598,7 @@
 				CBB74C5A13BE6E1900C85CB5 /* TUIKit.h */,
 				CBB74C3813BE6E1900C85CB5 /* Support */,
 				CBB74C3D13BE6E1900C85CB5 /* UIKit */,
+				D0F7EC71148B2D7600698197 /* Velvet Bridge */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -605,8 +606,6 @@
 		CBB74C3813BE6E1900C85CB5 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				1E6183E6147B6B3900E57256 /* VELTUIView.h */,
-				1E6183E7147B6B3900E57256 /* VELTUIView.m */,
 				CBB74C3913BE6E1900C85CB5 /* ABActiveRange.h */,
 				CBB74C3A13BE6E1900C85CB5 /* ABActiveRange.m */,
 				CBB74C3B13BE6E1900C85CB5 /* CoreText+Additions.h */,
@@ -785,6 +784,16 @@
 				D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */,
 			);
 			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
+		D0F7EC71148B2D7600698197 /* Velvet Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				1E6183E6147B6B3900E57256 /* VELTUIView.h */,
+				1E6183E7147B6B3900E57256 /* VELTUIView.m */,
+			);
+			name = "Velvet Bridge";
+			path = lib/VelvetBridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
