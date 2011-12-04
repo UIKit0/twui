@@ -94,7 +94,7 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 	NSTimeInterval toolTipDelay;
 	
 	@public
-	TUINSView *_nsView; // keep this updated, fast way of getting .nsView
+	NSView *_nsView; // keep this updated, fast way of getting .nsView
 	
 	struct {
 		NSInteger lastWidth;
@@ -443,7 +443,7 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 
 @interface TUIView (TUIViewAppKit)
 
-@property (nonatomic, assign, setter=setNSView:) TUINSView *nsView;
+@property (nonatomic, assign, setter=setNSView:) NSView *nsView;
 @property (nonatomic, readonly) TUINSWindow *nsWindow;
 
 /**

@@ -828,7 +828,9 @@ static NSInteger SortCells(TUITableViewCell *a, TUITableViewCell *b, void *ctx)
 			NSLog(@"!!! Warning: already have a cell in place for index path %@\n\n\n", i);
 		} else {
 			TUITableViewCell *cell = [_dataSource tableView:self cellForRowAtIndexPath:i];
-			[self.nsView invalidateHoverForView:cell];
+
+            if ([self.nsView isKindOfClass:[TUINSView class]])
+                [(id)self.nsView invalidateHoverForView:cell];
 			
 			cell.frame = [self rectForRowAtIndexPath:i];
 			cell.layer.zPosition = 0;
