@@ -16,8 +16,15 @@
 @synthesize TUIView = m_TUIView;
 
 - (void)setTUIView:(TUIView *)view {
-    [self.layer addSublayer:view.layer];
+    [m_TUIView.layer removeFromSuperlayer];
+    m_TUIView.nsView = nil;
+
     m_TUIView = view;
+
+    if (m_TUIView) {
+        m_TUIView.nsView = self.hostView;
+        [self.layer addSublayer:m_TUIView.layer];
+    }
 }
 
 #pragma mark Lifecycle
