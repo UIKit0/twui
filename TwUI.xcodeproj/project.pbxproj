@@ -436,6 +436,21 @@
 		CBB74C8E13BE6E1900C85CB5 /* TUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewController.m; sourceTree = "<group>"; };
 		CBB74C8F13BE6E1900C85CB5 /* TUIViewNSViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIViewNSViewContainer.h; sourceTree = "<group>"; };
 		CBB74C9013BE6E1900C85CB5 /* TUIViewNSViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewNSViewContainer.m; sourceTree = "<group>"; };
+		D0B5CF0E148B28FB00989BE2 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D0B5CF10148B28FB00989BE2 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D0B5CF11148B28FB00989BE2 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D0B5CF12148B28FB00989BE2 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D0B5CF14148B28FB00989BE2 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D0B5CF15148B28FB00989BE2 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D0B5CF17148B28FB00989BE2 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF18148B28FB00989BE2 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF19148B28FB00989BE2 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF1C148B28FB00989BE2 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0B5CF20148B28FB00989BE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +515,7 @@
 				CBB74C3713BE6E0200C85CB5 /* Source */,
 				CB5B265513BE6DA200579B1E /* Resources */,
 				CB5B266813BE6DA300579B1E /* TwUITests */,
+				D0B5CF0C148B28FB00989BE2 /* Configuration */,
 				CB5B264E13BE6DA200579B1E /* Frameworks */,
 				CB5B264D13BE6DA200579B1E /* Products */,
 			);
@@ -706,6 +722,69 @@
 			);
 			name = UIKit;
 			path = lib/UIKit;
+			sourceTree = "<group>";
+		};
+		D0B5CF0C148B28FB00989BE2 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5CF0D148B28FB00989BE2 /* Base */,
+				D0B5CF16148B28FB00989BE2 /* iOS */,
+				D0B5CF1A148B28FB00989BE2 /* Mac OS X */,
+				D0B5CF20148B28FB00989BE2 /* README.md */,
+			);
+			name = Configuration;
+			path = Frameworks/Velvet/Configuration;
+			sourceTree = "<group>";
+		};
+		D0B5CF0D148B28FB00989BE2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5CF0E148B28FB00989BE2 /* Common.xcconfig */,
+				D0B5CF0F148B28FB00989BE2 /* Configurations */,
+				D0B5CF13148B28FB00989BE2 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D0B5CF0F148B28FB00989BE2 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5CF10148B28FB00989BE2 /* Debug.xcconfig */,
+				D0B5CF11148B28FB00989BE2 /* Profile.xcconfig */,
+				D0B5CF12148B28FB00989BE2 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D0B5CF13148B28FB00989BE2 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5CF14148B28FB00989BE2 /* Application.xcconfig */,
+				D0B5CF15148B28FB00989BE2 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D0B5CF16148B28FB00989BE2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5CF17148B28FB00989BE2 /* iOS-Application.xcconfig */,
+				D0B5CF18148B28FB00989BE2 /* iOS-Base.xcconfig */,
+				D0B5CF19148B28FB00989BE2 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D0B5CF1A148B28FB00989BE2 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */,
+				D0B5CF1C148B28FB00989BE2 /* Mac-Base.xcconfig */,
+				D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */,
+				D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */,
+				D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1209,6 +1288,7 @@
 /* Begin XCBuildConfiguration section */
 		5EE983BD13BE7809005F430D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1217,6 +1297,7 @@
 		};
 		5EE983BE13BE7809005F430D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1225,64 +1306,51 @@
 		};
 		CB5B267213BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF10148B28FB00989BE2 /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = NO;
+				GCC_WARN_SIGN_COMPARE = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				HEADER_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)/Velvet.framework";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
-				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		CB5B267313BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF12148B28FB00989BE2 /* Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = NO;
+				GCC_WARN_SIGN_COMPARE = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				HEADER_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)/Velvet.framework";
-				LLVM_LTO = YES;
 				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
-				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
 		CB5B267513BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1297,6 +1365,7 @@
 		};
 		CB5B267613BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1311,6 +1380,7 @@
 		};
 		CB5B267813BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -1323,6 +1393,7 @@
 		};
 		CB5B267913BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -1335,6 +1406,7 @@
 		};
 		CB5E321913BE7099004B7899 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
@@ -1344,12 +1416,82 @@
 		};
 		CB5E321A13BE7099004B7899 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = libtwui;
 			};
 			name = Release;
+		};
+		D0B5CF21148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF11148B28FB00989BE2 /* Profile.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = NO;
+				GCC_WARN_SIGN_COMPARE = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				HEADER_SEARCH_PATHS = "Frameworks/Velvet/Framework/Velvet/\nFrameworks/Velvet/Framework/Velvet/build/$(CONFIGURATION)/Velvet.framework";
+				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
+				SDKROOT = macosx;
+			};
+			name = Profile;
+		};
+		D0B5CF22148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
+				INFOPLIST_FILE = "Resources/TwUI-Info.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
+				PRODUCT_NAME = TwUI;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Profile;
+		};
+		D0B5CF23148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
+				INSTALL_PATH = /usr/local/lib;
+				PRODUCT_NAME = libtwui;
+			};
+			name = Profile;
+		};
+		D0B5CF24148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
+				PRODUCT_NAME = twui;
+			};
+			name = Profile;
+		};
+		D0B5CF25148B293600989BE2 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PREFIX_HEADER = "TwUI/TwUI-Prefix.pch";
+				INFOPLIST_FILE = "TwUITests/TwUITests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Profile;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1359,6 +1501,7 @@
 			buildConfigurations = (
 				5EE983BD13BE7809005F430D /* Debug */,
 				5EE983BE13BE7809005F430D /* Release */,
+				D0B5CF24148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1368,6 +1511,7 @@
 			buildConfigurations = (
 				CB5B267213BE6DA300579B1E /* Debug */,
 				CB5B267313BE6DA300579B1E /* Release */,
+				D0B5CF21148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1377,6 +1521,7 @@
 			buildConfigurations = (
 				CB5B267513BE6DA300579B1E /* Debug */,
 				CB5B267613BE6DA300579B1E /* Release */,
+				D0B5CF22148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1386,6 +1531,7 @@
 			buildConfigurations = (
 				CB5B267813BE6DA300579B1E /* Debug */,
 				CB5B267913BE6DA300579B1E /* Release */,
+				D0B5CF25148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1395,6 +1541,7 @@
 			buildConfigurations = (
 				CB5E321913BE7099004B7899 /* Debug */,
 				CB5E321A13BE7099004B7899 /* Release */,
+				D0B5CF23148B293600989BE2 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

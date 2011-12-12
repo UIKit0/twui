@@ -7,13 +7,15 @@
 //
 
 #import "VELTUIView.h"
-#import <Velvet/VELContext.h>
-#import <Velvet/NSVelvetView.h>
-#import <Velvet/dispatch+SynchronizationAdditions.h>
 #import "TUIView.h"
 
 @implementation VELTUIView
 @synthesize TUIView = m_TUIView;
+
+- (void)setTUIView:(TUIView *)view {
+    [self.layer addSublayer:view.layer];
+    m_TUIView = view;
+}
 
 - (id)initWithTUIView:(TUIView *)view {
 	self = [super init];
@@ -23,23 +25,6 @@
 	self.TUIView = view;
 	return self;
 
-}
-
-- (TUIView *)TUIView {
-	__block TUIView *view;
-
-	dispatch_sync_recursive(self.context.dispatchQueue, ^{
-		view = m_TUIView;
-	});
-
-	return view;
-}
-
-- (void)setTUIView:(TUIView *)view {
-	dispatch_sync_recursive(self.context.dispatchQueue, ^{
-		[self.layer addSublayer:view.layer];
-		m_TUIView = view;
-	});
 }
 
 @end
