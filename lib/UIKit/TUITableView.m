@@ -278,7 +278,7 @@ typedef struct {
 	
 	NSMutableArray *sections = [[NSMutableArray alloc] initWithCapacity:numberOfSections];
 	
-	CGFloat offset = [_headerView bounds].size.height - self.contentInset.top;
+	CGFloat offset = [_headerView bounds].size.height - self.contentInset.top*2;
 	for(int s = 0; s < numberOfSections; ++s) {
 		TUITableViewSection *section = [[TUITableViewSection alloc] initWithNumberOfRows:[_dataSource tableView:self numberOfRowsInSection:s] sectionIndex:s tableView:self];
 		[section _setupRowHeights];
@@ -1061,7 +1061,7 @@ static NSInteger SortCells(TUITableViewCell *a, TUITableViewCell *b, void *ctx)
 
 - (void)selectRowAtIndexPath:(TUIFastIndexPath *)indexPath animated:(BOOL)animated scrollPosition:(TUITableViewScrollPosition)scrollPosition
 {
-  TUIFastIndexPath *oldIndexPath = [self indexPathForSelectedRow];  
+	TUIFastIndexPath *oldIndexPath = [self indexPathForSelectedRow];
 //	if([indexPath isEqual:oldIndexPath]) {
 //		// just scroll to visible
 //	} else {

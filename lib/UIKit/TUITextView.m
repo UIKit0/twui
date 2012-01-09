@@ -59,6 +59,7 @@
 @property (nonatomic, strong) NSArray *lastCheckResults;
 @property (nonatomic, strong) NSTextCheckingResult *selectedTextCheckingResult;
 @property (nonatomic, strong) NSMutableDictionary *autocorrectedResults;
+@property (nonatomic, strong) TUITextRenderer *placeholderRenderer;
 @end
 
 @implementation TUITextView
@@ -76,6 +77,7 @@
 @synthesize selectedTextCheckingResult;
 @synthesize autocorrectionEnabled;
 @synthesize autocorrectedResults;
+@synthesize placeholderRenderer;
 
 - (void)_updateDefaultAttributes
 {
@@ -280,6 +282,16 @@ static CAAnimation *ThrobAnimation()
 	
 	[renderer draw];
 	
+	if(renderer.attributedString.length < 1 && self.placeholder.length > 0) {
+		TUIAttributedString *attributedString = [TUIAttributedString stringWithString:self.placeholder];
+		attributedString.font = self.font;
+		attributedString.color = [self.textColor colorWithAlphaComponent:0.4f];
+		
+		self.placeholderRenderer.attributedString = attributedString;
+		self.placeholderRenderer.frame = rendererFrame;
+		[self.placeholderRenderer draw];
+	}
+	
 	if(doMask) {
 		CGContextRestoreGState(ctx);
 	}
@@ -306,11 +318,21 @@ static CAAnimation *ThrobAnimation()
 	r.origin.y += floor(self.font.leading);
 	//NSLog(@"ascent: %f, descent: %f, leading: %f, cap height: %f, x-height: %f, bounding: %@", self.font.ascender, self.font.descender, self.font.leading, self.font.capHeight, self.font.xHeight, NSStringFromRect(CTFontGetBoundingBox(self.font.ctFont)));
 	
+	if(self.text.length > 0) {
+		unichar lastCharacter = [self.text characterAtIndex:MAX(selection.location - 1, 0)];
+		// Sigh. So if the string ends with a return, CTFrameGetLines doesn't consider that a new line. So we have to fudge it.
+		if(lastCharacter == '\n') {
+			CGRect firstCharacterRect = [renderer firstRectForCharacterRange:CFRangeMake(0, 0)];
+			r.origin.y -= firstCharacterRect.size.height;
+			r.origin.x = firstCharacterRect.origin.x;
+		}
+	}
+	
 	if(fakeMetrics) {
 		// restore
 		renderer.attributedString = [renderer backingStore];
 	}
-	
+		
 	return r;
 }
 
@@ -327,7 +349,7 @@ static CAAnimation *ThrobAnimation()
 - (void)_checkSpelling
 {
 	NSTextCheckingType checkingTypes = NSTextCheckingTypeSpelling;
-	if(autocorrectionEnabled) checkingTypes |= NSTextCheckingTypeCorrection;
+	if(autocorrectionEnabled) checkingTypes |= NSTextCheckingTypeCorrection | NSTextCheckingTypeReplacement;
 	
 	lastCheckToken = [[NSSpellChecker sharedSpellChecker] requestCheckingOfString:self.text range:NSMakeRange(0, [self.text length]) types:checkingTypes options:nil inSpellDocumentWithTag:0 completionHandler:^(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount) {
 		// This needs to happen on the main thread so that the user doesn't enter more text while we're changing the attributed string.
@@ -355,8 +377,8 @@ static CAAnimation *ThrobAnimation()
 					unichar lastCharacter = [[[renderer backingStore] string] characterAtIndex:self.selectedRange.location - 1];
 					if(lastCharacter == '\'') continue;
 				}
-				
-				if(result.resultType == NSTextCheckingTypeCorrection) {
+								
+				if(result.resultType == NSTextCheckingTypeCorrection || result.resultType == NSTextCheckingTypeReplacement) {
 					NSString *oldString = [[[renderer backingStore] string] substringWithRange:result.range];
 					TUITextViewAutocorrectedPair *correctionPair = [[TUITextViewAutocorrectedPair alloc] init];
 					correctionPair.correctionResult = result;
@@ -364,6 +386,9 @@ static CAAnimation *ThrobAnimation()
 					
 					// Don't redo corrections that the user undid.
 					if([self.autocorrectedResults objectForKey:correctionPair] != nil) continue;
+					
+					[[renderer backingStore] removeAttribute:(id)kCTUnderlineColorAttributeName range:result.range];
+					[[renderer backingStore] removeAttribute:(id)kCTUnderlineStyleAttributeName range:result.range];
 					
 					[self.autocorrectedResults setObject:oldString forKey:correctionPair];
 					[[renderer backingStore] replaceCharactersInRange:result.range withString:result.replacementString];
@@ -376,12 +401,6 @@ static CAAnimation *ThrobAnimation()
 					[[renderer backingStore] addAttribute:(id)kCTUnderlineColorAttributeName value:(id)[TUIColor redColor].CGColor range:result.range];
 					[[renderer backingStore] addAttribute:(id)kCTUnderlineStyleAttributeName value:[NSNumber numberWithInteger:kCTUnderlineStyleThick | kCTUnderlinePatternDot] range:result.range];
 				}
-			}
-			
-			// We need to go back and remove any misspelled markers from the results that we autocorrected.
-			for(NSTextCheckingResult *result in autocorrectedResultsThisRound) {
-				[[renderer backingStore] removeAttribute:(id)kCTUnderlineColorAttributeName range:result.range];
-				[[renderer backingStore] removeAttribute:(id)kCTUnderlineStyleAttributeName range:result.range];
 			}
 			
 			[[renderer backingStore] endEditing];
@@ -504,13 +523,72 @@ static CAAnimation *ThrobAnimation()
     return YES;
 }
 
+- (BOOL)performKeyEquivalent:(NSEvent *)event {
+	if([self.nsWindow firstResponder] == renderer) {
+		return [renderer performKeyEquivalent:event];
+	}
+	
+	return [super performKeyEquivalent:event];
+}
+
 - (BOOL)doCommandBySelector:(SEL)selector
 {
 	if(_textViewFlags.delegateDoCommandBySelector) {
-		return [delegate textView:self doCommandBySelector:selector];
+		BOOL consumed = [delegate textView:self doCommandBySelector:selector];
+		if(consumed) return YES;
+	}
+	
+	NSLog(@"%@", NSStringFromSelector(selector));
+	
+	if(selector == @selector(moveUp:)) {
+		if([self singleLine]) {
+			self.selectedRange = NSMakeRange(0, 0);
+		} else {
+			CGRect rect = [renderer firstRectForCharacterRange:ABCFRangeFromNSRange(self.selectedRange)];
+			CFIndex aboveIndex = [renderer stringIndexForPoint:CGPointMake(rect.origin.x - rect.size.width, rect.origin.y + rect.size.height*2)];
+			self.selectedRange = NSMakeRange(MAX(aboveIndex - 1, 0), 0);
+		}
+		
+		return YES;
+	} else if(selector == @selector(moveDown:)) {
+		if([self singleLine]) {
+			self.selectedRange = NSMakeRange(self.text.length, 0);
+		} else {
+			CGRect rect = [renderer firstRectForCharacterRange:ABCFRangeFromNSRange(self.selectedRange)];
+			CFIndex belowIndex = [renderer stringIndexForPoint:CGPointMake(rect.origin.x - rect.size.width, rect.origin.y)];
+			belowIndex = MAX(belowIndex - 1, 0);
+			
+			// if we're on the same level as the belowIndex, then we've hit the last line and want to go to the end
+			CGRect belowRect = [renderer firstRectForCharacterRange:CFRangeMake(belowIndex, 0)];
+			if(belowRect.origin.y == rect.origin.y) {
+				belowIndex = MIN(belowIndex + 1, self.text.length);
+			}
+			self.selectedRange = NSMakeRange(belowIndex, 0);
+		}
+		
+		return YES;
 	}
 	
 	return NO;
+}
+
+- (TUITextRenderer *)placeholderRenderer {
+	if(placeholderRenderer == nil) {
+		self.placeholderRenderer = [[TUITextRenderer alloc] init];
+	}
+	
+	return placeholderRenderer;
+}
+
+- (CGSize)sizeThatFits:(CGSize)size {
+	CGSize textSize = [renderer sizeConstrainedToWidth:CGRectGetWidth([self textRect])];
+	// Sigh. So if the string ends with a return, CTFrameGetLines doesn't consider that a new line. So we have to fudge it.
+	if([self.text hasSuffix:@"\n"]) {
+		CGRect firstCharacterRect = [renderer firstRectForCharacterRange:CFRangeMake(0, 0)];
+		textSize.height += firstCharacterRect.size.height;
+	}
+	
+	return CGSizeMake(CGRectGetWidth(self.bounds), textSize.height + contentInset.top + contentInset.bottom);
 }
 
 
