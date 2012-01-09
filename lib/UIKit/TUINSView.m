@@ -20,6 +20,11 @@
 #import "TUITooltipWindow.h"
 #import <CoreFoundation/CoreFoundation.h>
 
+@interface TUINSView ()
+- (void)windowDidResignKey:(NSNotification *)notification;
+@end
+
+
 @implementation TUINSView
 
 @synthesize rootView;
@@ -34,10 +39,14 @@
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignKeyNotification object:nil];
+	
+	[rootView removeFromSuperview];
 	rootView = nil;
 	_hoverView = nil;
 	_trackingView = nil;
 	_trackingArea = nil;
+	_tempTextRendererForTextInputClient = nil;
 	
 }
 
@@ -128,16 +137,25 @@
 }
 
 - (void)viewWillMoveToWindow:(NSWindow *)newWindow {
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignKeyNotification object:self.window];
+	
+	if(newWindow != nil && rootView.layer.superlayer != [self layer]) {
+		rootView.layer.frame = self.layer.bounds;
+		[[self layer] addSublayer:rootView.layer];
+	}
+	
 	[self.rootView willMoveToWindow:(TUINSWindow *) newWindow];
+	
+	if(newWindow == nil) {
+		[rootView removeFromSuperview];
+	}
 }
 
 - (void)viewDidMoveToWindow
 {
-	if(self.window != nil && rootView.layer.superlayer != [self layer]) {
-		[[self layer] addSublayer:rootView.layer];
-	}
-	
 	[self.rootView didMoveToWindow];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResignKey:) name:NSWindowDidResignKeyNotification object:self.window];
 }
 
 - (TUIView *)viewForLocalPoint:(NSPoint)p
@@ -158,6 +176,11 @@
 - (TUIView *)viewForEvent:(NSEvent *)event
 {
 	return [self viewForLocationInWindow:[event locationInWindow]];
+}
+
+- (void)windowDidResignKey:(NSNotification *)notification
+{
+	[TUITooltipWindow endTooltip];
 }
 
 - (void)_updateHoverView:(TUIView *)_newHoverView withEvent:(NSEvent *)event

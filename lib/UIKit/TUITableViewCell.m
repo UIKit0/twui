@@ -90,6 +90,9 @@
 		[self setNeedsDisplay];
 	}
 	
+	if([self acceptsFirstResponder]) {
+		[self.nsWindow makeFirstResponderIfNotAlreadyInResponderChain:self];
+	}
 }
 
 /**

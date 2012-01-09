@@ -880,6 +880,10 @@ static float clampBounce(float x) {
 	return _scrollViewFlags.gestureBegan;
 }
 
+- (BOOL)isDecelerating {
+	return _scrollViewFlags.animationMode == AnimationModeScrollTo;
+}
+
 /*
  
  10.6 throw sequence:

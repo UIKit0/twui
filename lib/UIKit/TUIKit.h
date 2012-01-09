@@ -36,6 +36,7 @@
 #import "TUITableView.h"
 #import "TUITableViewCell.h"
 #import "TUITableViewSectionHeader.h"
+#import "TUITextEditor.h"
 #import "TUITextField.h"
 #import "TUITextView.h"
 #import "TUIVelvetView.h"

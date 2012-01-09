@@ -33,7 +33,7 @@
 	
 	NSTrackingArea *_trackingArea;
 	
-	__weak TUITextRenderer *_tempTextRendererForTextInputClient; // weak, set temporarily while NSTextInputClient dicks around
+	TUITextRenderer *_tempTextRendererForTextInputClient;
 	
 	BOOL deliveringEvent;
 	BOOL inLiveResize;
