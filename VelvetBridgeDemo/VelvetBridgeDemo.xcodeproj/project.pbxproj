@@ -466,6 +466,7 @@
 				D0BA292914BE56C000005386 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
