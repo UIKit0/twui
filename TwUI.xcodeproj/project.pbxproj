@@ -13,9 +13,6 @@
 		1E6183EB147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
 		1E6183EC147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
 		1E6183ED147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
-		1EBA7715147C90E2001BFC0B /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBA770F147C8F38001BFC0B /* Velvet.framework */; };
-		1EBA7718147C912F001BFC0B /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBA770F147C8F38001BFC0B /* Velvet.framework */; };
-		1EBA771B147C9151001BFC0B /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBA770F147C8F38001BFC0B /* Velvet.framework */; };
 		5E6ECEB313BE791600109598 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE9839C13BE7650005F430D /* ApplicationServices.framework */; };
 		5E6ECEB413BE791600109598 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5E31B613BE6F49004B7899 /* QuartzCore.framework */; };
 		5E6ECEB613BE791C00109598 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE9839C13BE7650005F430D /* ApplicationServices.framework */; };
@@ -268,44 +265,12 @@
 		D0B8DFEC148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 		D0B8DFED148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 		D0B8DFEE148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
+		D0BA27E814BE4CB700005386 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
+		D0BA27E914BE4CBC00005386 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
+		D0BA27EA14BE4CC000005386 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1EBA770E147C8F38001BFC0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0EFFC01147851A80095AB35;
-			remoteInfo = Velvet;
-		};
-		1EBA7710147C8F38001BFC0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0EFFC19147851A80095AB35;
-			remoteInfo = VelvetTests;
-		};
-		1EBA7713147C90DC001BFC0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0EFFC00147851A80095AB35;
-			remoteInfo = Velvet;
-		};
-		1EBA7716147C911A001BFC0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0EFFC00147851A80095AB35;
-			remoteInfo = Velvet;
-		};
-		1EBA7719147C914D001BFC0B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0EFFC00147851A80095AB35;
-			remoteInfo = Velvet;
-		};
 		CB5B266513BE6DA300579B1E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB5B264213BE6DA200579B1E /* Project object */;
@@ -313,12 +278,46 @@
 			remoteGlobalIDString = CB5B264B13BE6DA200579B1E;
 			remoteInfo = TwUI;
 		};
+		D0884F4614BE4BFC007FC13F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC01147851A80095AB35;
+			remoteInfo = Velvet;
+		};
+		D0884F4814BE4BFC007FC13F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC19147851A80095AB35;
+			remoteInfo = VelvetTests;
+		};
+		D0BA27E214BE4CA900005386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFFC00147851A80095AB35;
+			remoteInfo = Velvet;
+		};
+		D0BA27E414BE4CB100005386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFFC00147851A80095AB35;
+			remoteInfo = Velvet;
+		};
+		D0BA27E614BE4CB400005386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFFC00147851A80095AB35;
+			remoteInfo = Velvet;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1E6183E6147B6B3900E57256 /* VELTUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VELTUIView.h; sourceTree = "<group>"; };
 		1E6183E7147B6B3900E57256 /* VELTUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VELTUIView.m; sourceTree = "<group>"; };
-		1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = Frameworks/Velvet/Framework/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
 		5EE9839C13BE7650005F430D /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		5EE983B713BE7809005F430D /* libtwui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtwui.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8819794213E26E0200AA39EB /* TUIView+Accessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TUIView+Accessibility.h"; sourceTree = "<group>"; };
@@ -442,21 +441,22 @@
 		CBB74C8E13BE6E1900C85CB5 /* TUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewController.m; sourceTree = "<group>"; };
 		CBB74C8F13BE6E1900C85CB5 /* TUIViewNSViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIViewNSViewContainer.h; sourceTree = "<group>"; };
 		CBB74C9013BE6E1900C85CB5 /* TUIViewNSViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewNSViewContainer.m; sourceTree = "<group>"; };
-		D0B5CF0E148B28FB00989BE2 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		D0B5CF10148B28FB00989BE2 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		D0B5CF11148B28FB00989BE2 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
-		D0B5CF12148B28FB00989BE2 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		D0B5CF14148B28FB00989BE2 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
-		D0B5CF15148B28FB00989BE2 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
-		D0B5CF17148B28FB00989BE2 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF18148B28FB00989BE2 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF19148B28FB00989BE2 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF1C148B28FB00989BE2 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0B5CF20148B28FB00989BE2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
+		D0884F5014BE4C1C007FC13F /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D0884F5214BE4C1C007FC13F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D0884F5314BE4C1C007FC13F /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D0884F5414BE4C1C007FC13F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D0884F5614BE4C1C007FC13F /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D0884F5714BE4C1C007FC13F /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D0884F5914BE4C1C007FC13F /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D0884F5A14BE4C1C007FC13F /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D0884F5B14BE4C1C007FC13F /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D0884F5E14BE4C1C007FC13F /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0884F6214BE4C1C007FC13F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D0B8DFE7148B314700F611CA /* TUIVelvetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVelvetView.h; sourceTree = "<group>"; };
 		D0B8DFE8148B314700F611CA /* TUIVelvetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVelvetView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -466,7 +466,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBA771B147C9151001BFC0B /* Velvet.framework in Frameworks */,
+				D0BA27E814BE4CB700005386 /* Velvet.framework in Frameworks */,
 				5EE983B813BE7809005F430D /* Cocoa.framework in Frameworks */,
 				5E6ECEB413BE791600109598 /* QuartzCore.framework in Frameworks */,
 				5E6ECEB313BE791600109598 /* ApplicationServices.framework in Frameworks */,
@@ -477,7 +477,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBA7715147C90E2001BFC0B /* Velvet.framework in Frameworks */,
+				D0BA27EA14BE4CC000005386 /* Velvet.framework in Frameworks */,
 				CB5E327F13BE710C004B7899 /* Cocoa.framework in Frameworks */,
 				CB5E31B713BE6F49004B7899 /* QuartzCore.framework in Frameworks */,
 				5E6ECEB613BE791C00109598 /* ApplicationServices.framework in Frameworks */,
@@ -498,7 +498,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EBA7718147C912F001BFC0B /* Velvet.framework in Frameworks */,
+				D0BA27E914BE4CBC00005386 /* Velvet.framework in Frameworks */,
 				5E6ECEB713BE792100109598 /* Cocoa.framework in Frameworks */,
 				CB5E327613BE70EE004B7899 /* QuartzCore.framework in Frameworks */,
 				5EE9839D13BE7650005F430D /* ApplicationServices.framework in Frameworks */,
@@ -508,22 +508,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1EBA7707147C8F37001BFC0B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1EBA770F147C8F38001BFC0B /* Velvet.framework */,
-				1EBA7711147C8F38001BFC0B /* VelvetTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CB5B264013BE6DA200579B1E = {
 			isa = PBXGroup;
 			children = (
 				CBB74C3713BE6E0200C85CB5 /* Source */,
 				CB5B265513BE6DA200579B1E /* Resources */,
 				CB5B266813BE6DA300579B1E /* TwUITests */,
-				D0B5CF0C148B28FB00989BE2 /* Configuration */,
+				D0884F4E14BE4C1C007FC13F /* Configuration */,
 				CB5B264E13BE6DA200579B1E /* Frameworks */,
 				CB5B264D13BE6DA200579B1E /* Products */,
 			);
@@ -543,7 +534,7 @@
 		CB5B264E13BE6DA200579B1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */,
+				D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */,
 				5EE9839C13BE7650005F430D /* ApplicationServices.framework */,
 				CB5B264F13BE6DA200579B1E /* Cocoa.framework */,
 				CB5E31B613BE6F49004B7899 /* QuartzCore.framework */,
@@ -731,65 +722,74 @@
 			path = lib/UIKit;
 			sourceTree = "<group>";
 		};
-		D0B5CF0C148B28FB00989BE2 /* Configuration */ = {
+		D0884F3B14BE4BFC007FC13F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0B5CF0D148B28FB00989BE2 /* Base */,
-				D0B5CF16148B28FB00989BE2 /* iOS */,
-				D0B5CF1A148B28FB00989BE2 /* Mac OS X */,
-				D0B5CF20148B28FB00989BE2 /* README.md */,
+				D0884F4714BE4BFC007FC13F /* Velvet.framework */,
+				D0884F4914BE4BFC007FC13F /* VelvetTests.octest */,
 			);
-			name = Configuration;
-			path = Frameworks/Velvet/Configuration;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		D0B5CF0D148B28FB00989BE2 /* Base */ = {
+		D0884F4E14BE4C1C007FC13F /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				D0B5CF0E148B28FB00989BE2 /* Common.xcconfig */,
-				D0B5CF0F148B28FB00989BE2 /* Configurations */,
-				D0B5CF13148B28FB00989BE2 /* Targets */,
+				D0884F4F14BE4C1C007FC13F /* Base */,
+				D0884F5814BE4C1C007FC13F /* iOS */,
+				D0884F5C14BE4C1C007FC13F /* Mac OS X */,
+				D0884F6214BE4C1C007FC13F /* README.md */,
+			);
+			name = Configuration;
+			path = Frameworks/Velvet/Frameworks/Proton/Frameworks/libextobjc/Configuration;
+			sourceTree = "<group>";
+		};
+		D0884F4F14BE4C1C007FC13F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D0884F5014BE4C1C007FC13F /* Common.xcconfig */,
+				D0884F5114BE4C1C007FC13F /* Configurations */,
+				D0884F5514BE4C1C007FC13F /* Targets */,
 			);
 			path = Base;
 			sourceTree = "<group>";
 		};
-		D0B5CF0F148B28FB00989BE2 /* Configurations */ = {
+		D0884F5114BE4C1C007FC13F /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				D0B5CF10148B28FB00989BE2 /* Debug.xcconfig */,
-				D0B5CF11148B28FB00989BE2 /* Profile.xcconfig */,
-				D0B5CF12148B28FB00989BE2 /* Release.xcconfig */,
+				D0884F5214BE4C1C007FC13F /* Debug.xcconfig */,
+				D0884F5314BE4C1C007FC13F /* Profile.xcconfig */,
+				D0884F5414BE4C1C007FC13F /* Release.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
 		};
-		D0B5CF13148B28FB00989BE2 /* Targets */ = {
+		D0884F5514BE4C1C007FC13F /* Targets */ = {
 			isa = PBXGroup;
 			children = (
-				D0B5CF14148B28FB00989BE2 /* Application.xcconfig */,
-				D0B5CF15148B28FB00989BE2 /* StaticLibrary.xcconfig */,
+				D0884F5614BE4C1C007FC13F /* Application.xcconfig */,
+				D0884F5714BE4C1C007FC13F /* StaticLibrary.xcconfig */,
 			);
 			path = Targets;
 			sourceTree = "<group>";
 		};
-		D0B5CF16148B28FB00989BE2 /* iOS */ = {
+		D0884F5814BE4C1C007FC13F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D0B5CF17148B28FB00989BE2 /* iOS-Application.xcconfig */,
-				D0B5CF18148B28FB00989BE2 /* iOS-Base.xcconfig */,
-				D0B5CF19148B28FB00989BE2 /* iOS-StaticLibrary.xcconfig */,
+				D0884F5914BE4C1C007FC13F /* iOS-Application.xcconfig */,
+				D0884F5A14BE4C1C007FC13F /* iOS-Base.xcconfig */,
+				D0884F5B14BE4C1C007FC13F /* iOS-StaticLibrary.xcconfig */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		D0B5CF1A148B28FB00989BE2 /* Mac OS X */ = {
+		D0884F5C14BE4C1C007FC13F /* Mac OS X */ = {
 			isa = PBXGroup;
 			children = (
-				D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */,
-				D0B5CF1C148B28FB00989BE2 /* Mac-Base.xcconfig */,
-				D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */,
-				D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */,
-				D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */,
+				D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */,
+				D0884F5E14BE4C1C007FC13F /* Mac-Base.xcconfig */,
+				D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */,
+				D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */,
+				D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */,
 			);
 			path = "Mac OS X";
 			sourceTree = "<group>";
@@ -916,7 +916,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1EBA771A147C914D001BFC0B /* PBXTargetDependency */,
+				D0BA27E714BE4CB400005386 /* PBXTargetDependency */,
 			);
 			name = "Static Library";
 			productName = statictwui;
@@ -935,7 +935,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1EBA7714147C90DC001BFC0B /* PBXTargetDependency */,
+				D0BA27E314BE4CA900005386 /* PBXTargetDependency */,
 			);
 			name = TwUI;
 			productName = TwUI;
@@ -972,7 +972,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1EBA7717147C911A001BFC0B /* PBXTargetDependency */,
+				D0BA27E514BE4CB100005386 /* PBXTargetDependency */,
 			);
 			name = "Dynamic Library";
 			productName = libTwUI;
@@ -999,8 +999,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 1EBA7707147C8F37001BFC0B /* Products */;
-					ProjectRef = 1EBA7706147C8F37001BFC0B /* Velvet.xcodeproj */;
+					ProductGroup = D0884F3B14BE4BFC007FC13F /* Products */;
+					ProjectRef = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1014,18 +1014,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1EBA770F147C8F38001BFC0B /* Velvet.framework */ = {
+		D0884F4714BE4BFC007FC13F /* Velvet.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Velvet.framework;
-			remoteRef = 1EBA770E147C8F38001BFC0B /* PBXContainerItemProxy */;
+			remoteRef = D0884F4614BE4BFC007FC13F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1EBA7711147C8F38001BFC0B /* VelvetTests.octest */ = {
+		D0884F4914BE4BFC007FC13F /* VelvetTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = VelvetTests.octest;
-			remoteRef = 1EBA7710147C8F38001BFC0B /* PBXContainerItemProxy */;
+			remoteRef = D0884F4814BE4BFC007FC13F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1269,25 +1269,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1EBA7714147C90DC001BFC0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Velvet;
-			targetProxy = 1EBA7713147C90DC001BFC0B /* PBXContainerItemProxy */;
-		};
-		1EBA7717147C911A001BFC0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Velvet;
-			targetProxy = 1EBA7716147C911A001BFC0B /* PBXContainerItemProxy */;
-		};
-		1EBA771A147C914D001BFC0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Velvet;
-			targetProxy = 1EBA7719147C914D001BFC0B /* PBXContainerItemProxy */;
-		};
 		CB5B266613BE6DA300579B1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CB5B264B13BE6DA200579B1E /* TwUI */;
 			targetProxy = CB5B266513BE6DA300579B1E /* PBXContainerItemProxy */;
+		};
+		D0BA27E314BE4CA900005386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Velvet;
+			targetProxy = D0BA27E214BE4CA900005386 /* PBXContainerItemProxy */;
+		};
+		D0BA27E514BE4CB100005386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Velvet;
+			targetProxy = D0BA27E414BE4CB100005386 /* PBXContainerItemProxy */;
+		};
+		D0BA27E714BE4CB400005386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Velvet;
+			targetProxy = D0BA27E614BE4CB400005386 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1313,7 +1313,7 @@
 /* Begin XCBuildConfiguration section */
 		5EE983BD13BE7809005F430D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1322,7 +1322,7 @@
 		};
 		5EE983BE13BE7809005F430D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1331,7 +1331,7 @@
 		};
 		CB5B267213BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF10148B28FB00989BE2 /* Debug.xcconfig */;
+			baseConfigurationReference = D0884F5214BE4C1C007FC13F /* Debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1353,7 +1353,7 @@
 		};
 		CB5B267313BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF12148B28FB00989BE2 /* Release.xcconfig */;
+			baseConfigurationReference = D0884F5414BE4C1C007FC13F /* Release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1375,7 +1375,7 @@
 		};
 		CB5B267513BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */;
+			baseConfigurationReference = D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1390,7 +1390,7 @@
 		};
 		CB5B267613BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */;
+			baseConfigurationReference = D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1405,7 +1405,7 @@
 		};
 		CB5B267813BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -1418,7 +1418,7 @@
 		};
 		CB5B267913BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -1431,7 +1431,7 @@
 		};
 		CB5E321913BE7099004B7899 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */;
+			baseConfigurationReference = D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
@@ -1441,7 +1441,7 @@
 		};
 		CB5E321A13BE7099004B7899 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */;
+			baseConfigurationReference = D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
@@ -1451,7 +1451,7 @@
 		};
 		D0B5CF21148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF11148B28FB00989BE2 /* Profile.xcconfig */;
+			baseConfigurationReference = D0884F5314BE4C1C007FC13F /* Profile.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1473,7 +1473,7 @@
 		};
 		D0B5CF22148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1E148B28FB00989BE2 /* Mac-Framework.xcconfig */;
+			baseConfigurationReference = D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1488,7 +1488,7 @@
 		};
 		D0B5CF23148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1D148B28FB00989BE2 /* Mac-DynamicLibrary.xcconfig */;
+			baseConfigurationReference = D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
@@ -1498,7 +1498,7 @@
 		};
 		D0B5CF24148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1F148B28FB00989BE2 /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1507,7 +1507,7 @@
 		};
 		D0B5CF25148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B5CF1B148B28FB00989BE2 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
