@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0BA28F714BE568400005386 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA28F614BE568400005386 /* Cocoa.framework */; };
+		D0BA290114BE568400005386 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0BA28FF14BE568400005386 /* InfoPlist.strings */; };
+		D0BA290314BE568400005386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA290214BE568400005386 /* main.m */; };
+		D0BA290714BE568400005386 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D0BA290514BE568400005386 /* Credits.rtf */; };
+		D0BA290A14BE568400005386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA290914BE568400005386 /* AppDelegate.m */; };
+		D0BA290D14BE568400005386 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0BA290B14BE568400005386 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D0BA28F214BE568400005386 /* VelvetBridgeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelvetBridgeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0BA28F614BE568400005386 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D0BA28F914BE568400005386 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D0BA28FA14BE568400005386 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D0BA28FB14BE568400005386 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D0BA28FE14BE568400005386 /* VelvetBridgeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VelvetBridgeDemo-Info.plist"; sourceTree = "<group>"; };
+		D0BA290014BE568400005386 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D0BA290214BE568400005386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D0BA290414BE568400005386 /* VelvetBridgeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VelvetBridgeDemo-Prefix.pch"; sourceTree = "<group>"; };
+		D0BA290614BE568400005386 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D0BA290814BE568400005386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D0BA290914BE568400005386 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D0BA290C14BE568400005386 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0BA28EF14BE568400005386 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0BA28F714BE568400005386 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0BA28E714BE568300005386 = {
+			isa = PBXGroup;
+			children = (
+				D0BA28FC14BE568400005386 /* VelvetBridgeDemo */,
+				D0BA28F514BE568400005386 /* Frameworks */,
+				D0BA28F314BE568400005386 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0BA28F314BE568400005386 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA28F214BE568400005386 /* VelvetBridgeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0BA28F514BE568400005386 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA28F614BE568400005386 /* Cocoa.framework */,
+				D0BA28F814BE568400005386 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0BA28F814BE568400005386 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA28F914BE568400005386 /* AppKit.framework */,
+				D0BA28FA14BE568400005386 /* CoreData.framework */,
+				D0BA28FB14BE568400005386 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D0BA28FC14BE568400005386 /* VelvetBridgeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA290814BE568400005386 /* AppDelegate.h */,
+				D0BA290914BE568400005386 /* AppDelegate.m */,
+				D0BA290B14BE568400005386 /* MainMenu.xib */,
+				D0BA28FD14BE568400005386 /* Supporting Files */,
+			);
+			path = VelvetBridgeDemo;
+			sourceTree = "<group>";
+		};
+		D0BA28FD14BE568400005386 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA28FE14BE568400005386 /* VelvetBridgeDemo-Info.plist */,
+				D0BA28FF14BE568400005386 /* InfoPlist.strings */,
+				D0BA290214BE568400005386 /* main.m */,
+				D0BA290414BE568400005386 /* VelvetBridgeDemo-Prefix.pch */,
+				D0BA290514BE568400005386 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0BA28F114BE568400005386 /* VelvetBridgeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0BA291014BE568400005386 /* Build configuration list for PBXNativeTarget "VelvetBridgeDemo" */;
+			buildPhases = (
+				D0BA28EE14BE568400005386 /* Sources */,
+				D0BA28EF14BE568400005386 /* Frameworks */,
+				D0BA28F014BE568400005386 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VelvetBridgeDemo;
+			productName = VelvetBridgeDemo;
+			productReference = D0BA28F214BE568400005386 /* VelvetBridgeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0BA28E914BE568300005386 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Bitswift;
+			};
+			buildConfigurationList = D0BA28EC14BE568300005386 /* Build configuration list for PBXProject "VelvetBridgeDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D0BA28E714BE568300005386;
+			productRefGroup = D0BA28F314BE568400005386 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0BA28F114BE568400005386 /* VelvetBridgeDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0BA28F014BE568400005386 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0BA290114BE568400005386 /* InfoPlist.strings in Resources */,
+				D0BA290714BE568400005386 /* Credits.rtf in Resources */,
+				D0BA290D14BE568400005386 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0BA28EE14BE568400005386 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0BA290314BE568400005386 /* main.m in Sources */,
+				D0BA290A14BE568400005386 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D0BA28FF14BE568400005386 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0BA290014BE568400005386 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D0BA290514BE568400005386 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0BA290614BE568400005386 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D0BA290B14BE568400005386 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0BA290C14BE568400005386 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0BA290E14BE568400005386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D0BA290F14BE568400005386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D0BA291114BE568400005386 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
+				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D0BA291214BE568400005386 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
+				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0BA28EC14BE568300005386 /* Build configuration list for PBXProject "VelvetBridgeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0BA290E14BE568400005386 /* Debug */,
+				D0BA290F14BE568400005386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0BA291014BE568400005386 /* Build configuration list for PBXNativeTarget "VelvetBridgeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0BA291114BE568400005386 /* Debug */,
+				D0BA291214BE568400005386 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0BA28E914BE568300005386 /* Project object */;
+}
