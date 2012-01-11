@@ -70,7 +70,7 @@
 				TUIImage *image = [TUIImage imageNamed:@"clock.png" cache:YES];
 				CGRect imageRect = ABIntegralRectWithSizeCenteredInRect([image size], b);
 
-				if([v.nsView isTrackingSubviewOfView:v]) { // simple way to check if the mouse is currently down inside of 'v'.  See the other methods in TUINSView for more.
+				if([(TUINSView *)v.nsView isTrackingSubviewOfView:v]) { // simple way to check if the mouse is currently down inside of 'v'.  See the other methods in TUINSView for more.
 					
 					// first draw a slight white emboss below
 					CGContextSaveGState(ctx);

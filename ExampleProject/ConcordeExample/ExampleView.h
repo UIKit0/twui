@@ -14,7 +14,7 @@
  limitations under the License.
  */
 
-#import "TUIKit.h"
+#import <TwUI/TUIKit.h>
 #import "ExampleTabBar.h"
 
 @interface ExampleView : TUIView <TUITableViewDelegate, TUITableViewDataSource, ExampleTabBarDelegate>

@@ -389,7 +389,6 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConcordeExample/Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../lib/**";
 				INFOPLIST_FILE = "ConcordeExample/Example-Info.plist";
 				PRODUCT_NAME = Example;
 				WRAPPER_EXTENSION = app;
@@ -405,7 +404,6 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConcordeExample/Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "../lib/**";
 				INFOPLIST_FILE = "ConcordeExample/Example-Info.plist";
 				PRODUCT_NAME = Example;
 				WRAPPER_EXTENSION = app;

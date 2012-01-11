@@ -15,7 +15,7 @@
  */
 
 #import <Cocoa/Cocoa.h>
-#import "TUIKit.h"
+#import <TwUI/TUIKit.h>
 
 /*
  Notes:
