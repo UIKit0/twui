@@ -136,6 +136,17 @@
 	}
 }
 
+- (void)setNextResponder:(NSResponder *)r
+{
+	NSResponder *nextResponder = [self nextResponder];
+	if([nextResponder isKindOfClass:[NSViewController class]]) {
+		// keep view controller in chain
+		[nextResponder setNextResponder:r];
+	} else {
+		[super setNextResponder:r];
+	}
+}
+
 - (void)viewWillMoveToWindow:(NSWindow *)newWindow {
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignKeyNotification object:self.window];
 	
