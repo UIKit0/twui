@@ -14,6 +14,7 @@
 		D0BA290A14BE568400005386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA290914BE568400005386 /* AppDelegate.m */; };
 		D0BA290D14BE568400005386 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0BA290B14BE568400005386 /* MainMenu.xib */; };
 		D0BA294414BE575E00005386 /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA293214BE56E800005386 /* TwUI.framework */; };
+		D0BA29A314BE58DF00005386 /* TwUI.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA293214BE56E800005386 /* TwUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,20 @@
 			remoteInfo = TwUI;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0BA299E14BE58D400005386 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D0BA29A314BE58DF00005386 /* TwUI.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D0BA28F214BE568400005386 /* VelvetBridgeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelvetBridgeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -244,6 +259,7 @@
 				D0BA28EE14BE568400005386 /* Sources */,
 				D0BA28EF14BE568400005386 /* Frameworks */,
 				D0BA28F014BE568400005386 /* Resources */,
+				D0BA299E14BE58D400005386 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
