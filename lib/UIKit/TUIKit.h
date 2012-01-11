@@ -39,6 +39,7 @@
 #import "TUITextEditor.h"
 #import "TUITextField.h"
 #import "TUITextView.h"
+#import "TUIVelvetView.h"
 #import "TUIView.h"
 #import "TUIViewController.h"
 #import "VELTUIView.h"

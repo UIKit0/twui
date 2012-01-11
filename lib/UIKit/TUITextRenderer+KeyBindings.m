@@ -209,4 +209,24 @@
 	}
 }
 
+- (void)moveToBeginningOfParagraph:(id)sender
+{
+	
+}
+
+- (void)moveToEndOfParagraph:(id)sender
+{
+	
+}
+
+- (void)moveToBeginningOfDocument:(id)sender
+{
+	
+}
+
+- (void)moveToEndOfDocument:(id)sender
+{
+	
+}
+
 @end

@@ -920,7 +920,7 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 
 @implementation TUIView (TUIViewAppKit)
 
-- (void)setNSView:(TUINSView *)n
+- (void)setNSView:(NSView *)n
 {
 	if(n != _nsView) {
 		[self willMoveToWindow:(TUINSWindow *)[n window]];
@@ -932,7 +932,7 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 	}
 }
 
-- (TUINSView *)nsView
+- (NSView *)nsView
 {
 	return _nsView;
 }

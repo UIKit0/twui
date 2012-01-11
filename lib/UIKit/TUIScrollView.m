@@ -840,7 +840,9 @@ static float clampBounce(float x) {
 		// scroll up, rect to be flush with top of view
 		[self setContentOffset:CGPointMake(0, -rect.origin.y + visible.size.height - rect.size.height) animated:animated];
 	}
-	[self.nsView invalidateHoverForView:self];
+
+    if ([self.nsView isKindOfClass:[TUINSView class]])
+        [(id)self.nsView invalidateHoverForView:self];
 }
 
 - (void)scrollToTopAnimated:(BOOL)animated
