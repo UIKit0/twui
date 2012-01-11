@@ -29,6 +29,21 @@
 		D0BA290814BE568400005386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0BA290914BE568400005386 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D0BA290C14BE568400005386 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D0BA291514BE56BB00005386 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D0BA291714BE56BB00005386 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D0BA291814BE56BB00005386 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D0BA291914BE56BB00005386 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D0BA291B14BE56BB00005386 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D0BA291C14BE56BB00005386 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D0BA291E14BE56BB00005386 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D0BA291F14BE56BB00005386 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D0BA292014BE56BB00005386 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D0BA292314BE56BB00005386 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D0BA292414BE56BB00005386 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0BA292514BE56BB00005386 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D0BA292614BE56BB00005386 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D0BA292714BE56BB00005386 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				D0BA28FC14BE568400005386 /* VelvetBridgeDemo */,
+				D0BA291314BE56BB00005386 /* Configuration */,
 				D0BA28F514BE568400005386 /* Frameworks */,
 				D0BA28F314BE568400005386 /* Products */,
 			);
@@ -100,6 +116,69 @@
 				D0BA290514BE568400005386 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0BA291314BE56BB00005386 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA291414BE56BB00005386 /* Base */,
+				D0BA291D14BE56BB00005386 /* iOS */,
+				D0BA292114BE56BB00005386 /* Mac OS X */,
+				D0BA292714BE56BB00005386 /* README.md */,
+			);
+			name = Configuration;
+			path = ../Frameworks/Velvet/Frameworks/Proton/Frameworks/libextobjc/Configuration;
+			sourceTree = "<group>";
+		};
+		D0BA291414BE56BB00005386 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA291514BE56BB00005386 /* Common.xcconfig */,
+				D0BA291614BE56BB00005386 /* Configurations */,
+				D0BA291A14BE56BB00005386 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D0BA291614BE56BB00005386 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA291714BE56BB00005386 /* Debug.xcconfig */,
+				D0BA291814BE56BB00005386 /* Profile.xcconfig */,
+				D0BA291914BE56BB00005386 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D0BA291A14BE56BB00005386 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA291B14BE56BB00005386 /* Application.xcconfig */,
+				D0BA291C14BE56BB00005386 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D0BA291D14BE56BB00005386 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA291E14BE56BB00005386 /* iOS-Application.xcconfig */,
+				D0BA291F14BE56BB00005386 /* iOS-Base.xcconfig */,
+				D0BA292014BE56BB00005386 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D0BA292114BE56BB00005386 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */,
+				D0BA292314BE56BB00005386 /* Mac-Base.xcconfig */,
+				D0BA292414BE56BB00005386 /* Mac-DynamicLibrary.xcconfig */,
+				D0BA292514BE56BB00005386 /* Mac-Framework.xcconfig */,
+				D0BA292614BE56BB00005386 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,46 +282,21 @@
 /* Begin XCBuildConfiguration section */
 		D0BA290E14BE568400005386 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BA291714BE56BB00005386 /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		D0BA290F14BE568400005386 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BA291914BE56BB00005386 /* Release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
@@ -250,8 +304,8 @@
 		};
 		D0BA291114BE568400005386 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
 				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,14 +315,36 @@
 		};
 		D0BA291214BE568400005386 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
 				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
+		};
+		D0BA292814BE56C000005386 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BA291814BE56BB00005386 /* Profile.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Profile;
+		};
+		D0BA292914BE56C000005386 /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
+				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Profile;
 		};
 /* End XCBuildConfiguration section */
 
@@ -278,6 +354,7 @@
 			buildConfigurations = (
 				D0BA290E14BE568400005386 /* Debug */,
 				D0BA290F14BE568400005386 /* Release */,
+				D0BA292814BE56C000005386 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -287,6 +364,7 @@
 			buildConfigurations = (
 				D0BA291114BE568400005386 /* Debug */,
 				D0BA291214BE568400005386 /* Release */,
+				D0BA292914BE56C000005386 /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
