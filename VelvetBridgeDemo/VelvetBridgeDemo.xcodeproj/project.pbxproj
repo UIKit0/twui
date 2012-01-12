@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0B8DDBD14BEDF040039358E /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B8DDB714BEDEF70039358E /* Velvet.framework */; };
+		D0B8DDBE14BEDF090039358E /* Velvet.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D0B8DDB714BEDEF70039358E /* Velvet.framework */; };
 		D0BA28F714BE568400005386 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA28F614BE568400005386 /* Cocoa.framework */; };
 		D0BA290114BE568400005386 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0BA28FF14BE568400005386 /* InfoPlist.strings */; };
 		D0BA290314BE568400005386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA290214BE568400005386 /* main.m */; };
@@ -18,6 +20,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D0B8DDB614BEDEF70039358E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC01147851A80095AB35;
+			remoteInfo = Velvet;
+		};
+		D0B8DDB814BEDEF70039358E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC19147851A80095AB35;
+			remoteInfo = VelvetTests;
+		};
+		D0B8DDBB14BEDF020039358E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFFC00147851A80095AB35;
+			remoteInfo = Velvet;
+		};
 		D0BA293114BE56E800005386 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
@@ -62,6 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D0B8DDBE14BEDF090039358E /* Velvet.framework in Copy Frameworks */,
 				D0BA29A314BE58DF00005386 /* TwUI.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
@@ -70,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = ../Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
 		D0BA28F214BE568400005386 /* VelvetBridgeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelvetBridgeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BA28F614BE568400005386 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D0BA28F914BE568400005386 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -106,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B8DDBD14BEDF040039358E /* Velvet.framework in Frameworks */,
 				D0BA294414BE575E00005386 /* TwUI.framework in Frameworks */,
 				D0BA28F714BE568400005386 /* Cocoa.framework in Frameworks */,
 			);
@@ -114,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0B8DDAF14BEDEF70039358E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0B8DDB714BEDEF70039358E /* Velvet.framework */,
+				D0B8DDB914BEDEF70039358E /* VelvetTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D0BA28E714BE568300005386 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				D0BA292A14BE56E800005386 /* TwUI.xcodeproj */,
+				D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */,
 				D0BA28F614BE568400005386 /* Cocoa.framework */,
 				D0BA28F814BE568400005386 /* Other Frameworks */,
 			);
@@ -264,6 +300,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D0B8DDBC14BEDF020039358E /* PBXTargetDependency */,
 				D0BA294314BE575600005386 /* PBXTargetDependency */,
 			);
 			name = VelvetBridgeDemo;
@@ -295,6 +332,10 @@
 					ProductGroup = D0BA292B14BE56E800005386 /* Products */;
 					ProjectRef = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
 				},
+				{
+					ProductGroup = D0B8DDAF14BEDEF70039358E /* Products */;
+					ProjectRef = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -304,6 +345,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		D0B8DDB714BEDEF70039358E /* Velvet.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Velvet.framework;
+			remoteRef = D0B8DDB614BEDEF70039358E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D0B8DDB914BEDEF70039358E /* VelvetTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VelvetTests.octest;
+			remoteRef = D0B8DDB814BEDEF70039358E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D0BA293214BE56E800005386 /* TwUI.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -360,6 +415,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D0B8DDBC14BEDF020039358E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Velvet;
+			targetProxy = D0B8DDBB14BEDF020039358E /* PBXContainerItemProxy */;
+		};
 		D0BA294314BE575600005386 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TwUI;
