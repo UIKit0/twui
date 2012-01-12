@@ -46,6 +46,13 @@
 
 #pragma mark View hierarchy
 
+- (void)didMoveFromHostView:(NSVelvetView *)oldHostView {
+    // TODO: expose this!
+    //[super didMoveFromHostView:oldHostView];
+
+    self.TUIView.nsView = self.hostView;
+}
+
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
     return [self.TUIView descendantViewAtPoint:point];
 }
