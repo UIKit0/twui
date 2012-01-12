@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0B8DDBD14BEDF040039358E /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B8DDB714BEDEF70039358E /* Velvet.framework */; };
 		D0B8DDBE14BEDF090039358E /* Velvet.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D0B8DDB714BEDEF70039358E /* Velvet.framework */; };
+		D0B8DDCC14BEE37B0039358E /* large-image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0B8DDCB14BEE37B0039358E /* large-image.jpeg */; };
 		D0BA28F714BE568400005386 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA28F614BE568400005386 /* Cocoa.framework */; };
 		D0BA290114BE568400005386 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0BA28FF14BE568400005386 /* InfoPlist.strings */; };
 		D0BA290314BE568400005386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA290214BE568400005386 /* main.m */; };
@@ -95,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = ../Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
+		D0B8DDCB14BEE37B0039358E /* large-image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "large-image.jpeg"; path = "../../ExampleProject/ConcordeExample/large-image.jpeg"; sourceTree = "<group>"; };
 		D0BA28F214BE568400005386 /* VelvetBridgeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelvetBridgeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BA28F614BE568400005386 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D0BA28F914BE568400005386 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -202,6 +204,7 @@
 		D0BA28FD14BE568400005386 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0B8DDCB14BEE37B0039358E /* large-image.jpeg */,
 				D0BA28FE14BE568400005386 /* VelvetBridgeDemo-Info.plist */,
 				D0BA28FF14BE568400005386 /* InfoPlist.strings */,
 				D0BA290214BE568400005386 /* main.m */,
@@ -397,6 +400,7 @@
 				D0BA290114BE568400005386 /* InfoPlist.strings in Resources */,
 				D0BA290714BE568400005386 /* Credits.rtf in Resources */,
 				D0BA290D14BE568400005386 /* MainMenu.xib in Resources */,
+				D0B8DDCC14BEE37B0039358E /* large-image.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

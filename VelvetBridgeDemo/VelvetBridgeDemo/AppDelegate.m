@@ -13,28 +13,43 @@
 @synthesize window = _window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    VELTUIView *twuiHostView = [[VELTUIView alloc] initWithFrame:CGRectMake(50, 50, 400, 400)];
-    twuiHostView.TUIView = [[TUIView alloc] initWithFrame:twuiHostView.bounds];
+    VELTUIView *twuiHostView = [[VELTUIView alloc] initWithFrame:self.window.rootView.bounds];
+    twuiHostView.autoresizingMask = VELViewAutoresizingFlexibleSize;
 
-    TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    textView.placeholder = @"Type some text?";
-    textView.font = [TUIFont systemFontOfSize:17];
-    [twuiHostView.TUIView addSubview:textView];
+    #if 0
+        twuiHostView.TUIView = [[TUIView alloc] initWithFrame:twuiHostView.bounds];
 
-    TUIVelvetView *velvetHostView = [[TUIVelvetView alloc] initWithFrame:CGRectMake(250, 100, 100, 100)];
-    velvetHostView.backgroundColor = [TUIColor blueColor];
+        TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+        textView.placeholder = @"Type some text?";
+        textView.font = [TUIFont systemFontOfSize:17];
+        [twuiHostView.TUIView addSubview:textView];
+    #else
+        TUIScrollView *scrollView = [[TUIScrollView alloc] initWithFrame:twuiHostView.bounds];
+        scrollView.backgroundColor = [TUIColor colorWithWhite:0.9 alpha:1.0];
+        scrollView.autoresizingMask = TUIViewAutoresizingFlexibleSize;
+        scrollView.scrollIndicatorStyle = TUIScrollViewIndicatorStyleDark;
+
+        twuiHostView.TUIView = scrollView;
+    
+        TUIImageView *imageView = [[TUIImageView alloc] initWithImage:[TUIImage imageNamed:@"large-image.jpeg"]];
+        [scrollView addSubview:imageView];
+        [scrollView setContentSize:imageView.frame.size];
+    #endif
+
+    TUIVelvetView *velvetHostView = [[TUIVelvetView alloc] initWithFrame:twuiHostView.TUIView.bounds];
     [twuiHostView.TUIView addSubview:velvetHostView];
 
-    NSButton *button = [[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 80, 28)];
-    [button setButtonType:NSMomentaryPushInButton];
-    [button setBezelStyle:NSRoundedBezelStyle];
-    [button setTitle:@"Test Button"];
-    [button setTarget:self];
-    [button setAction:@selector(testButtonPushed:)];
-    
-    VELNSView *buttonHostView = [[VELNSView alloc] initWithNSView:button];
-    buttonHostView.backgroundColor = [NSColor redColor];
-    [velvetHostView.rootView addSubview:buttonHostView];
+    for (CGFloat offset = 0; offset < 200; offset += 50) {
+        NSButton *button = [[NSButton alloc] initWithFrame:NSMakeRect(250 + offset, 100 + offset, 80, 28)];
+        [button setButtonType:NSMomentaryPushInButton];
+        [button setBezelStyle:NSRoundedBezelStyle];
+        [button setTitle:@"Test Button"];
+        [button setTarget:self];
+        [button setAction:@selector(testButtonPushed:)];
+        
+        VELNSView *buttonHostView = [[VELNSView alloc] initWithNSView:button];
+        [velvetHostView.rootView addSubview:buttonHostView];
+    }
 
     [self.window.rootView addSubview:twuiHostView];
 }
