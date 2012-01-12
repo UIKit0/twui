@@ -11,6 +11,11 @@
 #import "TUIView+VELBridgedViewAdditions.h"
 #import "TUIView+VELTUIViewAdditions.h"
 
+@interface VELView (ProtectedMethodsFixup)
+// TODO: expose this!
+- (void)didMoveFromHostView:(NSVelvetView *)oldHostView;
+@end
+
 @implementation VELTUIView
 
 #pragma mark Properties
@@ -47,8 +52,7 @@
 #pragma mark View hierarchy
 
 - (void)didMoveFromHostView:(NSVelvetView *)oldHostView {
-    // TODO: expose this!
-    //[super didMoveFromHostView:oldHostView];
+    [super didMoveFromHostView:oldHostView];
 
     self.TUIView.nsView = self.hostView;
 }
