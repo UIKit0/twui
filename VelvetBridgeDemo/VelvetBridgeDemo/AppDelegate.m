@@ -37,7 +37,12 @@
     #endif
 
     TUIVelvetView *velvetHostView = [[TUIVelvetView alloc] initWithFrame:twuiHostView.TUIView.bounds];
+    velvetHostView.autoresizingMask = TUIViewAutoresizingFlexibleSize;
     [twuiHostView.TUIView addSubview:velvetHostView];
+
+    // don't steal events from TwUI
+    velvetHostView.userInteractionEnabled = NO;
+    velvetHostView.rootView.userInteractionEnabled = NO;
 
     for (CGFloat offset = 0; offset < 200; offset += 50) {
         NSButton *button = [[NSButton alloc] initWithFrame:NSMakeRect(250 + offset, 100 + offset, 80, 28)];
