@@ -6,8 +6,9 @@
 //  Copyright (c) 2011 Bitswift. All rights reserved.
 //
 
-#import <TwUI/VELTUIView.h>
-#import <TwUI/TUIView.h>
+#import "VELTUIView.h"
+#import "TUIView.h"
+#import "TUIView+VELBridgedViewAdditions.h"
 
 @implementation VELTUIView
 
@@ -36,6 +37,12 @@
 
 	self.TUIView = view;
 	return self;
+}
+
+#pragma mark View hierarchy
+
+- (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
+    return [self.TUIView descendantViewAtPoint:point];
 }
 
 @end
