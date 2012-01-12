@@ -17,10 +17,12 @@
 // correct -- they only take into account position, and do not include things
 // like transforms (however, the implementation does match that of TwUI)
 
-// TODO 2: these geometry conversion methods should use the hostView if no
-// superview is available
-
 - (CGPoint)convertFromWindowPoint:(CGPoint)point; {
+    if (self.hostView) {
+        CGPoint pointInHostView = [self.hostView convertFromWindowPoint:point];
+        return [self.layer convertPoint:pointInHostView fromLayer:self.hostView.layer];
+    }
+
 	CGRect hostViewFrame = self.frameInNSView;
 
 	CGPoint pointInHostView = [self.nsView convertPoint:point fromView:nil];
@@ -28,6 +30,11 @@
 }
 
 - (CGPoint)convertToWindowPoint:(CGPoint)point; {
+    if (self.hostView) {
+        CGPoint pointInHostView = [self.layer convertPoint:point toLayer:self.hostView.layer];
+        return [self.hostView convertToWindowPoint:pointInHostView];
+    }
+
 	CGRect hostViewFrame = self.frameInNSView;
 
     CGPoint pointInHostView = CGPointMake(point.x + hostViewFrame.origin.x, point.y + hostViewFrame.origin.y);
@@ -35,6 +42,11 @@
 }
 
 - (CGRect)convertFromWindowRect:(CGRect)rect; {
+    if (self.hostView) {
+        CGRect rectInHostView = [self.hostView convertFromWindowRect:rect];
+        return [self.layer convertRect:rectInHostView fromLayer:self.hostView.layer];
+    }
+
 	CGRect hostViewFrame = self.frameInNSView;
 
 	CGRect rectInHostView = [self.nsView convertRect:rect fromView:nil];
@@ -42,6 +54,11 @@
 }
 
 - (CGRect)convertToWindowRect:(CGRect)rect; {
+    if (self.hostView) {
+        CGRect rectInHostView = [self.layer convertRect:rect toLayer:self.hostView.layer];
+        return [self.hostView convertToWindowRect:rectInHostView];
+    }
+
 	CGRect hostViewFrame = self.frameInNSView;
 
     CGRect rectInHostView = CGRectOffset(rect, hostViewFrame.origin.x, hostViewFrame.origin.y);
@@ -73,3 +90,4 @@
 }
 
 @end
+
