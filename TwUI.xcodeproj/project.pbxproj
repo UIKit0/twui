@@ -275,6 +275,8 @@
 		D0BA29AA14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
 		D0BA29AB14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
 		D0BA29CF14BE5FC600005386 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
+		D0BA2A6314BE69B600005386 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
+		D0BA2A6614BE69BE00005386 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -349,6 +351,20 @@
 			remoteInfo = "Proton iOS Tests";
 		};
 		D0BA29CD14BE5FC200005386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0DB5CC31492DDD5005955FB;
+			remoteInfo = "Proton Mac";
+		};
+		D0BA2A6114BE69B300005386 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0DB5CC31492DDD5005955FB;
+			remoteInfo = "Proton Mac";
+		};
+		D0BA2A6414BE69BB00005386 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
 			proxyType = 1;
@@ -511,6 +527,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BA2A6614BE69BE00005386 /* Proton.framework in Frameworks */,
 				D0BA27E814BE4CB700005386 /* Velvet.framework in Frameworks */,
 				5EE983B813BE7809005F430D /* Cocoa.framework in Frameworks */,
 				5E6ECEB413BE791600109598 /* QuartzCore.framework in Frameworks */,
@@ -544,6 +561,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BA2A6314BE69B600005386 /* Proton.framework in Frameworks */,
 				D0BA27E914BE4CBC00005386 /* Velvet.framework in Frameworks */,
 				5E6ECEB713BE792100109598 /* Cocoa.framework in Frameworks */,
 				CB5E327613BE70EE004B7899 /* QuartzCore.framework in Frameworks */,
@@ -979,6 +997,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D0BA2A6514BE69BB00005386 /* PBXTargetDependency */,
 				D0BA27E714BE4CB400005386 /* PBXTargetDependency */,
 			);
 			name = "Static Library";
@@ -1036,6 +1055,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D0BA2A6214BE69B300005386 /* PBXTargetDependency */,
 				D0BA27E514BE4CB100005386 /* PBXTargetDependency */,
 			);
 			name = "Dynamic Library";
@@ -1392,6 +1412,16 @@
 			isa = PBXTargetDependency;
 			name = "Proton Mac";
 			targetProxy = D0BA29CD14BE5FC200005386 /* PBXContainerItemProxy */;
+		};
+		D0BA2A6214BE69B300005386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Proton Mac";
+			targetProxy = D0BA2A6114BE69B300005386 /* PBXContainerItemProxy */;
+		};
+		D0BA2A6514BE69BB00005386 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Proton Mac";
+			targetProxy = D0BA2A6414BE69BB00005386 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
