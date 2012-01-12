@@ -39,9 +39,12 @@
 #import "TUITextEditor.h"
 #import "TUITextField.h"
 #import "TUITextView.h"
-#import "TUIVelvetView.h"
 #import "TUIView.h"
 #import "TUIViewController.h"
+
+// Velvet bridging
+#import "TUIVelvetView.h"
+#import "TUIView+VELBridgedViewAdditions.h"
 #import "VELTUIView.h"
 
 extern CGContextRef TUIGraphicsGetCurrentContext(void);
