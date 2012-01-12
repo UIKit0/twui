@@ -55,6 +55,10 @@
     return self;
 }
 
+- (void)dealloc {
+    self.guestView.hostView = nil;
+}
+
 #pragma mark View hierarchy
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
