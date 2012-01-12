@@ -13,9 +13,10 @@
 @synthesize window = _window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
+    TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    textView.backgroundColor = [TUIColor lightGrayColor];
 
-    VELTUIView *twuiHostView = [[VELTUIView alloc] initWithFrame:textView.frame];
+    VELTUIView *twuiHostView = [[VELTUIView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
     twuiHostView.TUIView = textView;
 
     [self.window.rootView addSubview:twuiHostView];
