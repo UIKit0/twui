@@ -7,8 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <TwUI/TUIKit.h>
 
 int main(int argc, char *argv[])
 {
+    AtLeastLion = YES;
     return NSApplicationMain(argc, (const char **)argv);
 }
