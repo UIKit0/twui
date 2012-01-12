@@ -76,7 +76,8 @@
 #pragma mark View hierarchy
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
-    return [self.rootView descendantViewAtPoint:point];
+    CGPoint rootViewPoint = [self.rootView.layer convertPoint:point fromLayer:self.layer];
+    return [self.rootView descendantViewAtPoint:rootViewPoint];
 }
 
 - (void)didMoveToWindow; {

@@ -58,7 +58,8 @@
 }
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
-    return [self.TUIView descendantViewAtPoint:point];
+    CGPoint viewPoint = [self.TUIView.layer convertPoint:point fromLayer:self.layer];
+    return [self.TUIView descendantViewAtPoint:viewPoint];
 }
 
 #pragma mark NSObject overrides
