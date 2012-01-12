@@ -66,16 +66,7 @@
 }
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point; {
-    CGPoint framePoint;
-
-    if (self.superview)
-        framePoint = [self convertPoint:point toView:self.superview];
-    else if (self.hostView)
-        framePoint = point;
-    else
-        return nil;
-
-    id hitView = [self hitTest:framePoint withEvent:nil];
+    id hitView = [self hitTest:point withEvent:nil];
 
     if ([hitView isKindOfClass:[TUIVelvetView class]]) {
         CGPoint descendantPoint = [self convertPoint:point toView:hitView];
