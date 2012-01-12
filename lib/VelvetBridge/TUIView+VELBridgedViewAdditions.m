@@ -7,13 +7,18 @@
 //
 
 #import "TUIView+VELBridgedViewAdditions.h"
+#import "TUIView+VELTUIViewAdditions.h"
 #import "TUIVelvetView.h"
+#import "VELTUIView.h"
 #import <Proton/Proton.h>
 
 @safecategory (TUIView, VELBridgedViewAdditions)
 // TODO: the implementations of these conversion methods are not strictly
 // correct -- they only take into account position, and do not include things
 // like transforms (however, the implementation does match that of TwUI)
+
+// TODO 2: these geometry conversion methods should use the hostView if no
+// superview is available
 
 - (CGPoint)convertFromWindowPoint:(CGPoint)point; {
 	CGRect hostViewFrame = self.frameInNSView;
@@ -44,8 +49,16 @@
 }
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point; {
-    CGPoint superviewPoint = [self convertPoint:point toView:self.superview];
-    id hitView = [self hitTest:superviewPoint withEvent:nil];
+    CGPoint framePoint;
+
+    if (self.superview)
+        framePoint = [self convertPoint:point toView:self.superview];
+    else if (self.hostView)
+        framePoint = point;
+    else
+        return nil;
+
+    id hitView = [self hitTest:framePoint withEvent:nil];
 
     if ([hitView isKindOfClass:[TUIVelvetView class]]) {
         CGPoint descendantPoint = [self convertPoint:point toView:hitView];
