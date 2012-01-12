@@ -7,14 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import <TwUI/TUIKit.h>
 
 @implementation AppDelegate
-
 @synthesize window = _window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
+
+    VELTUIView *twuiHostView = [[VELTUIView alloc] initWithFrame:textView.frame];
+    twuiHostView.TUIView = textView;
+
+    [self.window.rootView addSubview:twuiHostView];
 }
 
 @end

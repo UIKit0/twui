@@ -7,9 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Velvet/Velvet.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
-
+@property (assign) IBOutlet VELWindow *window;
 @end
