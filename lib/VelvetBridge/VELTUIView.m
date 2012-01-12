@@ -57,4 +57,10 @@
     return [self.TUIView descendantViewAtPoint:point];
 }
 
+#pragma mark NSObject overrides
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@ %p> frame = %@, TUIView = %@", [self class], self, NSStringFromRect(self.frame), self.TUIView];
+}
+
 @end
