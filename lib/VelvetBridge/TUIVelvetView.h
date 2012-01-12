@@ -6,11 +6,16 @@
 //  Copyright (c) 2011 Bitswift. All rights reserved.
 //
 
-#import <TwUI/TUIView.h>
-#import <Velvet/Velvet.h>
+#import "TUIView.h"
+
+@class VELView;
 
 /**
- * A `TUIView` that is used to host a `VELView` hierarchy.
+ * A #TUIView that is used to host a \c VELView hierarchy.
+ *
+ * @warning **Important:** This class can only be used in view hierarchies that
+ * are ultimately rooted at an \c NSVelvetView. Velvet views cannot be displayed
+ * on screen in a pure TwUI hierarchy.
  */
 @interface TUIVelvetView : TUIView
 
