@@ -7,32 +7,31 @@
 //
 
 #import <Velvet/Velvet.h>
-
-@class TUIView;
+#import "TUIView+VELBridgedViewAdditions.h"
 
 /**
- * A view that is responsible for displaying and handling a `TUIView` within the
+ * A view that is responsible for displaying and handling a #TUIView within the
  * normal Velvet view hierarchy.
  */
-@interface VELTUIView : VELView
+@interface VELTUIView : VELView <VELHostView>
 
 /**
  * @name Initialization
  */
 
 /*
- * Initializes the receiver, setting its <TUIView> property to `view`.
+ * Initializes the receiver, setting its #guestView property to the given view.
  *
- * The designated initializer for this class is <[VELView init]>.
+ * The designated initializer for this class is \c init.
  */
 - (id)initWithTUIView:(TUIView *)view;
 
 /**
- * @name TUIView Hierarchy
+ * @name Guest View
  */
 
 /**
- * The view displayed by the reciever.
+ * The #TUIView displayed by the reciever.
  */
-@property (nonatomic, strong) TUIView *TUIView;
+@property (nonatomic, strong) TUIView *guestView;
 @end

@@ -7,12 +7,14 @@
 //
 
 #import "TUIView+VELBridgedViewAdditions.h"
-#import "TUIView+VELTUIViewAdditions.h"
 #import "TUIVelvetView.h"
 #import "VELTUIView.h"
 #import <Proton/Proton.h>
 
 @safecategory (TUIView, VELBridgedViewAdditions)
+
+#pragma mark Geometry
+
 // TODO: the implementations of these conversion methods are not strictly
 // correct -- they only take into account position, and do not include things
 // like transforms (however, the implementation does match that of TwUI)
@@ -65,6 +67,8 @@
     return [self.nsView convertRect:rectInHostView toView:nil];
 }
 
+#pragma mark Hit testing
+
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point; {
     id hitView = [self hitTest:point withEvent:nil];
 
@@ -78,6 +82,36 @@
 
 - (BOOL)pointInside:(CGPoint)point; {
     return [self pointInside:point withEvent:nil];
+}
+
+#pragma mark View hierarchy
+
+- (id<VELHostView>)hostView {
+    id<VELHostView> hostView = objc_getAssociatedObject(self, @selector(hostView));
+    if (hostView)
+        return hostView;
+    else
+        return self.superview.hostView;
+}
+
+- (void)setHostView:(id<VELHostView>)hostView {
+    objc_setAssociatedObject(self, @selector(hostView), hostView, OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (NSVelvetView *)ancestorNSVelvetView; {
+    id<VELHostView> hostView = self.hostView;
+    if (!hostView)
+        return nil;
+
+    return hostView.ancestorNSVelvetView;
+}
+
+- (id<VELBridgedView>)ancestorScrollView; {
+    TUIView *superview = self.superview;
+    if (superview)
+        return superview.ancestorScrollView;
+
+    return [self.hostView ancestorScrollView];
 }
 
 @end

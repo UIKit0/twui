@@ -18,7 +18,7 @@
 #import "TUIKit.h"
 #import "TUIView+Private.h"
 #import "TUIViewController.h"
-#import "TUIView+VELTUIViewAdditions.h"
+#import "TUIView+VELBridgedViewAdditions.h"
 #import "VELTUIView.h"
 
 NSString * const TUIViewWillMoveToWindowNotification = @"TUIViewWillMoveToWindowNotification";
@@ -946,20 +946,17 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 
 // Velvet change
 - (CGRect)globalFrame {
-	CGRect frame = self.frame;
-
     TUIView *view = self;
-	while (view.superview) {
-        frame = [view convertRect:frame toView:view.superview];
-
-        view = view.superview;
-	}
-
-    if (view.hostView) {
-        frame = [view.hostView.hostView convertFromWindowRect:[view convertToWindowRect:frame]];
-    }
+    id<VELBridgedView> topMostView = view.ancestorNSVelvetView;
     
-	return frame;
+    if (!topMostView) {
+        do {
+            topMostView = view;
+            view = view.superview;
+        } while (view);
+    }
+
+    return [self.layer convertRect:self.bounds toLayer:topMostView.layer];
 }
 
 - (NSRect)frameInNSView

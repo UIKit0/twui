@@ -8,57 +8,39 @@
 
 #import "TUIVelvetView.h"
 #import "TUIScrollView.h"
-#import "TUIView+VELTUIViewAdditions.h"
+#import "TUIView+VELBridgedViewAdditions.h"
 #import "VELTUIView.h"
-#import <Velvet/Velvet.h>
-
-@interface VELView (WritableHostViewFixup)
-// TODO: this property needs to be exposed as writable _somewhere_ in Velvet
-@property (nonatomic, strong) NSVelvetView *hostView;
-@end
-
-// TODO: move this category elsewhere
-@interface TUIView (AncestorScrollView)
-// TODO: this needs to be part of a Velvet protocol
-- (id)ancestorScrollView;
-@end
-
-@implementation VELView (AncestorScrollViewFixup)
-// TODO: there needs to be a more generic implementation for this method, which
-// will go into Velvet proper
-- (id)ancestorScrollView; {
-    VELView *superview = self.superview;
-    if (superview)
-        return superview.ancestorScrollView;
-
-    // TODO: this should use some hostView-like property set by TUIVelvetView
-    if ([superview.nextResponder isKindOfClass:[TUIVelvetView class]]) {
-        return [(id)superview.nextResponder ancestorScrollView];
-    }
-
-    return [self.hostView ancestorScrollView];
-}
-@end
 
 @implementation TUIVelvetView
 
 #pragma mark Properties
 
-@synthesize rootView = m_rootView;
+// implemented by TUIView
+@dynamic layer;
 
-- (void)setRootView:(VELView *)rootView {
-    [m_rootView.layer removeFromSuperlayer];
-    m_rootView.hostView = nil;
+@synthesize hostView = m_hostView;
+@synthesize guestView = m_guestView;
 
-    m_rootView = rootView;
+- (id<VELHostView>)hostView {
+    if (m_hostView)
+        return m_hostView;
+    else
+        return self.superview.hostView;
+}
 
-    if (m_rootView) {
-        [self.layer addSublayer:m_rootView.layer];
+- (void)setGuestView:(VELView *)guestView {
+    [m_guestView.layer removeFromSuperlayer];
+    m_guestView.hostView = nil;
 
-        m_rootView.hostView = self.hostView.hostView;
+    m_guestView = guestView;
+
+    if (m_guestView) {
+        [self.layer addSublayer:m_guestView.layer];
+
+        m_guestView.hostView = self;
 
         // TODO: this will interact poorly with view controllers
-        m_rootView.nextResponder = self;
+        m_guestView.nextResponder = self;
     }
 }
 
@@ -69,51 +51,21 @@
     if (!self)
         return nil;
 
-    self.rootView = [[VELView alloc] initWithFrame:self.bounds];
+    self.guestView = [[VELView alloc] initWithFrame:self.bounds];
     return self;
 }
 
 #pragma mark View hierarchy
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
-    CGPoint rootViewPoint = [self.rootView.layer convertPoint:point fromLayer:self.layer];
-    return [self.rootView descendantViewAtPoint:rootViewPoint];
-}
-
-- (void)didMoveToWindow; {
-    TUIView *view = self;
-
-    while (view && !view.hostView) {
-        view = view.superview;
-    }
-
-    VELTUIView *hostView = view.hostView;
-    NSAssert(hostView, @"%@ must be ultimately rooted in a VELTUIView", self);
-    
-    // TODO: it'd be nice if we could split this across willMove/didMove
-    self.rootView.hostView = hostView.hostView;
+    CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
+    return [self.guestView descendantViewAtPoint:viewPoint];
 }
 
 #pragma mark NSObject overrides
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@ %p> frame = %@, VELView = %@", [self class], self, NSStringFromRect(self.frame), self.rootView];
-}
-
-@end
-
-@implementation TUIView (AncestorScrollView)
-- (id)ancestorScrollView; {
-    TUIView *view = self;
-
-    do {
-        if ([view isKindOfClass:[TUIScrollView class]])
-            return view;
-
-        view = view.superview;
-    } while (view);
-
-    return [view.hostView ancestorScrollView];
+    return [NSString stringWithFormat:@"<%@ %p> frame = %@, VELView = %@", [self class], self, NSStringFromRect(self.frame), self.guestView];
 }
 
 @end

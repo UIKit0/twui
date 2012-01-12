@@ -7,8 +7,7 @@
 //
 
 #import "TUIView.h"
-
-@class VELView;
+#import <Velvet/Velvet.h>
 
 /**
  * A #TUIView that is used to host a \c VELView hierarchy.
@@ -17,17 +16,17 @@
  * are ultimately rooted at an \c NSVelvetView. Velvet views cannot be displayed
  * on screen in a pure TwUI hierarchy.
  */
-@interface TUIVelvetView : TUIView
+@interface TUIVelvetView : TUIView <VELHostView>
 
 /**
  * @name View Hierarchy
  */
 
 /**
- * The root view of a `VELView`-based hierarchy to display in the receiver.
+ * The root view of a Velvet hierarchy to display in the receiver.
  *
- * The value of this property is a plain `VELView` by default, but can be
- * replaced with another instance of `VELView` or any subclass.
+ * The value of this property is a plain \c VELView by default, but can be
+ * replaced with another instance of \c VELView or any subclass.
  */
-@property (nonatomic, strong) VELView *rootView;
+@property (nonatomic, strong) VELView *guestView;
 @end
