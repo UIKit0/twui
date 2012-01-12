@@ -14,7 +14,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-    textView.backgroundColor = [TUIColor lightGrayColor];
+    textView.placeholder = @"Type some text?";
+    textView.font = [TUIFont systemFontOfSize:17];
 
     VELTUIView *twuiHostView = [[VELTUIView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
     twuiHostView.TUIView = textView;
