@@ -9,6 +9,7 @@
 #import "VELTUIView.h"
 #import "TUIView.h"
 #import "TUIView+VELBridgedViewAdditions.h"
+#import "TUIView+VELTUIViewAdditions.h"
 
 @implementation VELTUIView
 
@@ -19,11 +20,15 @@
 - (void)setTUIView:(TUIView *)view {
     [m_TUIView.layer removeFromSuperlayer];
     m_TUIView.nsView = nil;
+    m_TUIView.hostView = nil;
 
     m_TUIView = view;
 
     if (m_TUIView) {
         m_TUIView.nsView = self.hostView;
+        m_TUIView.hostView = self;
+        m_TUIView.nextResponder = self;
+
         [self.layer addSublayer:m_TUIView.layer];
     }
 }
