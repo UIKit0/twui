@@ -37,7 +37,11 @@
     if (m_guestView) {
         [self.layer addSublayer:m_guestView.layer];
 
-        m_guestView.hostView = self;
+        // only notify the guest view of a new host view once it has a window
+        //
+        // TODO: this check should not be necessary
+        if (self.nsWindow)
+            m_guestView.hostView = self;
 
         // TODO: this will interact poorly with view controllers
         m_guestView.nextResponder = self;
@@ -64,6 +68,14 @@
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
     CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
     return [self.guestView descendantViewAtPoint:viewPoint];
+}
+
+- (void)didMoveToWindow {
+    // only notify the guest view of a new host view once it has a window
+    //
+    // TODO: we should call some notification method instead of setting this
+    // property
+    self.guestView.hostView = self;
 }
 
 #pragma mark NSObject overrides
