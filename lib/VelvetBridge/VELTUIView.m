@@ -25,11 +25,14 @@
     m_guestView = view;
 
     if (m_guestView) {
+        m_guestView.frame = self.bounds;
+        m_guestView.layer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
+
         m_guestView.nsView = self.ancestorNSVelvetView;
-        m_guestView.hostView = self;
         m_guestView.nextResponder = self;
 
         [self.layer addSublayer:m_guestView.layer];
+        m_guestView.hostView = self;
     }
 }
 

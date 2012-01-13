@@ -32,6 +32,9 @@
 
 /**
  * The #TUIView displayed by the reciever.
+ *
+ * You should not modify the geometry of this view. Modify the geometry of the
+ * #VELTUIView instead.
  */
 @property (nonatomic, strong) TUIView *guestView;
 @end
