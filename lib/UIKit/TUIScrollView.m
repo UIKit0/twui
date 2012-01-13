@@ -17,6 +17,7 @@
 #import "TUIScrollView.h"
 #import "TUIScrollKnob.h"
 #import "TUIView+Private.h"
+#import "TUIView+VELBridgedViewAdditions.h"
 #import "TUINSView.h"
 
 #define KNOB_Z_POSITION 6000
@@ -538,10 +539,15 @@ static CGPoint PointLerp(CGPoint a, CGPoint b, CGFloat t)
 	_unroundedContentOffset = p;
 	p.x = round(-p.x - self.bounceOffset.x - self.pullOffset.x);
 	p.y = round(-p.y - self.bounceOffset.y - self.pullOffset.y);
+
 	[((CAScrollLayer *)self.layer) scrollToPoint:p];
+
 	if(_scrollViewFlags.delegateScrollViewDidScroll){
 		[_delegate scrollViewDidScroll:self];
 	}
+
+    // Velvet change
+    [self.subviews makeObjectsPerformSelector:@selector(ancestorDidLayout)];
 }
 
 - (void)setContentOffset:(CGPoint)p

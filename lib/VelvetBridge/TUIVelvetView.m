@@ -11,6 +11,10 @@
 #import "TUIView+VELBridgedViewAdditions.h"
 #import "VELTUIView.h"
 
+// TODO: we shouldn't have to import this for -ancestorDidLayout, which means
+// that it should probably be part of <VELBridgedView>
+#import <Velvet/VELViewProtected.h>
+
 @implementation TUIVelvetView
 
 #pragma mark Properties
@@ -37,11 +41,7 @@
     if (m_guestView) {
         [self.layer addSublayer:m_guestView.layer];
 
-        // only notify the guest view of a new host view once it has a window
-        //
-        // TODO: this check should not be necessary
-        if (self.nsWindow)
-            m_guestView.hostView = self;
+        m_guestView.hostView = self;
 
         // TODO: this will interact poorly with view controllers
         m_guestView.nextResponder = self;
@@ -65,17 +65,24 @@
 
 #pragma mark View hierarchy
 
+- (void)ancestorDidLayout; {
+    [super ancestorDidLayout];
+    [self.guestView ancestorDidLayout];
+}
+
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
     CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
     return [self.guestView descendantViewAtPoint:viewPoint];
 }
 
-- (void)didMoveToWindow {
-    // only notify the guest view of a new host view once it has a window
-    //
-    // TODO: we should call some notification method instead of setting this
-    // property
-    self.guestView.hostView = self;
+- (void)didMoveFromNSVelvetView:(NSVelvetView *)view; {
+    [super didMoveFromNSVelvetView:view];
+    [self.guestView didMoveFromNSVelvetView:view];
+}
+
+- (void)willMoveToNSVelvetView:(NSVelvetView *)view; {
+    [super willMoveToNSVelvetView:view];
+    [self.guestView willMoveToNSVelvetView:view];
 }
 
 #pragma mark NSObject overrides

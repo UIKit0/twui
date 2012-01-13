@@ -98,6 +98,10 @@
     objc_setAssociatedObject(self, @selector(hostView), hostView, OBJC_ASSOCIATION_ASSIGN);
 }
 
+- (void)ancestorDidLayout; {
+    [self.subviews makeObjectsPerformSelector:_cmd];
+}
+
 - (NSVelvetView *)ancestorNSVelvetView; {
     id<VELHostView> hostView = self.hostView;
     if (!hostView)
@@ -112,6 +116,14 @@
         return superview.ancestorScrollView;
 
     return [self.hostView ancestorScrollView];
+}
+
+- (void)didMoveFromNSVelvetView:(NSVelvetView *)view; {
+    [self.subviews makeObjectsPerformSelector:_cmd withObject:view];
+}
+
+- (void)willMoveToNSVelvetView:(NSVelvetView *)view; {
+    [self.subviews makeObjectsPerformSelector:_cmd withObject:view];
 }
 
 @end

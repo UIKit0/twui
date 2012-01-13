@@ -343,6 +343,9 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 {
 	[self layoutSubviews];
 	[self _blockLayout];
+    
+    // Velvet change
+    [self.subviews makeObjectsPerformSelector:@selector(ancestorDidLayout)];
 }
 
 - (BOOL)drawInBackground
