@@ -10,11 +10,6 @@
 #import "TUIView.h"
 #import "TUIView+VELBridgedViewAdditions.h"
 
-@interface VELView (ProtectedMethodsFixup)
-// TODO: expose this!
-- (void)didMoveFromHostView:(id<VELHostView>)oldHostView;
-@end
-
 @implementation VELTUIView
 
 #pragma mark Properties
@@ -54,15 +49,21 @@
 
 #pragma mark View hierarchy
 
-- (void)didMoveFromHostView:(id<VELHostView>)oldHostView {
-    [super didMoveFromHostView:oldHostView];
-
-    self.guestView.nsView = self.ancestorNSVelvetView;
-}
-
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
     CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
     return [self.guestView descendantViewAtPoint:viewPoint];
+}
+
+- (void)didMoveFromNSVelvetView:(NSVelvetView *)view; {
+    [super didMoveFromNSVelvetView:view];
+
+    [self.guestView didMoveFromNSVelvetView:view];
+    self.guestView.nsView = self.ancestorNSVelvetView;
+}
+
+- (void)willMoveToNSVelvetView:(NSVelvetView *)view; {
+    [super willMoveToNSVelvetView:view];
+    [self.guestView willMoveToNSVelvetView:view];
 }
 
 #pragma mark NSObject overrides

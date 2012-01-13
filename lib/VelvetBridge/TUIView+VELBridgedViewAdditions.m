@@ -114,5 +114,13 @@
     return [self.hostView ancestorScrollView];
 }
 
+- (void)didMoveFromNSVelvetView:(NSVelvetView *)view; {
+    [self.subviews makeObjectsPerformSelector:_cmd withObject:view];
+}
+
+- (void)willMoveToNSVelvetView:(NSVelvetView *)view; {
+    [self.subviews makeObjectsPerformSelector:_cmd withObject:view];
+}
+
 @end
 
