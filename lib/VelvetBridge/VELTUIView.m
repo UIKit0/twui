@@ -9,32 +9,31 @@
 #import "VELTUIView.h"
 #import "TUIView.h"
 #import "TUIView+VELBridgedViewAdditions.h"
-#import "TUIView+VELTUIViewAdditions.h"
 
 @interface VELView (ProtectedMethodsFixup)
 // TODO: expose this!
-- (void)didMoveFromHostView:(NSVelvetView *)oldHostView;
+- (void)didMoveFromHostView:(id<VELHostView>)oldHostView;
 @end
 
 @implementation VELTUIView
 
 #pragma mark Properties
 
-@synthesize TUIView = m_TUIView;
+@synthesize guestView = m_guestView;
 
-- (void)setTUIView:(TUIView *)view {
-    [m_TUIView.layer removeFromSuperlayer];
-    m_TUIView.nsView = nil;
-    m_TUIView.hostView = nil;
+- (void)setGuestView:(TUIView *)view {
+    [m_guestView.layer removeFromSuperlayer];
+    m_guestView.nsView = nil;
+    m_guestView.hostView = nil;
 
-    m_TUIView = view;
+    m_guestView = view;
 
-    if (m_TUIView) {
-        m_TUIView.nsView = self.hostView;
-        m_TUIView.hostView = self;
-        m_TUIView.nextResponder = self;
+    if (m_guestView) {
+        m_guestView.nsView = self.ancestorNSVelvetView;
+        m_guestView.hostView = self;
+        m_guestView.nextResponder = self;
 
-        [self.layer addSublayer:m_TUIView.layer];
+        [self.layer addSublayer:m_guestView.layer];
     }
 }
 
@@ -45,27 +44,31 @@
 	if (!self)
 		return nil;
 
-	self.TUIView = view;
+	self.guestView = view;
 	return self;
+}
+
+- (void)dealloc {
+    self.guestView.hostView = nil;
 }
 
 #pragma mark View hierarchy
 
-- (void)didMoveFromHostView:(NSVelvetView *)oldHostView {
+- (void)didMoveFromHostView:(id<VELHostView>)oldHostView {
     [super didMoveFromHostView:oldHostView];
 
-    self.TUIView.nsView = self.hostView;
+    self.guestView.nsView = self.ancestorNSVelvetView;
 }
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
-    CGPoint viewPoint = [self.TUIView.layer convertPoint:point fromLayer:self.layer];
-    return [self.TUIView descendantViewAtPoint:viewPoint];
+    CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
+    return [self.guestView descendantViewAtPoint:viewPoint];
 }
 
 #pragma mark NSObject overrides
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@ %p> frame = %@, TUIView = %@", [self class], self, NSStringFromRect(self.frame), self.TUIView];
+    return [NSString stringWithFormat:@"<%@ %p> frame = %@, TUIView = %@ %@", [self class], self, NSStringFromRect(self.frame), self.guestView, NSStringFromRect(self.guestView.frame)];
 }
 
 @end
