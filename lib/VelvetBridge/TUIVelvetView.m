@@ -11,6 +11,10 @@
 #import "TUIView+VELBridgedViewAdditions.h"
 #import "VELTUIView.h"
 
+// TODO: we shouldn't have to import this for -ancestorDidLayout, which means
+// that it should probably be part of <VELBridgedView>
+#import <Velvet/VELViewProtected.h>
+
 @implementation TUIVelvetView
 
 #pragma mark Properties
@@ -60,6 +64,11 @@
 }
 
 #pragma mark View hierarchy
+
+- (void)ancestorDidLayout; {
+    [super ancestorDidLayout];
+    [self.guestView ancestorDidLayout];
+}
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
     CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];

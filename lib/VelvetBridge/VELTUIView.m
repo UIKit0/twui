@@ -9,6 +9,7 @@
 #import "VELTUIView.h"
 #import "TUIView.h"
 #import "TUIView+VELBridgedViewAdditions.h"
+#import <Velvet/VELViewProtected.h>
 
 @implementation VELTUIView
 
@@ -48,6 +49,11 @@
 }
 
 #pragma mark View hierarchy
+
+- (void)ancestorDidLayout; {
+    [super ancestorDidLayout];
+    [self.guestView ancestorDidLayout];
+}
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
     CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
