@@ -13,8 +13,8 @@
 @synthesize window = _window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    VELTUIView *twuiHostView = [[VELTUIView alloc] initWithFrame:self.window.rootView.bounds];
-    twuiHostView.autoresizingMask = VELViewAutoresizingFlexibleSize;
+    VELTUIView *twuiHostView = [[VELTUIView alloc] init];
+    self.window.rootView = twuiHostView;
 
     #if 0
         twuiHostView.guestView = [[TUIView alloc] initWithFrame:twuiHostView.bounds];
@@ -26,7 +26,6 @@
     #else
         TUIScrollView *scrollView = [[TUIScrollView alloc] initWithFrame:twuiHostView.bounds];
         scrollView.backgroundColor = [TUIColor colorWithWhite:0.9 alpha:1.0];
-        scrollView.autoresizingMask = TUIViewAutoresizingFlexibleSize;
         scrollView.scrollIndicatorStyle = TUIScrollViewIndicatorStyleDark;
 
         twuiHostView.guestView = scrollView;
@@ -55,8 +54,6 @@
         VELNSView *buttonHostView = [[VELNSView alloc] initWithNSView:button];
         [velvetHostView.guestView addSubview:buttonHostView];
     }
-
-    [self.window.rootView addSubview:twuiHostView];
 }
 
 - (void)testButtonPushed:(id)sender {

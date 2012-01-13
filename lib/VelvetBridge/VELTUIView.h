@@ -22,7 +22,11 @@
 /*
  * Initializes the receiver, setting its #guestView property to the given view.
  *
+ * The \c frame of the receiver will automatically be set to that of \a view.
+ *
  * The designated initializer for this class is \c init.
+ *
+ * @param view The view to display in the receiver.
  */
 - (id)initWithTUIView:(TUIView *)view;
 
@@ -32,6 +36,9 @@
 
 /**
  * The #TUIView displayed by the reciever.
+ *
+ * You should not modify the geometry of this view. Modify the geometry of the
+ * #VELTUIView instead.
  */
 @property (nonatomic, strong) TUIView *guestView;
 @end

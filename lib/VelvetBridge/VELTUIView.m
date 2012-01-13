@@ -25,23 +25,29 @@
     m_guestView = view;
 
     if (m_guestView) {
+        m_guestView.frame = self.bounds;
+        m_guestView.layer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
+
         m_guestView.nsView = self.ancestorNSVelvetView;
-        m_guestView.hostView = self;
         m_guestView.nextResponder = self;
 
         [self.layer addSublayer:m_guestView.layer];
+        m_guestView.hostView = self;
     }
 }
 
 #pragma mark Lifecycle
 
 - (id)initWithTUIView:(TUIView *)view {
-	self = [super init];
-	if (!self)
-		return nil;
+    self = [super init];
+    if (!self)
+        return nil;
 
-	self.guestView = view;
-	return self;
+    // order here is important -- self.guestView will reset the frame, so we
+    // need to update self.frame before that
+    self.frame = view.frame;
+    self.guestView = view;
+    return self;
 }
 
 - (void)dealloc {
