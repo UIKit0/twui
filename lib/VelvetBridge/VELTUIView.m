@@ -39,12 +39,15 @@
 #pragma mark Lifecycle
 
 - (id)initWithTUIView:(TUIView *)view {
-	self = [super init];
-	if (!self)
-		return nil;
+    self = [super init];
+    if (!self)
+        return nil;
 
-	self.guestView = view;
-	return self;
+    // order here is important -- self.guestView will reset the frame, so we
+    // need to update self.frame before that
+    self.frame = view.frame;
+    self.guestView = view;
+    return self;
 }
 
 - (void)dealloc {
