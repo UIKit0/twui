@@ -38,8 +38,16 @@
 
 #pragma mark Lifecycle
 
-- (id)initWithTUIView:(TUIView *)view {
+- (id)init {
     self = [super init];
+    if (!self)
+        return nil;
+
+    return self;
+}
+
+- (id)initWithTUIView:(TUIView *)view {
+    self = [self init];
     if (!self)
         return nil;
 
@@ -63,6 +71,9 @@
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
     CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
+    
+    // never return 'self', since we don't want to catch clicks that didn't
+    // directly hit the TUIView
     return [self.guestView descendantViewAtPoint:viewPoint];
 }
 
