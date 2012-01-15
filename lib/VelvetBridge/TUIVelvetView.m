@@ -72,11 +72,6 @@
     [self.guestView ancestorDidLayout];
 }
 
-- (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
-    CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
-    return [self.guestView descendantViewAtPoint:viewPoint];
-}
-
 - (void)didMoveFromNSVelvetView:(NSVelvetView *)view; {
     [super didMoveFromNSVelvetView:view];
     [self.guestView didMoveFromNSVelvetView:view];
@@ -85,6 +80,21 @@
 - (void)willMoveToNSVelvetView:(NSVelvetView *)view; {
     [super willMoveToNSVelvetView:view];
     [self.guestView willMoveToNSVelvetView:view];
+}
+
+#pragma mark Event handling
+
+- (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
+    CGPoint viewPoint = [self.guestView.layer convertPoint:point fromLayer:self.layer];
+    
+    // never return 'self', since we don't want to catch clicks that didn't
+    // directly hit the VELView
+    return [self.guestView descendantViewAtPoint:viewPoint];
+}
+
+- (TUIView *)hitTest:(CGPoint)point withEvent:(id)event {
+    // don't catch TwUI events on this view
+    return nil;
 }
 
 #pragma mark NSObject overrides
