@@ -38,9 +38,6 @@
         m_guestView.frame = self.bounds;
         m_guestView.layer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
 
-        // TODO: this will interact poorly with view controllers
-        m_guestView.nextResponder = self;
-
         [self.layer addSublayer:m_guestView.layer];
         m_guestView.hostView = self;
     }
