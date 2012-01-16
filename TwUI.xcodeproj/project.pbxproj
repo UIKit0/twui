@@ -120,7 +120,6 @@
 		CB5B266413BE6DA300579B1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5B264F13BE6DA200579B1E /* Cocoa.framework */; };
 		CB5B266713BE6DA300579B1E /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5B264C13BE6DA200579B1E /* TwUI.framework */; };
 		CB5B266D13BE6DA300579B1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB5B266B13BE6DA300579B1E /* InfoPlist.strings */; };
-		CB5B267113BE6DA300579B1E /* TwUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5B267013BE6DA300579B1E /* TwUITests.m */; };
 		CB5E31B713BE6F49004B7899 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5E31B613BE6F49004B7899 /* QuartzCore.framework */; };
 		CB5E321D13BE70CA004B7899 /* TUIAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C3F13BE6E1900C85CB5 /* TUIAccessibility.m */; };
 		CB5E321F13BE70CA004B7899 /* TUIActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C4113BE6E1900C85CB5 /* TUIActivityIndicatorView.m */; };
@@ -260,6 +259,7 @@
 		D03FD99314C3AA5D0062B7A3 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
 		D03FD99414C3AA5D0062B7A3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
 		D03FD99514C3AA5D0062B7A3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5E31B613BE6F49004B7899 /* QuartzCore.framework */; };
+		D03FD99914C3AB3B0062B7A3 /* TUIVelvetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03FD99814C3AB3B0062B7A3 /* TUIVelvetViewTests.m */; };
 		D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -429,8 +429,6 @@
 		CB5B266213BE6DA300579B1E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		CB5B266A13BE6DA300579B1E /* TwUITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwUITests-Info.plist"; sourceTree = "<group>"; };
 		CB5B266C13BE6DA300579B1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CB5B266E13BE6DA300579B1E /* TwUITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwUITests.h; sourceTree = "<group>"; };
-		CB5B267013BE6DA300579B1E /* TwUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwUITests.m; sourceTree = "<group>"; };
 		CB5E31B613BE6F49004B7899 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CB5E321813BE7098004B7899 /* libtwui.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libtwui.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB74C3913BE6E1900C85CB5 /* ABActiveRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABActiveRange.h; sourceTree = "<group>"; };
@@ -520,6 +518,8 @@
 		CBB74C8E13BE6E1900C85CB5 /* TUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewController.m; sourceTree = "<group>"; };
 		CBB74C8F13BE6E1900C85CB5 /* TUIViewNSViewContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIViewNSViewContainer.h; sourceTree = "<group>"; };
 		CBB74C9013BE6E1900C85CB5 /* TUIViewNSViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewNSViewContainer.m; sourceTree = "<group>"; };
+		D03FD99714C3AB3B0062B7A3 /* TUIVelvetViewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVelvetViewTests.h; sourceTree = "<group>"; };
+		D03FD99814C3AB3B0062B7A3 /* TUIVelvetViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVelvetViewTests.m; sourceTree = "<group>"; };
 		D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
 		D0884F5014BE4C1C007FC13F /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D0884F5214BE4C1C007FC13F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -666,8 +666,7 @@
 		CB5B266813BE6DA300579B1E /* TwUITests */ = {
 			isa = PBXGroup;
 			children = (
-				CB5B266E13BE6DA300579B1E /* TwUITests.h */,
-				CB5B267013BE6DA300579B1E /* TwUITests.m */,
+				D03FD99614C3AB260062B7A3 /* Classes */,
 				CB5B266913BE6DA300579B1E /* Supporting Files */,
 			);
 			path = TwUITests;
@@ -811,6 +810,15 @@
 			);
 			name = UIKit;
 			path = lib/UIKit;
+			sourceTree = "<group>";
+		};
+		D03FD99614C3AB260062B7A3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D03FD99714C3AB3B0062B7A3 /* TUIVelvetViewTests.h */,
+				D03FD99814C3AB3B0062B7A3 /* TUIVelvetViewTests.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		D0884F3B14BE4BFC007FC13F /* Products */ = {
@@ -1350,7 +1358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB5B267113BE6DA300579B1E /* TwUITests.m in Sources */,
+				D03FD99914C3AB3B0062B7A3 /* TUIVelvetViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
