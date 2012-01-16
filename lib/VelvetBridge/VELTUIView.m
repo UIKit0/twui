@@ -9,7 +9,6 @@
 #import "VELTUIView.h"
 #import "TUIView.h"
 #import "TUIView+VELBridgedViewAdditions.h"
-#import <Velvet/VELViewProtected.h>
 
 @implementation VELTUIView
 
