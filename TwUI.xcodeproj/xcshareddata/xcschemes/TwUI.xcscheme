@@ -19,6 +19,20 @@
                ReferencedContainer = "container:TwUI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CB5B266013BE6DA300579B1E"
+               BuildableName = "Tests.octest"
+               BlueprintName = "Tests"
+               ReferencedContainer = "container:TwUI.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
