@@ -41,6 +41,15 @@
     STAssertEquals(hostView.guestView, imageView, @"");
 }
 
+- (void)testResponderChain {
+    TUIVelvetView *hostView = [[TUIVelvetView alloc] initWithFrame:CGRectZero];
+
+    VELImageView *imageView = [[VELImageView alloc] init];
+    hostView.guestView = imageView;
+
+    STAssertEquals(imageView.nextResponder, hostView, @"");
+}
+
 - (void)testConformsToVELBridgedView {
     STAssertTrue([TUIVelvetView conformsToProtocol:@protocol(VELBridgedView)], @"");
 
