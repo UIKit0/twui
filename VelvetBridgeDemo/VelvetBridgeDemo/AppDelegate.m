@@ -39,10 +39,6 @@
     velvetHostView.autoresizingMask = TUIViewAutoresizingFlexibleSize;
     [twuiHostView.guestView addSubview:velvetHostView];
 
-    // don't steal events from TwUI
-    velvetHostView.userInteractionEnabled = NO;
-    velvetHostView.guestView.userInteractionEnabled = NO;
-
     for (CGFloat offset = 0; offset < 200; offset += 50) {
         NSButton *button = [[NSButton alloc] initWithFrame:NSMakeRect(250 + offset, 100 + offset, 80, 28)];
         [button setButtonType:NSMomentaryPushInButton];
