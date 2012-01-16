@@ -13,6 +13,12 @@
 
 @safecategory (TUIView, VELBridgedViewAdditions)
 
+#pragma mark Category loading
+
++ (void)load {
+    class_addProtocol([TUIView class], @protocol(VELBridgedView));
+}
+
 #pragma mark Geometry
 
 // TODO: the implementations of these conversion methods are not strictly
