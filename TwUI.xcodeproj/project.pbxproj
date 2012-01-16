@@ -260,6 +260,7 @@
 		D03FD99414C3AA5D0062B7A3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
 		D03FD99514C3AA5D0062B7A3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5E31B613BE6F49004B7899 /* QuartzCore.framework */; };
 		D03FD99914C3AB3B0062B7A3 /* TUIVelvetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03FD99814C3AB3B0062B7A3 /* TUIVelvetViewTests.m */; };
+		D03FD99C14C3AB690062B7A3 /* TUIViewAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03FD99B14C3AB690062B7A3 /* TUIViewAdditionsTests.m */; };
 		D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -520,6 +521,8 @@
 		CBB74C9013BE6E1900C85CB5 /* TUIViewNSViewContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewNSViewContainer.m; sourceTree = "<group>"; };
 		D03FD99714C3AB3B0062B7A3 /* TUIVelvetViewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVelvetViewTests.h; sourceTree = "<group>"; };
 		D03FD99814C3AB3B0062B7A3 /* TUIVelvetViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVelvetViewTests.m; sourceTree = "<group>"; };
+		D03FD99A14C3AB690062B7A3 /* TUIViewAdditionsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIViewAdditionsTests.h; sourceTree = "<group>"; };
+		D03FD99B14C3AB690062B7A3 /* TUIViewAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewAdditionsTests.m; sourceTree = "<group>"; };
 		D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
 		D0884F5014BE4C1C007FC13F /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D0884F5214BE4C1C007FC13F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -817,6 +820,8 @@
 			children = (
 				D03FD99714C3AB3B0062B7A3 /* TUIVelvetViewTests.h */,
 				D03FD99814C3AB3B0062B7A3 /* TUIVelvetViewTests.m */,
+				D03FD99A14C3AB690062B7A3 /* TUIViewAdditionsTests.h */,
+				D03FD99B14C3AB690062B7A3 /* TUIViewAdditionsTests.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1359,6 +1364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03FD99914C3AB3B0062B7A3 /* TUIVelvetViewTests.m in Sources */,
+				D03FD99C14C3AB690062B7A3 /* TUIViewAdditionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
