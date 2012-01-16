@@ -34,6 +34,15 @@
     self.window.rootView = [[VELTUIView alloc] init];
 }
 
+- (void)testResponderChain {
+    VELTUIView *hostView = [[VELTUIView alloc] init];
+
+    TUIScrollView *scrollView = [[TUIScrollView alloc] initWithFrame:CGRectZero];
+    hostView.guestView = scrollView;
+
+    STAssertEquals(scrollView.nextResponder, hostView, @"");
+}
+
 - (void)testConformsToVELBridgedView {
     STAssertTrue([VELTUIView conformsToProtocol:@protocol(VELBridgedView)], @"");
 
