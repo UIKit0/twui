@@ -9,9 +9,14 @@
 #import "TUIView+VELBridgedViewAdditions.h"
 #import "TUIVelvetView.h"
 #import "VELTUIView.h"
-#import <Proton/Proton.h>
+#import <objc/runtime.h>
 
-@safecategory (TUIView, VELBridgedViewAdditions)
+@implementation TUIView (VELBridgedViewAdditions)
+
+#pragma mark Properties
+
+// implemented by TUIView proper
+@dynamic layer;
 
 #pragma mark Category loading
 
