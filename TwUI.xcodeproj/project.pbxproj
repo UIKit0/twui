@@ -256,30 +256,26 @@
 		CBB74CE513BE6E1900C85CB5 /* TUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C8E13BE6E1900C85CB5 /* TUIViewController.m */; };
 		CBB74CE613BE6E1900C85CB5 /* TUIViewNSViewContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = CBB74C8F13BE6E1900C85CB5 /* TUIViewNSViewContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBB74CE713BE6E1900C85CB5 /* TUIViewNSViewContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C9013BE6E1900C85CB5 /* TUIViewNSViewContainer.m */; };
-		D03FD99314C3AA5D0062B7A3 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
-		D03FD99414C3AA5D0062B7A3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
 		D03FD99514C3AA5D0062B7A3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5E31B613BE6F49004B7899 /* QuartzCore.framework */; };
 		D03FD99914C3AB3B0062B7A3 /* TUIVelvetViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03FD99814C3AB3B0062B7A3 /* TUIVelvetViewTests.m */; };
 		D03FD99C14C3AB690062B7A3 /* TUIViewAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03FD99B14C3AB690062B7A3 /* TUIViewAdditionsTests.m */; };
 		D03FD99F14C3AB860062B7A3 /* VELTUIViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D03FD99E14C3AB860062B7A3 /* VELTUIViewTests.m */; };
+		D040D80914C5861400CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
+		D040D80C14C5861C00CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
+		D040D80F14C5862200CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
+		D040D81014C5862900CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
 		D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEC148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 		D0B8DFED148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 		D0B8DFEE148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
-		D0BA27E814BE4CB700005386 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
-		D0BA27E914BE4CBC00005386 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
-		D0BA27EA14BE4CC000005386 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0884F4714BE4BFC007FC13F /* Velvet.framework */; };
 		D0BA29A614BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0BA29A714BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0BA29A814BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0BA29A914BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
 		D0BA29AA14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
 		D0BA29AB14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
-		D0BA29CF14BE5FC600005386 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
-		D0BA2A6314BE69B600005386 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
-		D0BA2A6614BE69BE00005386 /* Proton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA29C614BE5FBE00005386 /* Proton.framework */; };
 		D0F5C0B214BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F5C0B014BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D0F5C0B314BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F5C0B014BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D0F5C0B414BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F5C0B014BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -296,103 +292,40 @@
 			remoteGlobalIDString = CB5B264B13BE6DA200579B1E;
 			remoteInfo = TwUI;
 		};
-		D03FD98F14C3AA540062B7A3 /* PBXContainerItemProxy */ = {
+		D040D80314C5860900CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0DB5CC31492DDD5005955FB;
-			remoteInfo = "Proton Mac";
-		};
-		D03FD99114C3AA540062B7A3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0EFFC00147851A80095AB35;
-			remoteInfo = Velvet;
-		};
-		D0884F4614BE4BFC007FC13F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			containerPortal = D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D0EFFC01147851A80095AB35;
 			remoteInfo = Velvet;
 		};
-		D0884F4814BE4BFC007FC13F /* PBXContainerItemProxy */ = {
+		D040D80514C5860900CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			containerPortal = D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D0EFFC19147851A80095AB35;
 			remoteInfo = VelvetTests;
 		};
-		D0BA27E214BE4CA900005386 /* PBXContainerItemProxy */ = {
+		D040D80714C5861100CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			containerPortal = D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D0EFFC00147851A80095AB35;
 			remoteInfo = Velvet;
 		};
-		D0BA27E414BE4CB100005386 /* PBXContainerItemProxy */ = {
+		D040D80A14C5861800CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			containerPortal = D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D0EFFC00147851A80095AB35;
 			remoteInfo = Velvet;
 		};
-		D0BA27E614BE4CB400005386 /* PBXContainerItemProxy */ = {
+		D040D80D14C5861F00CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+			containerPortal = D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = D0EFFC00147851A80095AB35;
 			remoteInfo = Velvet;
-		};
-		D0BA29C514BE5FBE00005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0DB5CC41492DDD5005955FB;
-			remoteInfo = "Proton Mac";
-		};
-		D0BA29C714BE5FBE00005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0DB5CDC1492DDD5005955FB;
-			remoteInfo = "Proton Mac Tests";
-		};
-		D0BA29C914BE5FBE00005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0B07ACE1492E72800A1E816;
-			remoteInfo = "Proton iOS";
-		};
-		D0BA29CB14BE5FBE00005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0B07ADC1492E72800A1E816;
-			remoteInfo = "Proton iOS Tests";
-		};
-		D0BA29CD14BE5FC200005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0DB5CC31492DDD5005955FB;
-			remoteInfo = "Proton Mac";
-		};
-		D0BA2A6114BE69B300005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0DB5CC31492DDD5005955FB;
-			remoteInfo = "Proton Mac";
-		};
-		D0BA2A6414BE69BB00005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0DB5CC31492DDD5005955FB;
-			remoteInfo = "Proton Mac";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -541,12 +474,11 @@
 		D040D7F214C585C300CD53B3 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D040D7F314C585C300CD53B3 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D040D7F414C585C300CD53B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
+		D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = lib/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
 		D0B8DFE7148B314700F611CA /* TUIVelvetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVelvetView.h; sourceTree = "<group>"; };
 		D0B8DFE8148B314700F611CA /* TUIVelvetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVelvetView.m; sourceTree = "<group>"; };
 		D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TUIView+VELBridgedViewAdditions.h"; sourceTree = "<group>"; };
 		D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TUIView+VELBridgedViewAdditions.m"; sourceTree = "<group>"; };
-		D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Proton.xcodeproj; path = Frameworks/Velvet/Frameworks/Proton/Frameworks/Proton/Proton.xcodeproj; sourceTree = "<group>"; };
 		D0F5C0B014BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TUIScrollView+VELBridgedViewAdditions.h"; sourceTree = "<group>"; };
 		D0F5C0B114BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TUIScrollView+VELBridgedViewAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -556,8 +488,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0BA2A6614BE69BE00005386 /* Proton.framework in Frameworks */,
-				D0BA27E814BE4CB700005386 /* Velvet.framework in Frameworks */,
+				D040D80F14C5862200CD53B3 /* Velvet.framework in Frameworks */,
 				5EE983B813BE7809005F430D /* Cocoa.framework in Frameworks */,
 				5E6ECEB413BE791600109598 /* QuartzCore.framework in Frameworks */,
 				5E6ECEB313BE791600109598 /* ApplicationServices.framework in Frameworks */,
@@ -568,8 +499,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0BA29CF14BE5FC600005386 /* Proton.framework in Frameworks */,
-				D0BA27EA14BE4CC000005386 /* Velvet.framework in Frameworks */,
+				D040D80914C5861400CD53B3 /* Velvet.framework in Frameworks */,
 				CB5E327F13BE710C004B7899 /* Cocoa.framework in Frameworks */,
 				CB5E31B713BE6F49004B7899 /* QuartzCore.framework in Frameworks */,
 				5E6ECEB613BE791C00109598 /* ApplicationServices.framework in Frameworks */,
@@ -580,8 +510,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03FD99314C3AA5D0062B7A3 /* Proton.framework in Frameworks */,
-				D03FD99414C3AA5D0062B7A3 /* Velvet.framework in Frameworks */,
+				D040D81014C5862900CD53B3 /* Velvet.framework in Frameworks */,
 				D03FD99514C3AA5D0062B7A3 /* QuartzCore.framework in Frameworks */,
 				CB5B266313BE6DA300579B1E /* SenTestingKit.framework in Frameworks */,
 				CB5B266413BE6DA300579B1E /* Cocoa.framework in Frameworks */,
@@ -593,8 +522,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0BA2A6314BE69B600005386 /* Proton.framework in Frameworks */,
-				D0BA27E914BE4CBC00005386 /* Velvet.framework in Frameworks */,
+				D040D80C14C5861C00CD53B3 /* Velvet.framework in Frameworks */,
 				5E6ECEB713BE792100109598 /* Cocoa.framework in Frameworks */,
 				CB5E327613BE70EE004B7899 /* QuartzCore.framework in Frameworks */,
 				5EE9839D13BE7650005F430D /* ApplicationServices.framework in Frameworks */,
@@ -630,8 +558,7 @@
 		CB5B264E13BE6DA200579B1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */,
-				D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */,
+				D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */,
 				5EE9839C13BE7650005F430D /* ApplicationServices.framework */,
 				CB5B264F13BE6DA200579B1E /* Cocoa.framework */,
 				CB5E31B613BE6F49004B7899 /* QuartzCore.framework */,
@@ -894,22 +821,11 @@
 			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
-		D0884F3B14BE4BFC007FC13F /* Products */ = {
+		D040D7FC14C5860900CD53B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0884F4714BE4BFC007FC13F /* Velvet.framework */,
-				D0884F4914BE4BFC007FC13F /* VelvetTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D0BA29BF14BE5FBE00005386 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA29C614BE5FBE00005386 /* Proton.framework */,
-				D0BA29C814BE5FBE00005386 /* Proton Mac Tests.octest */,
-				D0BA29CA14BE5FBE00005386 /* libProton.a */,
-				D0BA29CC14BE5FBE00005386 /* Proton iOS Tests.octest */,
+				D040D80414C5860900CD53B3 /* Velvet.framework */,
+				D040D80614C5860900CD53B3 /* VelvetTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1046,8 +962,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D0BA2A6514BE69BB00005386 /* PBXTargetDependency */,
-				D0BA27E714BE4CB400005386 /* PBXTargetDependency */,
+				D040D80E14C5861F00CD53B3 /* PBXTargetDependency */,
 			);
 			name = "Static Library";
 			productName = statictwui;
@@ -1066,8 +981,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D0BA29CE14BE5FC200005386 /* PBXTargetDependency */,
-				D0BA27E314BE4CA900005386 /* PBXTargetDependency */,
+				D040D80814C5861100CD53B3 /* PBXTargetDependency */,
 			);
 			name = TwUI;
 			productName = TwUI;
@@ -1086,8 +1000,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D03FD99014C3AA540062B7A3 /* PBXTargetDependency */,
-				D03FD99214C3AA540062B7A3 /* PBXTargetDependency */,
 				CB5B266613BE6DA300579B1E /* PBXTargetDependency */,
 			);
 			name = Tests;
@@ -1106,8 +1018,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				D0BA2A6214BE69B300005386 /* PBXTargetDependency */,
-				D0BA27E514BE4CB100005386 /* PBXTargetDependency */,
+				D040D80B14C5861800CD53B3 /* PBXTargetDependency */,
 			);
 			name = "Dynamic Library";
 			productName = libTwUI;
@@ -1134,12 +1045,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D0BA29BF14BE5FBE00005386 /* Products */;
-					ProjectRef = D0BA29BE14BE5FBE00005386 /* Proton.xcodeproj */;
-				},
-				{
-					ProductGroup = D0884F3B14BE4BFC007FC13F /* Products */;
-					ProjectRef = D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */;
+					ProductGroup = D040D7FC14C5860900CD53B3 /* Products */;
+					ProjectRef = D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1153,46 +1060,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D0884F4714BE4BFC007FC13F /* Velvet.framework */ = {
+		D040D80414C5860900CD53B3 /* Velvet.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Velvet.framework;
-			remoteRef = D0884F4614BE4BFC007FC13F /* PBXContainerItemProxy */;
+			remoteRef = D040D80314C5860900CD53B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D0884F4914BE4BFC007FC13F /* VelvetTests.octest */ = {
+		D040D80614C5860900CD53B3 /* VelvetTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = VelvetTests.octest;
-			remoteRef = D0884F4814BE4BFC007FC13F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D0BA29C614BE5FBE00005386 /* Proton.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Proton.framework;
-			remoteRef = D0BA29C514BE5FBE00005386 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D0BA29C814BE5FBE00005386 /* Proton Mac Tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Proton Mac Tests.octest";
-			remoteRef = D0BA29C714BE5FBE00005386 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D0BA29CA14BE5FBE00005386 /* libProton.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libProton.a;
-			remoteRef = D0BA29C914BE5FBE00005386 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D0BA29CC14BE5FBE00005386 /* Proton iOS Tests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Proton iOS Tests.octest";
-			remoteRef = D0BA29CB14BE5FBE00005386 /* PBXContainerItemProxy */;
+			remoteRef = D040D80514C5860900CD53B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1447,45 +1326,20 @@
 			target = CB5B264B13BE6DA200579B1E /* TwUI */;
 			targetProxy = CB5B266513BE6DA300579B1E /* PBXContainerItemProxy */;
 		};
-		D03FD99014C3AA540062B7A3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Proton Mac";
-			targetProxy = D03FD98F14C3AA540062B7A3 /* PBXContainerItemProxy */;
-		};
-		D03FD99214C3AA540062B7A3 /* PBXTargetDependency */ = {
+		D040D80814C5861100CD53B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Velvet;
-			targetProxy = D03FD99114C3AA540062B7A3 /* PBXContainerItemProxy */;
+			targetProxy = D040D80714C5861100CD53B3 /* PBXContainerItemProxy */;
 		};
-		D0BA27E314BE4CA900005386 /* PBXTargetDependency */ = {
+		D040D80B14C5861800CD53B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Velvet;
-			targetProxy = D0BA27E214BE4CA900005386 /* PBXContainerItemProxy */;
+			targetProxy = D040D80A14C5861800CD53B3 /* PBXContainerItemProxy */;
 		};
-		D0BA27E514BE4CB100005386 /* PBXTargetDependency */ = {
+		D040D80E14C5861F00CD53B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Velvet;
-			targetProxy = D0BA27E414BE4CB100005386 /* PBXContainerItemProxy */;
-		};
-		D0BA27E714BE4CB400005386 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Velvet;
-			targetProxy = D0BA27E614BE4CB400005386 /* PBXContainerItemProxy */;
-		};
-		D0BA29CE14BE5FC200005386 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Proton Mac";
-			targetProxy = D0BA29CD14BE5FC200005386 /* PBXContainerItemProxy */;
-		};
-		D0BA2A6214BE69B300005386 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Proton Mac";
-			targetProxy = D0BA2A6114BE69B300005386 /* PBXContainerItemProxy */;
-		};
-		D0BA2A6514BE69BB00005386 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Proton Mac";
-			targetProxy = D0BA2A6414BE69BB00005386 /* PBXContainerItemProxy */;
+			targetProxy = D040D80D14C5861F00CD53B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
