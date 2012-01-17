@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0B8DDBD14BEDF040039358E /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0B8DDB714BEDEF70039358E /* Velvet.framework */; };
-		D0B8DDBE14BEDF090039358E /* Velvet.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D0B8DDB714BEDEF70039358E /* Velvet.framework */; };
+		D040D85C14C5879200CD53B3 /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D84B14C5878400CD53B3 /* TwUI.framework */; };
+		D040D85D14C5879200CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D85514C5878400CD53B3 /* Velvet.framework */; };
+		D040D85E14C5879900CD53B3 /* TwUI.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D040D84B14C5878400CD53B3 /* TwUI.framework */; };
+		D040D85F14C5879900CD53B3 /* Velvet.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D040D85514C5878400CD53B3 /* Velvet.framework */; };
 		D0B8DDCC14BEE37B0039358E /* large-image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D0B8DDCB14BEE37B0039358E /* large-image.jpeg */; };
 		D0BA28F714BE568400005386 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA28F614BE568400005386 /* Cocoa.framework */; };
 		D0BA290114BE568400005386 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0BA28FF14BE568400005386 /* InfoPlist.strings */; };
@@ -16,63 +18,61 @@
 		D0BA290714BE568400005386 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D0BA290514BE568400005386 /* Credits.rtf */; };
 		D0BA290A14BE568400005386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA290914BE568400005386 /* AppDelegate.m */; };
 		D0BA290D14BE568400005386 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0BA290B14BE568400005386 /* MainMenu.xib */; };
-		D0BA294414BE575E00005386 /* TwUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA293214BE56E800005386 /* TwUI.framework */; };
-		D0BA29A314BE58DF00005386 /* TwUI.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D0BA293214BE56E800005386 /* TwUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D0B8DDB614BEDEF70039358E /* PBXContainerItemProxy */ = {
+		D040D84A14C5878400CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0EFFC01147851A80095AB35;
-			remoteInfo = Velvet;
-		};
-		D0B8DDB814BEDEF70039358E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D0EFFC19147851A80095AB35;
-			remoteInfo = VelvetTests;
-		};
-		D0B8DDBB14BEDF020039358E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D0EFFC00147851A80095AB35;
-			remoteInfo = Velvet;
-		};
-		D0BA293114BE56E800005386 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
+			containerPortal = D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = CB5B264C13BE6DA200579B1E;
 			remoteInfo = TwUI;
 		};
-		D0BA293314BE56E800005386 /* PBXContainerItemProxy */ = {
+		D040D84C14C5878400CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
+			containerPortal = D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = CB5E321813BE7098004B7899;
 			remoteInfo = "Dynamic Library";
 		};
-		D0BA293514BE56E800005386 /* PBXContainerItemProxy */ = {
+		D040D84E14C5878400CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
+			containerPortal = D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5EE983B713BE7809005F430D;
 			remoteInfo = "Static Library";
 		};
-		D0BA293714BE56E800005386 /* PBXContainerItemProxy */ = {
+		D040D85014C5878400CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
+			containerPortal = D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = CB5B266113BE6DA300579B1E;
 			remoteInfo = Tests;
 		};
-		D0BA294214BE575600005386 /* PBXContainerItemProxy */ = {
+		D040D85414C5878400CD53B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
+			containerPortal = D040D83914C5878300CD53B3 /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC01147851A80095AB35;
+			remoteInfo = Velvet;
+		};
+		D040D85614C5878400CD53B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D040D83914C5878300CD53B3 /* Velvet.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D0EFFC19147851A80095AB35;
+			remoteInfo = VelvetTests;
+		};
+		D040D85814C5878F00CD53B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D040D83914C5878300CD53B3 /* Velvet.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D0EFFC00147851A80095AB35;
+			remoteInfo = Velvet;
+		};
+		D040D85A14C5878F00CD53B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = CB5B264B13BE6DA200579B1E;
 			remoteInfo = TwUI;
@@ -86,8 +86,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D0B8DDBE14BEDF090039358E /* Velvet.framework in Copy Frameworks */,
-				D0BA29A314BE58DF00005386 /* TwUI.framework in Copy Frameworks */,
+				D040D85E14C5879900CD53B3 /* TwUI.framework in Copy Frameworks */,
+				D040D85F14C5879900CD53B3 /* Velvet.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,7 +95,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = ../Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
+		D040D83914C5878300CD53B3 /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = ../../lib/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
+		D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TwUI.xcodeproj; path = ../../TwUI.xcodeproj; sourceTree = "<group>"; };
+		D040D87414C587B200CD53B3 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D040D87614C587B200CD53B3 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D040D87714C587B200CD53B3 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D040D87814C587B200CD53B3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D040D87A14C587B200CD53B3 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D040D87B14C587B200CD53B3 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D040D87D14C587B200CD53B3 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D040D87E14C587B200CD53B3 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D040D87F14C587B200CD53B3 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D040D88114C587B200CD53B3 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D040D88214C587B200CD53B3 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D040D88314C587B200CD53B3 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D040D88414C587B200CD53B3 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D040D88514C587B200CD53B3 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D040D88614C587B200CD53B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D0B8DDCB14BEE37B0039358E /* large-image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "large-image.jpeg"; path = "../../ExampleProject/ConcordeExample/large-image.jpeg"; sourceTree = "<group>"; };
 		D0BA28F214BE568400005386 /* VelvetBridgeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VelvetBridgeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BA28F614BE568400005386 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -110,22 +126,6 @@
 		D0BA290814BE568400005386 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D0BA290914BE568400005386 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D0BA290C14BE568400005386 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		D0BA291514BE56BB00005386 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		D0BA291714BE56BB00005386 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		D0BA291814BE56BB00005386 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
-		D0BA291914BE56BB00005386 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		D0BA291B14BE56BB00005386 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
-		D0BA291C14BE56BB00005386 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
-		D0BA291E14BE56BB00005386 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
-		D0BA291F14BE56BB00005386 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
-		D0BA292014BE56BB00005386 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
-		D0BA292314BE56BB00005386 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
-		D0BA292414BE56BB00005386 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0BA292514BE56BB00005386 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
-		D0BA292614BE56BB00005386 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0BA292714BE56BB00005386 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		D0BA292A14BE56E800005386 /* TwUI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TwUI.xcodeproj; path = ../TwUI.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B8DDBD14BEDF040039358E /* Velvet.framework in Frameworks */,
-				D0BA294414BE575E00005386 /* TwUI.framework in Frameworks */,
+				D040D85C14C5879200CD53B3 /* TwUI.framework in Frameworks */,
+				D040D85D14C5879200CD53B3 /* Velvet.framework in Frameworks */,
 				D0BA28F714BE568400005386 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,20 +142,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D0B8DDAF14BEDEF70039358E /* Products */ = {
+		D040D83A14C5878300CD53B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D0B8DDB714BEDEF70039358E /* Velvet.framework */,
-				D0B8DDB914BEDEF70039358E /* VelvetTests.octest */,
+				D040D85514C5878400CD53B3 /* Velvet.framework */,
+				D040D85714C5878400CD53B3 /* VelvetTests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D040D83D14C5878300CD53B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D040D84B14C5878400CD53B3 /* TwUI.framework */,
+				D040D84D14C5878400CD53B3 /* libtwui.dylib */,
+				D040D84F14C5878400CD53B3 /* libtwui.a */,
+				D040D85114C5878400CD53B3 /* Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D040D87214C587B200CD53B3 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D040D87314C587B200CD53B3 /* Base */,
+				D040D87C14C587B200CD53B3 /* iOS */,
+				D040D88014C587B200CD53B3 /* Mac OS X */,
+				D040D88614C587B200CD53B3 /* README.md */,
+			);
+			name = Configuration;
+			path = ../../lib/Velvet/Configuration;
+			sourceTree = "<group>";
+		};
+		D040D87314C587B200CD53B3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D040D87414C587B200CD53B3 /* Common.xcconfig */,
+				D040D87514C587B200CD53B3 /* Configurations */,
+				D040D87914C587B200CD53B3 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D040D87514C587B200CD53B3 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D040D87614C587B200CD53B3 /* Debug.xcconfig */,
+				D040D87714C587B200CD53B3 /* Profile.xcconfig */,
+				D040D87814C587B200CD53B3 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D040D87914C587B200CD53B3 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D040D87A14C587B200CD53B3 /* Application.xcconfig */,
+				D040D87B14C587B200CD53B3 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D040D87C14C587B200CD53B3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D040D87D14C587B200CD53B3 /* iOS-Application.xcconfig */,
+				D040D87E14C587B200CD53B3 /* iOS-Base.xcconfig */,
+				D040D87F14C587B200CD53B3 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D040D88014C587B200CD53B3 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D040D88114C587B200CD53B3 /* Mac-Application.xcconfig */,
+				D040D88214C587B200CD53B3 /* Mac-Base.xcconfig */,
+				D040D88314C587B200CD53B3 /* Mac-DynamicLibrary.xcconfig */,
+				D040D88414C587B200CD53B3 /* Mac-Framework.xcconfig */,
+				D040D88514C587B200CD53B3 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 		D0BA28E714BE568300005386 = {
 			isa = PBXGroup;
 			children = (
 				D0BA28FC14BE568400005386 /* VelvetBridgeDemo */,
-				D0BA291314BE56BB00005386 /* Configuration */,
+				D040D87214C587B200CD53B3 /* Configuration */,
 				D0BA28F514BE568400005386 /* Frameworks */,
 				D0BA28F314BE568400005386 /* Products */,
 			);
@@ -172,8 +246,8 @@
 		D0BA28F514BE568400005386 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0BA292A14BE56E800005386 /* TwUI.xcodeproj */,
-				D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */,
+				D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */,
+				D040D83914C5878300CD53B3 /* Velvet.xcodeproj */,
 				D0BA28F614BE568400005386 /* Cocoa.framework */,
 				D0BA28F814BE568400005386 /* Other Frameworks */,
 			);
@@ -214,80 +288,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D0BA291314BE56BB00005386 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA291414BE56BB00005386 /* Base */,
-				D0BA291D14BE56BB00005386 /* iOS */,
-				D0BA292114BE56BB00005386 /* Mac OS X */,
-				D0BA292714BE56BB00005386 /* README.md */,
-			);
-			name = Configuration;
-			path = ../Frameworks/Velvet/Frameworks/Proton/Frameworks/libextobjc/Configuration;
-			sourceTree = "<group>";
-		};
-		D0BA291414BE56BB00005386 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA291514BE56BB00005386 /* Common.xcconfig */,
-				D0BA291614BE56BB00005386 /* Configurations */,
-				D0BA291A14BE56BB00005386 /* Targets */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		D0BA291614BE56BB00005386 /* Configurations */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA291714BE56BB00005386 /* Debug.xcconfig */,
-				D0BA291814BE56BB00005386 /* Profile.xcconfig */,
-				D0BA291914BE56BB00005386 /* Release.xcconfig */,
-			);
-			path = Configurations;
-			sourceTree = "<group>";
-		};
-		D0BA291A14BE56BB00005386 /* Targets */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA291B14BE56BB00005386 /* Application.xcconfig */,
-				D0BA291C14BE56BB00005386 /* StaticLibrary.xcconfig */,
-			);
-			path = Targets;
-			sourceTree = "<group>";
-		};
-		D0BA291D14BE56BB00005386 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA291E14BE56BB00005386 /* iOS-Application.xcconfig */,
-				D0BA291F14BE56BB00005386 /* iOS-Base.xcconfig */,
-				D0BA292014BE56BB00005386 /* iOS-StaticLibrary.xcconfig */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		D0BA292114BE56BB00005386 /* Mac OS X */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */,
-				D0BA292314BE56BB00005386 /* Mac-Base.xcconfig */,
-				D0BA292414BE56BB00005386 /* Mac-DynamicLibrary.xcconfig */,
-				D0BA292514BE56BB00005386 /* Mac-Framework.xcconfig */,
-				D0BA292614BE56BB00005386 /* Mac-StaticLibrary.xcconfig */,
-			);
-			path = "Mac OS X";
-			sourceTree = "<group>";
-		};
-		D0BA292B14BE56E800005386 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D0BA293214BE56E800005386 /* TwUI.framework */,
-				D0BA293414BE56E800005386 /* libtwui.dylib */,
-				D0BA293614BE56E800005386 /* libtwui.a */,
-				D0BA293814BE56E800005386 /* Tests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,8 +303,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				D0B8DDBC14BEDF020039358E /* PBXTargetDependency */,
-				D0BA294314BE575600005386 /* PBXTargetDependency */,
+				D040D85914C5878F00CD53B3 /* PBXTargetDependency */,
+				D040D85B14C5878F00CD53B3 /* PBXTargetDependency */,
 			);
 			name = VelvetBridgeDemo;
 			productName = VelvetBridgeDemo;
@@ -332,12 +332,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D0BA292B14BE56E800005386 /* Products */;
-					ProjectRef = D0BA292A14BE56E800005386 /* TwUI.xcodeproj */;
+					ProductGroup = D040D83D14C5878300CD53B3 /* Products */;
+					ProjectRef = D040D83C14C5878300CD53B3 /* TwUI.xcodeproj */;
 				},
 				{
-					ProductGroup = D0B8DDAF14BEDEF70039358E /* Products */;
-					ProjectRef = D0B8DDAE14BEDEF70039358E /* Velvet.xcodeproj */;
+					ProductGroup = D040D83A14C5878300CD53B3 /* Products */;
+					ProjectRef = D040D83914C5878300CD53B3 /* Velvet.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -348,46 +348,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D0B8DDB714BEDEF70039358E /* Velvet.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Velvet.framework;
-			remoteRef = D0B8DDB614BEDEF70039358E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D0B8DDB914BEDEF70039358E /* VelvetTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = VelvetTests.octest;
-			remoteRef = D0B8DDB814BEDEF70039358E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D0BA293214BE56E800005386 /* TwUI.framework */ = {
+		D040D84B14C5878400CD53B3 /* TwUI.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = TwUI.framework;
-			remoteRef = D0BA293114BE56E800005386 /* PBXContainerItemProxy */;
+			remoteRef = D040D84A14C5878400CD53B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D0BA293414BE56E800005386 /* libtwui.dylib */ = {
+		D040D84D14C5878400CD53B3 /* libtwui.dylib */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.dylib";
 			path = libtwui.dylib;
-			remoteRef = D0BA293314BE56E800005386 /* PBXContainerItemProxy */;
+			remoteRef = D040D84C14C5878400CD53B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D0BA293614BE56E800005386 /* libtwui.a */ = {
+		D040D84F14C5878400CD53B3 /* libtwui.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libtwui.a;
-			remoteRef = D0BA293514BE56E800005386 /* PBXContainerItemProxy */;
+			remoteRef = D040D84E14C5878400CD53B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D0BA293814BE56E800005386 /* Tests.octest */ = {
+		D040D85114C5878400CD53B3 /* Tests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = Tests.octest;
-			remoteRef = D0BA293714BE56E800005386 /* PBXContainerItemProxy */;
+			remoteRef = D040D85014C5878400CD53B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D040D85514C5878400CD53B3 /* Velvet.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Velvet.framework;
+			remoteRef = D040D85414C5878400CD53B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D040D85714C5878400CD53B3 /* VelvetTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = VelvetTests.octest;
+			remoteRef = D040D85614C5878400CD53B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -419,15 +419,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D0B8DDBC14BEDF020039358E /* PBXTargetDependency */ = {
+		D040D85914C5878F00CD53B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Velvet;
-			targetProxy = D0B8DDBB14BEDF020039358E /* PBXContainerItemProxy */;
+			targetProxy = D040D85814C5878F00CD53B3 /* PBXContainerItemProxy */;
 		};
-		D0BA294314BE575600005386 /* PBXTargetDependency */ = {
+		D040D85B14C5878F00CD53B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TwUI;
-			targetProxy = D0BA294214BE575600005386 /* PBXContainerItemProxy */;
+			targetProxy = D040D85A14C5878F00CD53B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -461,7 +461,7 @@
 /* Begin XCBuildConfiguration section */
 		D0BA290E14BE568400005386 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0BA291714BE56BB00005386 /* Debug.xcconfig */;
+			baseConfigurationReference = D040D87614C587B200CD53B3 /* Debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -472,7 +472,7 @@
 		};
 		D0BA290F14BE568400005386 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0BA291914BE56BB00005386 /* Release.xcconfig */;
+			baseConfigurationReference = D040D87814C587B200CD53B3 /* Release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -483,7 +483,7 @@
 		};
 		D0BA291114BE568400005386 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D040D88114C587B200CD53B3 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
 				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
@@ -494,7 +494,7 @@
 		};
 		D0BA291214BE568400005386 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D040D88114C587B200CD53B3 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
 				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
@@ -505,7 +505,7 @@
 		};
 		D0BA292814BE56C000005386 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0BA291814BE56BB00005386 /* Profile.xcconfig */;
+			baseConfigurationReference = D040D87714C587B200CD53B3 /* Profile.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -516,7 +516,7 @@
 		};
 		D0BA292914BE56C000005386 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0BA292214BE56BB00005386 /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D040D88114C587B200CD53B3 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "VelvetBridgeDemo/VelvetBridgeDemo-Prefix.pch";
 				INFOPLIST_FILE = "VelvetBridgeDemo/VelvetBridgeDemo-Info.plist";
