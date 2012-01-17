@@ -526,22 +526,22 @@
 		D03FD99B14C3AB690062B7A3 /* TUIViewAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIViewAdditionsTests.m; sourceTree = "<group>"; };
 		D03FD99D14C3AB860062B7A3 /* VELTUIViewTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VELTUIViewTests.h; sourceTree = "<group>"; };
 		D03FD99E14C3AB860062B7A3 /* VELTUIViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VELTUIViewTests.m; sourceTree = "<group>"; };
+		D040D7E214C585C300CD53B3 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D040D7E414C585C300CD53B3 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D040D7E514C585C300CD53B3 /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D040D7E614C585C300CD53B3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D040D7E814C585C300CD53B3 /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D040D7E914C585C300CD53B3 /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D040D7EB14C585C300CD53B3 /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D040D7EC14C585C300CD53B3 /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D040D7ED14C585C300CD53B3 /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D040D7EF14C585C300CD53B3 /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D040D7F014C585C300CD53B3 /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D040D7F114C585C300CD53B3 /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D040D7F214C585C300CD53B3 /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D040D7F314C585C300CD53B3 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D040D7F414C585C300CD53B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D0884F3A14BE4BFC007FC13F /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = Frameworks/Velvet/Frameworks/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
-		D0884F5014BE4C1C007FC13F /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
-		D0884F5214BE4C1C007FC13F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		D0884F5314BE4C1C007FC13F /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
-		D0884F5414BE4C1C007FC13F /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		D0884F5614BE4C1C007FC13F /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
-		D0884F5714BE4C1C007FC13F /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
-		D0884F5914BE4C1C007FC13F /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
-		D0884F5A14BE4C1C007FC13F /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
-		D0884F5B14BE4C1C007FC13F /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
-		D0884F5E14BE4C1C007FC13F /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
-		D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
-		D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
-		D0884F6214BE4C1C007FC13F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D0B8DFE7148B314700F611CA /* TUIVelvetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVelvetView.h; sourceTree = "<group>"; };
 		D0B8DFE8148B314700F611CA /* TUIVelvetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVelvetView.m; sourceTree = "<group>"; };
 		D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TUIView+VELBridgedViewAdditions.h"; sourceTree = "<group>"; };
@@ -610,8 +610,8 @@
 				CBB74C3713BE6E0200C85CB5 /* Source */,
 				CB5B265513BE6DA200579B1E /* Resources */,
 				CB5B266813BE6DA300579B1E /* TwUITests */,
-				D0884F4E14BE4C1C007FC13F /* Configuration */,
 				CB5B264E13BE6DA200579B1E /* Frameworks */,
+				D040D7E014C585C300CD53B3 /* Configuration */,
 				CB5B264D13BE6DA200579B1E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -831,6 +831,69 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		D040D7E014C585C300CD53B3 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D040D7E114C585C300CD53B3 /* Base */,
+				D040D7EA14C585C300CD53B3 /* iOS */,
+				D040D7EE14C585C300CD53B3 /* Mac OS X */,
+				D040D7F414C585C300CD53B3 /* README.md */,
+			);
+			name = Configuration;
+			path = lib/Velvet/Configuration;
+			sourceTree = "<group>";
+		};
+		D040D7E114C585C300CD53B3 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D040D7E214C585C300CD53B3 /* Common.xcconfig */,
+				D040D7E314C585C300CD53B3 /* Configurations */,
+				D040D7E714C585C300CD53B3 /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D040D7E314C585C300CD53B3 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D040D7E414C585C300CD53B3 /* Debug.xcconfig */,
+				D040D7E514C585C300CD53B3 /* Profile.xcconfig */,
+				D040D7E614C585C300CD53B3 /* Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D040D7E714C585C300CD53B3 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D040D7E814C585C300CD53B3 /* Application.xcconfig */,
+				D040D7E914C585C300CD53B3 /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D040D7EA14C585C300CD53B3 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D040D7EB14C585C300CD53B3 /* iOS-Application.xcconfig */,
+				D040D7EC14C585C300CD53B3 /* iOS-Base.xcconfig */,
+				D040D7ED14C585C300CD53B3 /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D040D7EE14C585C300CD53B3 /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D040D7EF14C585C300CD53B3 /* Mac-Application.xcconfig */,
+				D040D7F014C585C300CD53B3 /* Mac-Base.xcconfig */,
+				D040D7F114C585C300CD53B3 /* Mac-DynamicLibrary.xcconfig */,
+				D040D7F214C585C300CD53B3 /* Mac-Framework.xcconfig */,
+				D040D7F314C585C300CD53B3 /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
 		D0884F3B14BE4BFC007FC13F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,69 +901,6 @@
 				D0884F4914BE4BFC007FC13F /* VelvetTests.octest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D0884F4E14BE4C1C007FC13F /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				D0884F4F14BE4C1C007FC13F /* Base */,
-				D0884F5814BE4C1C007FC13F /* iOS */,
-				D0884F5C14BE4C1C007FC13F /* Mac OS X */,
-				D0884F6214BE4C1C007FC13F /* README.md */,
-			);
-			name = Configuration;
-			path = Frameworks/Velvet/Frameworks/Proton/Frameworks/libextobjc/Configuration;
-			sourceTree = "<group>";
-		};
-		D0884F4F14BE4C1C007FC13F /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				D0884F5014BE4C1C007FC13F /* Common.xcconfig */,
-				D0884F5114BE4C1C007FC13F /* Configurations */,
-				D0884F5514BE4C1C007FC13F /* Targets */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		D0884F5114BE4C1C007FC13F /* Configurations */ = {
-			isa = PBXGroup;
-			children = (
-				D0884F5214BE4C1C007FC13F /* Debug.xcconfig */,
-				D0884F5314BE4C1C007FC13F /* Profile.xcconfig */,
-				D0884F5414BE4C1C007FC13F /* Release.xcconfig */,
-			);
-			path = Configurations;
-			sourceTree = "<group>";
-		};
-		D0884F5514BE4C1C007FC13F /* Targets */ = {
-			isa = PBXGroup;
-			children = (
-				D0884F5614BE4C1C007FC13F /* Application.xcconfig */,
-				D0884F5714BE4C1C007FC13F /* StaticLibrary.xcconfig */,
-			);
-			path = Targets;
-			sourceTree = "<group>";
-		};
-		D0884F5814BE4C1C007FC13F /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D0884F5914BE4C1C007FC13F /* iOS-Application.xcconfig */,
-				D0884F5A14BE4C1C007FC13F /* iOS-Base.xcconfig */,
-				D0884F5B14BE4C1C007FC13F /* iOS-StaticLibrary.xcconfig */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
-		D0884F5C14BE4C1C007FC13F /* Mac OS X */ = {
-			isa = PBXGroup;
-			children = (
-				D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */,
-				D0884F5E14BE4C1C007FC13F /* Mac-Base.xcconfig */,
-				D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */,
-				D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */,
-				D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */,
-			);
-			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
 		D0BA29BF14BE5FBE00005386 /* Products */ = {
@@ -1511,7 +1511,7 @@
 /* Begin XCBuildConfiguration section */
 		5EE983BD13BE7809005F430D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D040D7F314C585C300CD53B3 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1520,7 +1520,7 @@
 		};
 		5EE983BE13BE7809005F430D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D040D7F314C585C300CD53B3 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1529,7 +1529,7 @@
 		};
 		CB5B267213BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5214BE4C1C007FC13F /* Debug.xcconfig */;
+			baseConfigurationReference = D040D7E414C585C300CD53B3 /* Debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1550,7 +1550,7 @@
 		};
 		CB5B267313BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5414BE4C1C007FC13F /* Release.xcconfig */;
+			baseConfigurationReference = D040D7E614C585C300CD53B3 /* Release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1571,7 +1571,7 @@
 		};
 		CB5B267513BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */;
+			baseConfigurationReference = D040D7F214C585C300CD53B3 /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1586,7 +1586,7 @@
 		};
 		CB5B267613BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */;
+			baseConfigurationReference = D040D7F214C585C300CD53B3 /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1601,7 +1601,7 @@
 		};
 		CB5B267813BE6DA300579B1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D040D7EF14C585C300CD53B3 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1613,7 +1613,7 @@
 		};
 		CB5B267913BE6DA300579B1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D040D7EF14C585C300CD53B3 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1625,7 +1625,7 @@
 		};
 		CB5E321913BE7099004B7899 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */;
+			baseConfigurationReference = D040D7F114C585C300CD53B3 /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
@@ -1635,7 +1635,7 @@
 		};
 		CB5E321A13BE7099004B7899 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */;
+			baseConfigurationReference = D040D7F114C585C300CD53B3 /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
@@ -1645,7 +1645,7 @@
 		};
 		D0B5CF21148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5314BE4C1C007FC13F /* Profile.xcconfig */;
+			baseConfigurationReference = D040D7E514C585C300CD53B3 /* Profile.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1666,7 +1666,7 @@
 		};
 		D0B5CF22148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F6014BE4C1C007FC13F /* Mac-Framework.xcconfig */;
+			baseConfigurationReference = D040D7F214C585C300CD53B3 /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
@@ -1681,7 +1681,7 @@
 		};
 		D0B5CF23148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5F14BE4C1C007FC13F /* Mac-DynamicLibrary.xcconfig */;
+			baseConfigurationReference = D040D7F114C585C300CD53B3 /* Mac-DynamicLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
@@ -1691,7 +1691,7 @@
 		};
 		D0B5CF24148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F6114BE4C1C007FC13F /* Mac-StaticLibrary.xcconfig */;
+			baseConfigurationReference = D040D7F314C585C300CD53B3 /* Mac-StaticLibrary.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
 				PRODUCT_NAME = twui;
@@ -1700,7 +1700,7 @@
 		};
 		D0B5CF25148B293600989BE2 /* Profile */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0884F5D14BE4C1C007FC13F /* Mac-Application.xcconfig */;
+			baseConfigurationReference = D040D7EF14C585C300CD53B3 /* Mac-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PREFIX_HEADER = "Resources/TwUI-Prefix.pch";
