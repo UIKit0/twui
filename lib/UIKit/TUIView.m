@@ -100,6 +100,8 @@ CGRect(^TUIViewCenteredLayout)(TUIView*) = nil;
 
 - (void)dealloc
 {
+	_layer.delegate = nil;
+
 	[self setTextRenderers:nil];
 	if(_context.context) {
 		CGContextRelease(_context.context);
