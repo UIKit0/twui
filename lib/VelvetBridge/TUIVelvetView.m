@@ -86,8 +86,8 @@
 }
 
 - (TUIView *)hitTest:(CGPoint)point withEvent:(id)event {
-    // don't catch TwUI events on this view
-    return nil;
+    // Don't recurse into subviews since TUIVelvetView is meant to host VELViews.
+    return CGRectContainsPoint(self.bounds, point) ? self : nil;
 }
 
 #pragma mark NSObject overrides
