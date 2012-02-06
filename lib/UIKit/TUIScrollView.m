@@ -285,6 +285,7 @@ enum {
 	CGSize s = _contentSize;
 	
 	s.height += _contentInset.top;
+	s.width += _contentInset.left;
 	
 	CGFloat mx = offset.x + s.width;
 	if(s.width > b.size.width) {
@@ -295,12 +296,7 @@ enum {
 			offset.x = 0.0;
 		}
 	} else {
-		if(mx > b.size.width) {
-			offset.x = b.size.width - s.width;
-		}
-		if(offset.x < 0.0) {
-			offset.x = 0.0;
-		}
+		offset.x = b.size.width - s.width;
 	}
 
 	CGFloat my = offset.y + s.height;
@@ -312,17 +308,7 @@ enum {
 			offset.y = 0.0;
 		}
 	} else { // content smaller than bounds
-		if(0) { // let it move around in bounds
-			if(my > b.size.height) {
-				offset.y = b.size.height - s.height;
-			}
-			if(offset.y < 0.0) {
-				offset.y = 0.0;
-			}
-		}
-		if(1) { // pin to top
-			offset.y = b.size.height - s.height;
-		}
+		offset.y = b.size.height - s.height;
 	}
 	
 	return offset;
