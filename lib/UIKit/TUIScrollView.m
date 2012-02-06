@@ -296,7 +296,7 @@ enum {
 			offset.x = 0.0;
 		}
 	} else {
-		offset.x = b.size.width - s.width;
+		offset.x = _contentInset.left;
 	}
 
 	CGFloat my = offset.y + s.height;
