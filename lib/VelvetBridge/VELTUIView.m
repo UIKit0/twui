@@ -17,22 +17,24 @@
 @synthesize guestView = m_guestView;
 
 - (void)setGuestView:(TUIView *)view {
-    [m_guestView.layer removeFromSuperlayer];
-    m_guestView.nsView = nil;
-    m_guestView.hostView = nil;
+    [CATransaction performWithDisabledActions:^{
+        [m_guestView.layer removeFromSuperlayer];
+        m_guestView.nsView = nil;
+        m_guestView.hostView = nil;
 
-    m_guestView = view;
+        m_guestView = view;
 
-    if (m_guestView) {
-        m_guestView.frame = self.bounds;
-        m_guestView.layer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
+        if (m_guestView) {
+            m_guestView.frame = self.bounds;
+            m_guestView.layer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
 
-        m_guestView.nsView = self.ancestorNSVelvetView;
-        m_guestView.nextResponder = self;
+            m_guestView.nsView = self.ancestorNSVelvetView;
+            m_guestView.nextResponder = self;
 
-        [self.layer addSublayer:m_guestView.layer];
-        m_guestView.hostView = self;
-    }
+            [self.layer addSublayer:m_guestView.layer];
+            m_guestView.hostView = self;
+        }
+    }];
 }
 
 #pragma mark Lifecycle
