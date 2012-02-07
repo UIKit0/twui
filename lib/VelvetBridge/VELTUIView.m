@@ -90,6 +90,11 @@
     [self.guestView willMoveToNSVelvetView:view];
 }
 
+- (void)viewHierarchyDidChange; {
+    [super viewHierarchyDidChange];
+    [self.guestView viewHierarchyDidChange];
+}
+
 #pragma mark NSObject overrides
 
 - (NSString *)description {
