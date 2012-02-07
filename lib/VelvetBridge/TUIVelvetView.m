@@ -29,18 +29,20 @@
 }
 
 - (void)setGuestView:(VELView *)guestView {
-    [m_guestView.layer removeFromSuperlayer];
-    m_guestView.hostView = nil;
+    [CATransaction performWithDisabledActions:^{
+        [m_guestView.layer removeFromSuperlayer];
+        m_guestView.hostView = nil;
 
-    m_guestView = guestView;
+        m_guestView = guestView;
 
-    if (m_guestView) {
-        m_guestView.frame = self.bounds;
-        m_guestView.layer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
+        if (m_guestView) {
+            m_guestView.frame = self.bounds;
+            m_guestView.layer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
 
-        [self.layer addSublayer:m_guestView.layer];
-        m_guestView.hostView = self;
-    }
+            [self.layer addSublayer:m_guestView.layer];
+            m_guestView.hostView = self;
+        }
+    }];
 }
 
 #pragma mark Lifecycle
