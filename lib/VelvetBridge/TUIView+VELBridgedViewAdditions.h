@@ -14,15 +14,4 @@
  * necessary to bridge with Velvet.
  */
 @interface TUIView (VELBridgedViewAdditions) <VELBridgedView>
-
-/*
- * Invoked any time an ancestor of the receiver has relaid itself out,
- * potentially moving or clipping the receiver relative to one of its ancestor
- * views.
- *
- * The default implementation forwards the message to all subviews.
- */
-// TODO: should this be moved into VELBridgedView proper?
-- (void)ancestorDidLayout;
-
 @end
