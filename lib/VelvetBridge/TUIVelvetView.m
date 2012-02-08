@@ -77,6 +77,11 @@
     [self.guestView willMoveToNSVelvetView:view];
 }
 
+- (void)viewHierarchyDidChange; {
+    [super viewHierarchyDidChange];
+    [self.guestView viewHierarchyDidChange];
+}
+
 #pragma mark Event handling
 
 - (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point {
