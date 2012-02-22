@@ -82,7 +82,7 @@
 
 - (id<VELBridgedView>)descendantViewAtPoint:(NSPoint)point {
     // Clip to self
-    if (!self.userInteractionEnabled || self.hidden || ![self pointInside:point] || self.alpha <= 0.01f)
+    if (!self.userInteractionEnabled || self.hidden || ![self pointInside:point] || self.alpha <= 0.0f)
         return nil;
 
     __block id<VELBridgedView> result = self;
