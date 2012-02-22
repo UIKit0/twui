@@ -36,10 +36,10 @@
         return [self.layer convertPoint:pointInHostView fromLayer:self.hostView.layer];
     }
 
-	CGRect hostViewFrame = self.frameInNSView;
+    CGRect hostViewFrame = self.frameInNSView;
 
-	CGPoint pointInHostView = [self.nsView convertPoint:point fromView:nil];
-	return CGPointMake(pointInHostView.x - hostViewFrame.origin.x, pointInHostView.y - hostViewFrame.origin.y);
+    CGPoint pointInHostView = [self.nsView convertPoint:point fromView:nil];
+    return CGPointMake(pointInHostView.x - hostViewFrame.origin.x, pointInHostView.y - hostViewFrame.origin.y);
 }
 
 - (CGPoint)convertToWindowPoint:(CGPoint)point; {
@@ -48,7 +48,7 @@
         return [self.hostView convertToWindowPoint:pointInHostView];
     }
 
-	CGRect hostViewFrame = self.frameInNSView;
+    CGRect hostViewFrame = self.frameInNSView;
 
     CGPoint pointInHostView = CGPointMake(point.x + hostViewFrame.origin.x, point.y + hostViewFrame.origin.y);
     return [self.nsView convertPoint:pointInHostView toView:nil];
@@ -60,10 +60,10 @@
         return [self.layer convertRect:rectInHostView fromLayer:self.hostView.layer];
     }
 
-	CGRect hostViewFrame = self.frameInNSView;
+    CGRect hostViewFrame = self.frameInNSView;
 
-	CGRect rectInHostView = [self.nsView convertRect:rect fromView:nil];
-	return CGRectOffset(rectInHostView, -hostViewFrame.origin.x, -hostViewFrame.origin.y);
+    CGRect rectInHostView = [self.nsView convertRect:rect fromView:nil];
+    return CGRectOffset(rectInHostView, -hostViewFrame.origin.x, -hostViewFrame.origin.y);
 }
 
 - (CGRect)convertToWindowRect:(CGRect)rect; {
@@ -72,7 +72,7 @@
         return [self.hostView convertToWindowRect:rectInHostView];
     }
 
-	CGRect hostViewFrame = self.frameInNSView;
+    CGRect hostViewFrame = self.frameInNSView;
 
     CGRect rectInHostView = CGRectOffset(rect, hostViewFrame.origin.x, hostViewFrame.origin.y);
     return [self.nsView convertRect:rectInHostView toView:nil];
@@ -80,15 +80,26 @@
 
 #pragma mark Hit testing
 
-- (id<VELBridgedView>)descendantViewAtPoint:(CGPoint)point; {
-    id hitView = [self hitTest:point withEvent:nil];
+- (id<VELBridgedView>)descendantViewAtPoint:(NSPoint)point {
+    // Clip to self
+    if (!self.userInteractionEnabled || self.hidden || ![self pointInside:point] || self.alpha <= 0.0f)
+        return nil;
 
-    if ([hitView isKindOfClass:[TUIVelvetView class]]) {
-        CGPoint descendantPoint = [self convertPoint:point toView:hitView];
-        return [hitView descendantViewAtPoint:descendantPoint];
-    }
+    __block id<VELBridgedView> result = self;
 
-    return hitView;
+    [self.subviews
+        enumerateObjectsWithOptions:NSEnumerationReverse
+        usingBlock:^(TUIView *view, NSUInteger index, BOOL *stop){
+            CGPoint subviewPoint = [view convertPoint:point fromView:self];
+
+            id<VELBridgedView> hitTestedView = [view descendantViewAtPoint:subviewPoint];
+            if (hitTestedView) {
+                result = hitTestedView;
+                *stop = YES;
+            }
+    }];
+
+    return result;
 }
 
 - (BOOL)pointInside:(CGPoint)point; {
