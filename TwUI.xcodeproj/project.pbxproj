@@ -264,6 +264,12 @@
 		D040D80C14C5861C00CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
 		D040D80F14C5862200CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
 		D040D81014C5862900CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
+		D08B7C8014FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D08B7C8114FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D08B7C8214FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D08B7C8314FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */; };
+		D08B7C8414FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */; };
+		D08B7C8514FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */; };
 		D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -475,6 +481,8 @@
 		D040D7F314C585C300CD53B3 /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D040D7F414C585C300CD53B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D040D7FB14C5860900CD53B3 /* Velvet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Velvet.xcodeproj; path = lib/Velvet/Velvet.xcodeproj; sourceTree = "<group>"; };
+		D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TUIScrollView+VELScrollViewAdditions.h"; sourceTree = "<group>"; };
+		D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TUIScrollView+VELScrollViewAdditions.m"; sourceTree = "<group>"; };
 		D0B8DFE7148B314700F611CA /* TUIVelvetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIVelvetView.h; sourceTree = "<group>"; };
 		D0B8DFE8148B314700F611CA /* TUIVelvetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIVelvetView.m; sourceTree = "<group>"; };
 		D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TUIView+VELBridgedViewAdditions.h"; sourceTree = "<group>"; };
@@ -835,6 +843,8 @@
 			children = (
 				D0F5C0B014BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h */,
 				D0F5C0B114BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.m */,
+				D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */,
+				D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */,
 				D0B8DFE7148B314700F611CA /* TUIVelvetView.h */,
 				D0B8DFE8148B314700F611CA /* TUIVelvetView.m */,
 				D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */,
@@ -865,6 +875,7 @@
 				D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */,
 				D0BA29A814BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */,
 				D0F5C0B414BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h in Headers */,
+				D08B7C8214FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +937,7 @@
 				D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */,
 				D0BA29A614BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */,
 				D0F5C0B214BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h in Headers */,
+				D08B7C8014FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,6 +957,7 @@
 				D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */,
 				D0BA29A714BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */,
 				D0F5C0B314BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.h in Headers */,
+				D08B7C8114FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1174,6 +1187,7 @@
 				D0B8DFEE148B314700F611CA /* TUIVelvetView.m in Sources */,
 				D0BA29AB14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */,
 				D0F5C0B714BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.m in Sources */,
+				D08B7C8514FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1240,6 +1254,7 @@
 				D0B8DFEC148B314700F611CA /* TUIVelvetView.m in Sources */,
 				D0BA29A914BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */,
 				D0F5C0B514BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.m in Sources */,
+				D08B7C8314FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1315,6 +1330,7 @@
 				D0B8DFED148B314700F611CA /* TUIVelvetView.m in Sources */,
 				D0BA29AA14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */,
 				D0F5C0B614BF991E00C66839 /* TUIScrollView+VELBridgedViewAdditions.m in Sources */,
+				D08B7C8414FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

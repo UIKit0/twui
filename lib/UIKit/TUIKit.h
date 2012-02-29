@@ -43,6 +43,7 @@
 #import "TUIViewController.h"
 
 // Velvet bridging
+#import "TUIScrollView+VELScrollViewAdditions.h"
 #import "TUIVelvetView.h"
 #import "TUIView+VELBridgedViewAdditions.h"
 #import "VELTUIView.h"
