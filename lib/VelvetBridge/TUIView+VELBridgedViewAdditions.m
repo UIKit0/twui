@@ -132,12 +132,15 @@
     return hostView.ancestorNSVelvetView;
 }
 
-- (id<VELBridgedView>)ancestorScrollView; {
+- (id<VELScrollView>)ancestorScrollView; {
+    if ([self conformsToProtocol:@protocol(VELScrollView)])
+        return (id)self;
+
     TUIView *superview = self.superview;
     if (superview)
         return superview.ancestorScrollView;
 
-    return [self.hostView ancestorScrollView];
+    return self.hostView.ancestorScrollView;
 }
 
 - (void)didMoveFromNSVelvetView:(NSVelvetView *)view; {
