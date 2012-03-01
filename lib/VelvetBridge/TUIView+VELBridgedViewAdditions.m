@@ -88,8 +88,7 @@
     __block id<VELBridgedView> result = self;
 
     [self.subviews
-        enumerateObjectsWithOptions:NSEnumerationReverse
-        usingBlock:^(TUIView *view, NSUInteger index, BOOL *stop){
+        enumerateObjectsUsingBlock:^(TUIView *view, NSUInteger index, BOOL *stop){
             CGPoint subviewPoint = [view convertPoint:point fromView:self];
 
             id<VELBridgedView> hitTestedView = [view descendantViewAtPoint:subviewPoint];
