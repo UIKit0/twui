@@ -598,6 +598,9 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 		self.nsView = nil;
 
 		[self didMoveToSuperview];
+
+        // Velvet change
+        [self viewHierarchyDidChange];
 	}
 }
 
@@ -668,6 +671,8 @@ else CGContextSetRGBFillColor(context, 1, 0, 0, 0.3); CGContextFillRect(context,
 	[self didAddSubview:view]; \
 	[view didMoveToSuperview]; \
 	[view setNextResponder:self]; \
+    /* Velvet change */ \
+    [view viewHierarchyDidChange]; \
 	[self _blockLayout];
 
 - (void)addSubview:(TUIView *)view // everything should go through this

@@ -117,6 +117,8 @@
 
 - (void)setHostView:(id<VELHostView>)hostView {
     objc_setAssociatedObject(self, @selector(hostView), hostView, OBJC_ASSOCIATION_ASSIGN);
+
+    [self viewHierarchyDidChange];
 }
 
 - (void)ancestorDidLayout; {
