@@ -16,24 +16,31 @@
     VELTUIView *twuiHostView = [[VELTUIView alloc] init];
     self.window.rootView = twuiHostView;
 
-    #if 0
-        twuiHostView.guestView = [[TUIView alloc] initWithFrame:twuiHostView.bounds];
+    TUIScrollView *scrollView = [[TUIScrollView alloc] initWithFrame:twuiHostView.bounds];
+    scrollView.backgroundColor = [TUIColor colorWithWhite:0.9 alpha:1.0];
+    scrollView.scrollIndicatorStyle = TUIScrollViewIndicatorStyleDark;
 
-        TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-        textView.placeholder = @"Type some text?";
-        textView.font = [TUIFont systemFontOfSize:17];
-        [twuiHostView.guestView addSubview:textView];
-    #else
-        TUIScrollView *scrollView = [[TUIScrollView alloc] initWithFrame:twuiHostView.bounds];
-        scrollView.backgroundColor = [TUIColor colorWithWhite:0.9 alpha:1.0];
-        scrollView.scrollIndicatorStyle = TUIScrollViewIndicatorStyleDark;
+    twuiHostView.guestView = scrollView;
 
-        twuiHostView.guestView = scrollView;
-    
-        TUIImageView *imageView = [[TUIImageView alloc] initWithImage:[TUIImage imageNamed:@"large-image.jpeg"]];
-        [scrollView addSubview:imageView];
-        [scrollView setContentSize:imageView.frame.size];
-    #endif
+    TUIImageView *imageView = [[TUIImageView alloc] initWithImage:[TUIImage imageNamed:@"large-image.jpeg"]];
+    [scrollView addSubview:imageView];
+    [scrollView setContentSize:imageView.frame.size];
+
+    TUITextView *textView = [[TUITextView alloc] initWithFrame:CGRectMake(100, 100, 200, 200)];
+    textView.placeholder = @"Type some text?";
+    textView.font = [TUIFont boldSystemFontOfSize:17];
+    textView.textColor = [TUIColor whiteColor];
+    [scrollView addSubview:textView];
+
+    VELClickEventRecognizer *clickRecognizer = [[VELClickEventRecognizer alloc] init];
+    clickRecognizer.numberOfClicksRequired = 2;
+    clickRecognizer.delaysEventDelivery = YES;
+    clickRecognizer.view = scrollView;
+
+    [clickRecognizer addActionUsingBlock:^(id clickRecognizer){
+        if ([clickRecognizer isActive])
+            NSLog(@"Event recognizer double-click at %@ in text view", NSStringFromPoint([clickRecognizer locationInView:textView]));
+    }];
 
     TUIVelvetView *velvetHostView = [[TUIVelvetView alloc] initWithFrame:twuiHostView.guestView.bounds];
     velvetHostView.autoresizingMask = TUIViewAutoresizingFlexibleSize;
