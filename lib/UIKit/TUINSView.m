@@ -42,6 +42,7 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignKeyNotification object:nil];
 	
 	[rootView removeFromSuperview];
+    rootView.nsView = nil;
 	rootView = nil;
 	_hoverView = nil;
 	_trackingView = nil;
@@ -192,6 +193,15 @@
 - (void)windowDidResignKey:(NSNotification *)notification
 {
 	[TUITooltipWindow endTooltip];
+}
+
+- (void)viewWillMoveToSuperview:(NSView *)newSuperview
+{
+	[super viewWillMoveToSuperview:newSuperview];
+	
+	if(newSuperview == nil) {
+		[TUITooltipWindow endTooltip];
+	}
 }
 
 - (void)_updateHoverView:(TUIView *)_newHoverView withEvent:(NSEvent *)event
