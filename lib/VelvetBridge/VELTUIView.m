@@ -61,7 +61,7 @@
     debugModeLayer.borderColor = [NSColor colorWithCalibratedRed:1 green:1 blue:0 alpha:0.75].CGColor;
     debugModeLayer.borderWidth = 3;
     debugModeLayer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
-    debugModeLayer.zPosition = CGFLOAT_MAX;
+    debugModeLayer.zPosition = 100000;
 
     m_hostViewDebugModeObserver = [[NSNotificationCenter defaultCenter]
         addObserverForName:VELHostViewDebugModeChangedNotification
