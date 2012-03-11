@@ -294,7 +294,6 @@
 		}
 		
 		CFRange selectedRange = [self _selectedRange];
-		
 		if(selectedRange.length > 0) {
 			[[NSColor selectedTextBackgroundColor] set];
 			// draw (or mask) selection
@@ -304,12 +303,7 @@
 			if(_flags.drawMaskDragSelection) {
 				CGContextClipToRects(context, rects, rectCount);
 			} else {
-				for(CFIndex i = 0; i < rectCount; ++i) {
-					CGRect r = rects[i];
-					r = CGRectIntegral(r);
-					if(r.size.width > 1)
-						CGContextFillRect(context, r);
-				}
+				[self drawSelectionWithRects:rects count:rectCount];
 			}
 		}
 		
@@ -324,6 +318,16 @@
 	}
 }
 
+- (void)drawSelectionWithRects:(CGRect *)rects count:(CFIndex)count {
+	CGContextRef context = TUIGraphicsGetCurrentContext();
+	for(CFIndex i = 0; i < count; ++i) {
+		CGRect r = rects[i];
+		r = CGRectIntegral(r);
+		if(r.size.width > 1)
+			CGContextFillRect(context, r);
+	}
+}
+
 - (CGSize)size
 {
 	if(attributedString) {
@@ -335,17 +339,12 @@
 - (CGSize)sizeConstrainedToWidth:(CGFloat)width
 {
 	if(attributedString) {
-		CTFrameRef oldCTFrame = _ct_frame != NULL ? CFRetain(_ct_frame) : NULL;
-		CGPathRef oldCGPath = _ct_path != NULL ? CGPathRetain(_ct_path) : NULL;
-		
 		CGRect oldFrame = frame;
 		self.frame = CGRectMake(0.0f, 0.0f, width, 1000000.0f);
 
 		CGSize size = [self size];
 		
-		frame = oldFrame;
-		_ct_frame = oldCTFrame;
-		_ct_path = oldCGPath;
+		self.frame = oldFrame;
 		
 		return size;
 	}

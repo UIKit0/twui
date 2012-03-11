@@ -23,11 +23,13 @@
 	NSRange markedRange;
 	NSDictionary *defaultAttributes;
 	NSDictionary *markedAttributes;
-	BOOL wasValidSelector;
 }
 
 - (NSTextInputContext *)inputContext;
 - (NSMutableAttributedString *)backingStore;
+
+// Insert the standard Cut, Copy, and Paste menu items.
+- (void)patchMenuWithStandardEditingMenuItems:(NSMenu *)menu;
 
 @property (nonatomic, copy) NSString *text;
 

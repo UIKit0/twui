@@ -87,7 +87,7 @@
 						 ABNSParagraphStyleForTextAlignment(textAlignment), NSParagraphStyleAttributeName,
 						 nil];
 	renderer.markedAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-						(id)[self.font ctFont], kCTFontAttributeName,
+						[NSFont fontWithName:self.font.fontName size:self.font.pointSize], kCTFontAttributeName, // NSFont and CTFont are toll-free bridged. *BUT* for reasons beyond my understanding, advanced input methods like Japanese and simplified Pinyin break unless this is an NSFont. So there we go.
 						[self.textColor CGColor], kCTForegroundColorAttributeName,
 						ABNSParagraphStyleForTextAlignment(textAlignment), NSParagraphStyleAttributeName,
 						nil];
@@ -351,7 +351,17 @@ static CAAnimation *ThrobAnimation()
 	NSTextCheckingType checkingTypes = NSTextCheckingTypeSpelling;
 	if(autocorrectionEnabled) checkingTypes |= NSTextCheckingTypeCorrection | NSTextCheckingTypeReplacement;
 	
-	lastCheckToken = [[NSSpellChecker sharedSpellChecker] requestCheckingOfString:self.text range:NSMakeRange(0, [self.text length]) types:checkingTypes options:nil inSpellDocumentWithTag:0 completionHandler:^(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount) {
+	NSRange wholeLineRange = NSMakeRange(0, [self.text length]);
+	lastCheckToken = [[NSSpellChecker sharedSpellChecker] requestCheckingOfString:self.text range:wholeLineRange types:checkingTypes options:nil inSpellDocumentWithTag:0 completionHandler:^(NSInteger sequenceNumber, NSArray *results, NSOrthography *orthography, NSInteger wordCount) {
+		NSRange selectionRange = [self selectedRange];
+		__block NSRange activeWordSubstringRange = NSMakeRange(0, 0);
+		[self.text enumerateSubstringsInRange:NSMakeRange(0, [self.text length]) options:NSStringEnumerationByWords | NSStringEnumerationSubstringNotRequired | NSStringEnumerationReverse | NSStringEnumerationLocalized usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
+			if(selectionRange.location >= substringRange.location && selectionRange.location <= substringRange.location + substringRange.length) {
+				activeWordSubstringRange = substringRange;
+				*stop = YES;
+			}
+		}];
+		
 		// This needs to happen on the main thread so that the user doesn't enter more text while we're changing the attributed string.
 		dispatch_async(dispatch_get_main_queue(), ^{
 			// we only care about the most recent results, ignore anything older
@@ -365,11 +375,10 @@ static CAAnimation *ThrobAnimation()
 			[[renderer backingStore] removeAttribute:(id)kCTUnderlineColorAttributeName range:wholeStringRange];
 			[[renderer backingStore] removeAttribute:(id)kCTUnderlineStyleAttributeName range:wholeStringRange];
 			
-			NSRange selectionRange = [self selectedRange];
 			NSMutableArray *autocorrectedResultsThisRound = [NSMutableArray array];
 			for(NSTextCheckingResult *result in results) {
 				// Don't check the word they're typing. It's just annoying.
-				BOOL isActiveWord = selectionRange.location - (result.range.location + result.range.length) < 1;
+				BOOL isActiveWord = NSEqualRanges(result.range, activeWordSubstringRange);
 				if(selectionRange.length == 0) {
 					if(isActiveWord) continue;
 					
@@ -456,11 +465,57 @@ static CAAnimation *ThrobAnimation()
 			[menu addItem:menuItem];
 		}
 	} else {
-		NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:@"No guesses" action:NULL keyEquivalent:@""];
+		NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"No guesses", @"") action:NULL keyEquivalent:@""];
 		[menu addItem:menuItem];
 	}
 	
-	return menu;
+	[menu addItem:[NSMenuItem separatorItem]];
+	
+	[renderer patchMenuWithStandardEditingMenuItems:menu];
+	
+	[menu addItem:[NSMenuItem separatorItem]];
+	
+	NSMenuItem *spellingAndGrammarItem = [menu addItemWithTitle:NSLocalizedString(@"Spelling and Grammar", @"") action:NULL keyEquivalent:@""];
+	NSMenu *spellingAndGrammarMenu = [[NSMenu alloc] initWithTitle:@""];
+	[spellingAndGrammarMenu addItemWithTitle:NSLocalizedString(@"Show Spelling and Grammar", @"") action:@selector(showGuessPanel:) keyEquivalent:@""];
+	[spellingAndGrammarMenu addItemWithTitle:NSLocalizedString(@"Check Document Now", @"") action:@selector(checkSpelling:) keyEquivalent:@""];
+	[spellingAndGrammarMenu addItem:[NSMenuItem separatorItem]];
+	[spellingAndGrammarMenu addItemWithTitle:NSLocalizedString(@"Check Spelling While Typing", @"") action:@selector(toggleContinuousSpellChecking:) keyEquivalent:@""];
+	[spellingAndGrammarMenu addItemWithTitle:NSLocalizedString(@"Check Grammar With Spelling", @"") action:@selector(toggleGrammarChecking:) keyEquivalent:@""];
+	[spellingAndGrammarMenu addItemWithTitle:NSLocalizedString(@"Correct Spelling Automatically", @"") action:@selector(toggleAutomaticSpellingCorrection:) keyEquivalent:@""];
+	[spellingAndGrammarItem setSubmenu:spellingAndGrammarMenu];
+	
+	NSMenuItem *substitutionsItem = [menu addItemWithTitle:NSLocalizedString(@"Substitutions", @"") action:NULL keyEquivalent:@""];
+	NSMenu *substitutionsMenu = [[NSMenu alloc] initWithTitle:@""];
+	[substitutionsMenu addItemWithTitle:NSLocalizedString(@"Show Substitutions", @"") action:@selector(orderFrontSubstitutionsPanel:) keyEquivalent:@""];
+	[substitutionsMenu addItem:[NSMenuItem separatorItem]];
+	[substitutionsMenu addItemWithTitle:NSLocalizedString(@"Smart Copy/Paste", @"") action:@selector(toggleSmartInsertDelete:) keyEquivalent:@""];
+	[substitutionsMenu addItemWithTitle:NSLocalizedString(@"Smart Quotes", @"") action:@selector(toggleAutomaticQuoteSubstitution:) keyEquivalent:@""];
+	[substitutionsMenu addItemWithTitle:NSLocalizedString(@"Smart Dashes", @"") action:@selector(toggleAutomaticDashSubstitution:) keyEquivalent:@""];
+	[substitutionsMenu addItemWithTitle:NSLocalizedString(@"Smart Links", @"") action:@selector(toggleAutomaticLinkDetection:) keyEquivalent:@""];
+	[substitutionsMenu addItemWithTitle:NSLocalizedString(@"Text Replacement", @"") action:@selector(toggleAutomaticTextReplacement:) keyEquivalent:@""];
+	[substitutionsItem setSubmenu:substitutionsMenu];
+	
+	NSMenuItem *transformationsItem = [menu addItemWithTitle:NSLocalizedString(@"Transformations", @"") action:NULL keyEquivalent:@""];
+	NSMenu *transformationsMenu = [[NSMenu alloc] initWithTitle:@""];
+	[transformationsMenu addItemWithTitle:NSLocalizedString(@"Make Upper Case", @"") action:@selector(uppercaseWord:) keyEquivalent:@""];
+	[transformationsMenu addItemWithTitle:NSLocalizedString(@"Make Lower Case", @"") action:@selector(lowercaseWord:) keyEquivalent:@""];
+	[transformationsMenu addItemWithTitle:NSLocalizedString(@"Capitalize", @"") action:@selector(capitalizeWord:) keyEquivalent:@""];
+	[transformationsItem setSubmenu:transformationsMenu];
+	
+	NSMenuItem *speechItem = [menu addItemWithTitle:NSLocalizedString(@"Speech", @"") action:NULL keyEquivalent:@""];
+	NSMenu *speechMenu = [[NSMenu alloc] initWithTitle:@""];
+	[speechMenu addItemWithTitle:NSLocalizedString(@"Start Speaking", @"") action:@selector(startSpeaking:) keyEquivalent:@""];
+	[speechMenu addItemWithTitle:NSLocalizedString(@"Stop Speaking", @"") action:@selector(stopSpeaking:) keyEquivalent:@""];
+	[speechItem setSubmenu:speechMenu];
+
+	// Velvet change
+	if ([self.nsView isKindOfClass:[TUINSView class]]) {
+		return [(id)self.nsView menuWithPatchedItems:menu];
+	} else {
+		// FIXME?
+		return menu;
+	}
 }
 
 - (void)_replaceMisspelledWord:(NSMenuItem *)menuItem
@@ -537,9 +592,7 @@ static CAAnimation *ThrobAnimation()
 		BOOL consumed = [delegate textView:self doCommandBySelector:selector];
 		if(consumed) return YES;
 	}
-	
-	NSLog(@"%@", NSStringFromSelector(selector));
-	
+		
 	if(selector == @selector(moveUp:)) {
 		if([self singleLine]) {
 			self.selectedRange = NSMakeRange(0, 0);

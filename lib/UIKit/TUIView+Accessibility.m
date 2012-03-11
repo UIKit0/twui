@@ -8,9 +8,6 @@
 
 #import "TUIView+Accessibility.h"
 
-@interface TUIView ()
-@end
-
 
 @implementation TUIView (Accessibility)
 
