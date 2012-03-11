@@ -57,8 +57,9 @@
 
     #ifdef DEBUG
     CALayer *debugModeLayer = [CALayer layer];
-    debugModeLayer.backgroundColor = [NSColor yellowColor].CGColor;
-    debugModeLayer.opacity = 0.3;
+    debugModeLayer.backgroundColor = [NSColor colorWithCalibratedRed:0 green:1 blue:1 alpha:0.1].CGColor;
+    debugModeLayer.borderColor = [NSColor colorWithCalibratedRed:0 green:1 blue:1 alpha:0.75].CGColor;
+    debugModeLayer.borderWidth = 3;
     debugModeLayer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
     debugModeLayer.zPosition = CGFLOAT_MAX;
 
