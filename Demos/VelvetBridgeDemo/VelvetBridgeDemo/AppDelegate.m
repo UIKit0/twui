@@ -34,7 +34,7 @@
 
     VELClickEventRecognizer *clickRecognizer = [[VELClickEventRecognizer alloc] init];
     clickRecognizer.numberOfClicksRequired = 2;
-    clickRecognizer.delaysEventDelivery = YES;
+    clickRecognizer.delaysEventDelivery = NO;
     clickRecognizer.view = scrollView;
 
     [clickRecognizer addActionUsingBlock:^(id clickRecognizer){
