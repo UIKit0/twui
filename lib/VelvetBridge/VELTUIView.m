@@ -10,6 +10,17 @@
 #import "TUIView.h"
 #import "TUIView+VELBridgedViewAdditions.h"
 
+@interface VELTUIView () {
+    #ifdef DEBUG
+    /**
+     * An observer for \c VELHostViewDebugModeChangedNotification.
+     */
+    id m_hostViewDebugModeObserver;
+    #endif
+}
+
+@end
+
 @implementation VELTUIView
 
 #pragma mark Properties
@@ -44,6 +55,31 @@
     if (!self)
         return nil;
 
+    #ifdef DEBUG
+    CALayer *debugModeLayer = [CALayer layer];
+    debugModeLayer.backgroundColor = [NSColor colorWithCalibratedRed:1 green:1 blue:0 alpha:0.1].CGColor;
+    debugModeLayer.borderColor = [NSColor colorWithCalibratedRed:1 green:1 blue:0 alpha:0.75].CGColor;
+    debugModeLayer.borderWidth = 3;
+    debugModeLayer.autoresizingMask = kCALayerWidthSizable | kCALayerHeightSizable;
+    debugModeLayer.zPosition = CGFLOAT_MAX;
+
+    m_hostViewDebugModeObserver = [[NSNotificationCenter defaultCenter]
+        addObserverForName:VELHostViewDebugModeChangedNotification
+        object:nil
+        queue:[NSOperationQueue mainQueue]
+        usingBlock:^(NSNotification *notification){
+            BOOL enabled = [[notification.userInfo objectForKey:VELHostViewDebugModeIsEnabledKey] boolValue];
+
+            if (enabled) {
+                debugModeLayer.frame = self.bounds;
+                [self.layer addSublayer:debugModeLayer];
+            } else {
+                [debugModeLayer removeFromSuperlayer];
+            }
+        }
+    ];
+    #endif
+
     return self;
 }
 
@@ -60,6 +96,13 @@
 }
 
 - (void)dealloc {
+    #ifdef DEBUG
+    if (m_hostViewDebugModeObserver) {
+        [[NSNotificationCenter defaultCenter] removeObserver:m_hostViewDebugModeObserver];
+        m_hostViewDebugModeObserver = nil;
+    }
+    #endif
+
     self.guestView.hostView = nil;
 }
 
