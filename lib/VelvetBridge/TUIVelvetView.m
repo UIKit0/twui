@@ -29,6 +29,7 @@
 // implemented by TUIView
 @dynamic layer;
 
+@synthesize focused = m_focused;
 @synthesize hostView = m_hostView;
 @synthesize guestView = m_guestView;
 
@@ -147,4 +148,9 @@
     return [NSString stringWithFormat:@"<%@ %p> frame = %@, VELView = %@", [self class], self, NSStringFromRect(self.frame), self.guestView];
 }
 
+- (void)setFocused:(BOOL)focused {
+    m_focused = focused;
+    
+    self.guestView.focused = focused;
+}
 @end

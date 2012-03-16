@@ -144,4 +144,10 @@
     return [NSString stringWithFormat:@"<%@ %p> frame = %@, TUIView = %@ %@", [self class], self, NSStringFromRect(self.frame), self.guestView, NSStringFromRect(self.guestView.frame)];
 }
 
+- (void)setFocused:(BOOL)focused {
+    [super setFocused:focused];
+    
+    self.guestView.focused = focused;
+}
+
 @end

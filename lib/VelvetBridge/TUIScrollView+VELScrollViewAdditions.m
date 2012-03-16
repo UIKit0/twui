@@ -17,6 +17,7 @@
 // implemented by TUIView
 @dynamic layer;
 @dynamic hostView;
+@dynamic focused;
 
 #pragma mark VELScrollView
 
