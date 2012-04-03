@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E6183E8147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E6183E9147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E6183EA147B6B3900E57256 /* VELTUIView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E6183E6147B6B3900E57256 /* VELTUIView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E6183EB147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
 		1E6183EC147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
 		1E6183ED147B6B3900E57256 /* VELTUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6183E7147B6B3900E57256 /* VELTUIView.m */; };
@@ -66,52 +64,36 @@
 		5EE983EB13BE783A005F430D /* ABActiveRange.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C3A13BE6E1900C85CB5 /* ABActiveRange.m */; };
 		5EE983EC13BE783A005F430D /* CoreText+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB74C3C13BE6E1900C85CB5 /* CoreText+Additions.m */; };
 		8819794413E26E0200AA39EB /* TUIView+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8819794213E26E0200AA39EB /* TUIView+Accessibility.h */; };
-		8819794513E26E0200AA39EB /* TUIView+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8819794213E26E0200AA39EB /* TUIView+Accessibility.h */; };
-		8819794613E26E0200AA39EB /* TUIView+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8819794213E26E0200AA39EB /* TUIView+Accessibility.h */; };
 		8819794713E26E0200AA39EB /* TUIView+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8819794313E26E0200AA39EB /* TUIView+Accessibility.m */; };
 		8819794813E26E0200AA39EB /* TUIView+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8819794313E26E0200AA39EB /* TUIView+Accessibility.m */; };
 		8819794913E26E0200AA39EB /* TUIView+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8819794313E26E0200AA39EB /* TUIView+Accessibility.m */; };
 		8819794C13E26E5800AA39EB /* TUINSView+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8819794A13E26E5800AA39EB /* TUINSView+Accessibility.h */; };
-		8819794D13E26E5800AA39EB /* TUINSView+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8819794A13E26E5800AA39EB /* TUINSView+Accessibility.h */; };
-		8819794E13E26E5800AA39EB /* TUINSView+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8819794A13E26E5800AA39EB /* TUINSView+Accessibility.h */; };
 		8819794F13E26E5800AA39EB /* TUINSView+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8819794B13E26E5800AA39EB /* TUINSView+Accessibility.m */; };
 		8819795013E26E5800AA39EB /* TUINSView+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8819794B13E26E5800AA39EB /* TUINSView+Accessibility.m */; };
 		8819795113E26E5800AA39EB /* TUINSView+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8819794B13E26E5800AA39EB /* TUINSView+Accessibility.m */; };
 		886EBA7F13D64393006DE018 /* TUIControl+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 886EBA7D13D64393006DE018 /* TUIControl+Private.h */; };
-		886EBA8013D64393006DE018 /* TUIControl+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 886EBA7D13D64393006DE018 /* TUIControl+Private.h */; };
-		886EBA8113D64393006DE018 /* TUIControl+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 886EBA7D13D64393006DE018 /* TUIControl+Private.h */; };
 		886EBA8213D64393006DE018 /* TUIControl+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 886EBA7E13D64393006DE018 /* TUIControl+Private.m */; };
 		886EBA8313D64393006DE018 /* TUIControl+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 886EBA7E13D64393006DE018 /* TUIControl+Private.m */; };
 		886EBA8413D64393006DE018 /* TUIControl+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 886EBA7E13D64393006DE018 /* TUIControl+Private.m */; };
 		887F272C13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 887F272A13F9969800D75DE6 /* TUITableViewSectionHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		887F272D13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 887F272A13F9969800D75DE6 /* TUITableViewSectionHeader.h */; };
-		887F272E13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 887F272A13F9969800D75DE6 /* TUITableViewSectionHeader.h */; };
 		887F272F13F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887F272B13F9969800D75DE6 /* TUITableViewSectionHeader.m */; };
 		887F273013F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887F272B13F9969800D75DE6 /* TUITableViewSectionHeader.m */; };
 		887F273113F9969800D75DE6 /* TUITableViewSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 887F272B13F9969800D75DE6 /* TUITableViewSectionHeader.m */; };
 		88A4AFDE145A16CA0071CF22 /* TUITextRenderer+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A4AFDC145A16C90071CF22 /* TUITextRenderer+Accessibility.h */; };
 		88A4AFDF145A16CA0071CF22 /* TUITextRenderer+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A4AFDD145A16C90071CF22 /* TUITextRenderer+Accessibility.m */; };
 		88CC1F2F13E365B600827793 /* TUIControl+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CC1F2D13E365B500827793 /* TUIControl+Accessibility.h */; };
-		88CC1F3013E365B600827793 /* TUIControl+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CC1F2D13E365B500827793 /* TUIControl+Accessibility.h */; };
-		88CC1F3113E365B600827793 /* TUIControl+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CC1F2D13E365B500827793 /* TUIControl+Accessibility.h */; };
 		88CC1F3213E365B600827793 /* TUIControl+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC1F2E13E365B500827793 /* TUIControl+Accessibility.m */; };
 		88CC1F3313E365B600827793 /* TUIControl+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC1F2E13E365B500827793 /* TUIControl+Accessibility.m */; };
 		88CC1F3413E365B600827793 /* TUIControl+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC1F2E13E365B500827793 /* TUIControl+Accessibility.m */; };
 		88CC1F3713E3684700827793 /* TUIButton+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CC1F3513E3684400827793 /* TUIButton+Accessibility.h */; };
-		88CC1F3813E3684700827793 /* TUIButton+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CC1F3513E3684400827793 /* TUIButton+Accessibility.h */; };
-		88CC1F3913E3684700827793 /* TUIButton+Accessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CC1F3513E3684400827793 /* TUIButton+Accessibility.h */; };
 		88CC1F3A13E3684700827793 /* TUIButton+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC1F3613E3684600827793 /* TUIButton+Accessibility.m */; };
 		88CC1F3B13E3684700827793 /* TUIButton+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC1F3613E3684600827793 /* TUIButton+Accessibility.m */; };
 		88CC1F3C13E3684700827793 /* TUIButton+Accessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CC1F3613E3684600827793 /* TUIButton+Accessibility.m */; };
 		88D25F5513F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D25F5313F5D96500CFAAA9 /* TUITableView+Cell.h */; };
-		88D25F5613F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D25F5313F5D96500CFAAA9 /* TUITableView+Cell.h */; };
-		88D25F5713F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */ = {isa = PBXBuildFile; fileRef = 88D25F5313F5D96500CFAAA9 /* TUITableView+Cell.h */; };
 		88D25F5813F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D25F5413F5D96500CFAAA9 /* TUITableView+Cell.m */; };
 		88D25F5913F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D25F5413F5D96500CFAAA9 /* TUITableView+Cell.m */; };
 		88D25F5A13F5D96500CFAAA9 /* TUITableView+Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D25F5413F5D96500CFAAA9 /* TUITableView+Cell.m */; };
 		88EFFB5113F417E200CF91A9 /* TUITextViewEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 88EFFB4F13F417E200CF91A9 /* TUITextViewEditor.h */; };
-		88EFFB5213F417E200CF91A9 /* TUITextViewEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 88EFFB4F13F417E200CF91A9 /* TUITextViewEditor.h */; };
-		88EFFB5313F417E200CF91A9 /* TUITextViewEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 88EFFB4F13F417E200CF91A9 /* TUITextViewEditor.h */; };
 		88EFFB5413F417E200CF91A9 /* TUITextViewEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFFB5013F417E200CF91A9 /* TUITextViewEditor.m */; };
 		88EFFB5513F417E200CF91A9 /* TUITextViewEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFFB5013F417E200CF91A9 /* TUITextViewEditor.m */; };
 		88EFFB5613F417E200CF91A9 /* TUITextViewEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EFFB5013F417E200CF91A9 /* TUITextViewEditor.m */; };
@@ -265,20 +247,14 @@
 		D040D80F14C5862200CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
 		D040D81014C5862900CD53B3 /* Velvet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D040D80414C5860900CD53B3 /* Velvet.framework */; };
 		D08B7C8014FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D08B7C8114FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D08B7C8214FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D08B7C7E14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D08B7C8314FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */; };
 		D08B7C8414FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */; };
 		D08B7C8514FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D08B7C7F14FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.m */; };
 		D0B8DFE9148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0B8DFE7148B314700F611CA /* TUIVelvetView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0B8DFEC148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 		D0B8DFED148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 		D0B8DFEE148B314700F611CA /* TUIVelvetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B8DFE8148B314700F611CA /* TUIVelvetView.m */; };
 		D0BA29A614BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0BA29A714BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D0BA29A814BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = D0BA29A414BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0BA29A914BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
 		D0BA29AA14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
 		D0BA29AB14BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BA29A514BE5DA400005386 /* TUIView+VELBridgedViewAdditions.m */; };
@@ -849,25 +825,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		5EE983B513BE7809005F430D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				886EBA8113D64393006DE018 /* TUIControl+Private.h in Headers */,
-				8819794613E26E0200AA39EB /* TUIView+Accessibility.h in Headers */,
-				8819794E13E26E5800AA39EB /* TUINSView+Accessibility.h in Headers */,
-				88CC1F3113E365B600827793 /* TUIControl+Accessibility.h in Headers */,
-				88CC1F3913E3684700827793 /* TUIButton+Accessibility.h in Headers */,
-				88EFFB5313F417E200CF91A9 /* TUITextViewEditor.h in Headers */,
-				88D25F5713F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
-				887F272E13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */,
-				1E6183EA147B6B3900E57256 /* VELTUIView.h in Headers */,
-				D0B8DFEB148B314700F611CA /* TUIVelvetView.h in Headers */,
-				D0BA29A814BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */,
-				D08B7C8214FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CB5B264913BE6DA200579B1E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -929,25 +886,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB5E321413BE7098004B7899 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				886EBA8013D64393006DE018 /* TUIControl+Private.h in Headers */,
-				8819794513E26E0200AA39EB /* TUIView+Accessibility.h in Headers */,
-				8819794D13E26E5800AA39EB /* TUINSView+Accessibility.h in Headers */,
-				88CC1F3013E365B600827793 /* TUIControl+Accessibility.h in Headers */,
-				88CC1F3813E3684700827793 /* TUIButton+Accessibility.h in Headers */,
-				88EFFB5213F417E200CF91A9 /* TUITextViewEditor.h in Headers */,
-				88D25F5613F5D96500CFAAA9 /* TUITableView+Cell.h in Headers */,
-				887F272D13F9969800D75DE6 /* TUITableViewSectionHeader.h in Headers */,
-				1E6183E9147B6B3900E57256 /* VELTUIView.h in Headers */,
-				D0B8DFEA148B314700F611CA /* TUIVelvetView.h in Headers */,
-				D0BA29A714BE5DA400005386 /* TUIView+VELBridgedViewAdditions.h in Headers */,
-				D08B7C8114FED09400F8BD17 /* TUIScrollView+VELScrollViewAdditions.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -957,7 +895,6 @@
 			buildPhases = (
 				5EE983B313BE7809005F430D /* Sources */,
 				5EE983B413BE7809005F430D /* Frameworks */,
-				5EE983B513BE7809005F430D /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1011,7 +948,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB5E321B13BE70B7004B7899 /* Build configuration list for PBXNativeTarget "Dynamic Library" */;
 			buildPhases = (
-				CB5E321413BE7098004B7899 /* Headers */,
 				CB5E321513BE7098004B7899 /* Sources */,
 				CB5E321613BE7098004B7899 /* Frameworks */,
 			);
@@ -1398,6 +1334,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				TEST_AFTER_BUILD = YES;
 			};
 			name = Debug;
@@ -1419,6 +1356,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				TEST_AFTER_BUILD = YES;
 			};
 			name = Release;
@@ -1433,7 +1371,6 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = TwUI;
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -1448,7 +1385,6 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = TwUI;
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -1514,6 +1450,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				OTHER_CFLAGS = "-DNS_BUILD_32_LIKE_64";
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				TEST_AFTER_BUILD = YES;
 			};
 			name = Profile;
@@ -1528,7 +1465,6 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LD_DYLIB_INSTALL_NAME = "$(DYLIB_INSTALL_NAME_BASE:standardizepath)/$(EXECUTABLE_PATH)";
 				PRODUCT_NAME = TwUI;
-				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Profile;
