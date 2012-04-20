@@ -6,6 +6,10 @@ This fork includes the `TUIVelvetView` and `VELTUIView` classes, which implement
 
 Additionally, Velvet protocols (like `<VELBridgedView>`) have been implemented on the appropriate `TUIView` classes.
 
+# Dependencies
+
+Naturally, this fork is dependent upon [Velvet](http://github.com/bitswift/Velvet). The required files can be retrieved by running `git submodule update --init --recursive` from the top level of the repository.
+
 # License
 
 This fork is licensed under the same terms as mainline TwUI. See the LICENSE file for more information.
