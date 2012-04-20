@@ -102,6 +102,7 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 		BOOL lastOpaque;
 		CGContextRef context;
 		CGRect dirtyRect;
+		CGFloat lastContentsScale;
 	} _context;
 	
 	struct {
@@ -116,6 +117,7 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
 		unsigned int dragDistanceLock:1;
 		unsigned int clearsContextBeforeDrawing:1;
 		unsigned int drawInBackground:1;
+		unsigned int needsDisplayWhenWindowsKeyednessChanges:1;
 		
 		unsigned int delegateMouseEntered:1;
 		unsigned int delegateMouseExited:1;
@@ -203,6 +205,21 @@ extern CGRect(^TUIViewCenteredLayout)(TUIView*);
  Make this view the first responder. Returns NO if it fails.
  */
 - (BOOL)makeFirstResponder;
+
+/**
+ * The window become key.
+ */
+- (void)windowDidBecomeKey;
+
+/**
+ * The window resigned key.
+ */
+- (void)windowDidResignKey;
+
+/**
+ * Does this view need to be redisplayed when the view's window's keyedness changes? If YES, the view will get automatically marked as needing display when the window's keyedness changes. Defaults to NO.
+ */
+@property (nonatomic, assign) BOOL needsDisplayWhenWindowsKeyednessChanges;
 
 @end
 

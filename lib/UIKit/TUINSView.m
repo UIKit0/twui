@@ -22,6 +22,8 @@
 
 @interface TUINSView ()
 - (void)windowDidResignKey:(NSNotification *)notification;
+- (void)windowDidBecomeKey:(NSNotification *)notification;
+- (void)screenProfileOrBackingPropertiesDidChange:(NSNotification *)notification;
 @end
 
 
@@ -40,6 +42,7 @@
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignKeyNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidBecomeKeyNotification object:nil];
 	
 	[rootView removeFromSuperview];
     rootView.nsView = nil;
@@ -47,8 +50,6 @@
 	_hoverView = nil;
 	_trackingView = nil;
 	_trackingArea = nil;
-	_tempTextRendererForTextInputClient = nil;
-	
 }
 
 - (void)resetCursorRects
@@ -131,10 +132,8 @@
 	CALayer *layer = [self layer];
 	[layer setDelegate:self];
 	[layer addSublayer:rootView.layer];
-	if(Screen_Scale != 1.0) {
-		layer.anchorPoint = CGPointMake(0, 0);
-		layer.transform = CATransform3DMakeScale(Screen_Scale, Screen_Scale, Screen_Scale);
-	}
+	
+	[self _updateLayerScaleFactor];
 }
 
 - (void)setNextResponder:(NSResponder *)r
@@ -149,7 +148,11 @@
 }
 
 - (void)viewWillMoveToWindow:(NSWindow *)newWindow {
-	[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignKeyNotification object:self.window];
+	if(self.window != nil) {
+		[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidBecomeKeyNotification object:self.window];
+		[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResignKeyNotification object:self.window];
+		[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidChangeScreenProfileNotification object:self.window];
+	}
 	
 	if(newWindow != nil && rootView.layer.superlayer != [self layer]) {
 		rootView.layer.frame = self.layer.bounds;
@@ -165,9 +168,40 @@
 
 - (void)viewDidMoveToWindow
 {
+	[self _updateLayerScaleFactor];
+	
 	[self.rootView didMoveToWindow];
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResignKey:) name:NSWindowDidResignKeyNotification object:self.window];
+	if(self.window != nil) {
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidResignKey:) name:NSWindowDidResignKeyNotification object:self.window];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowDidBecomeKey:) name:NSWindowDidBecomeKeyNotification object:self.window];
+		
+		// make sure the window will post NSWindowDidChangeScreenProfileNotification
+		[self.window setDisplaysWhenScreenProfileChanges:YES];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(screenProfileOrBackingPropertiesDidChange:) name:NSWindowDidChangeScreenProfileNotification object:self.window];
+	}
+}
+
+- (void)_updateLayerScaleFactor {
+	if([self window] != nil) {
+		CGFloat scale = 1.0f;
+		if([[self window] respondsToSelector:@selector(backingScaleFactor)]) {
+			scale = [[self window] backingScaleFactor];
+		}
+		
+		if([self.layer respondsToSelector:@selector(setContentsScale:)]) {
+			if(fabs(self.layer.contentsScale - scale) > 0.1f) {
+				self.layer.contentsScale = scale;
+			}
+		}
+		
+		[self.rootView _updateLayerScaleFactor];
+	}
+}
+
+- (void)screenProfileOrBackingPropertiesDidChange:(NSNotification *)notification
+{
+	[self _updateLayerScaleFactor];
 }
 
 - (TUIView *)viewForLocalPoint:(NSPoint)p
@@ -193,6 +227,25 @@
 - (void)windowDidResignKey:(NSNotification *)notification
 {
 	[TUITooltipWindow endTooltip];
+	
+	if(![self isWindowKey]) {
+		[self.rootView windowDidResignKey];
+	}
+}
+
+- (void)windowDidBecomeKey:(NSNotification *)notification
+{
+	[self.rootView windowDidBecomeKey];
+}
+
+- (BOOL)isWindowKey
+{
+	if([self.window isKeyWindow]) return YES;
+	
+	NSWindow *keyWindow = [NSApp keyWindow];
+	if(keyWindow == nil) return NO;
+	
+	return keyWindow == [self.window attachedSheet];
 }
 
 - (void)viewWillMoveToSuperview:(NSView *)newSuperview
@@ -362,6 +415,19 @@
 		deliveringEvent = YES;
 		[[self viewForEvent:event] swipeWithEvent:event];
 		deliveringEvent = NO;
+	}
+}
+
+- (void)keyDown:(NSEvent *)event
+{
+	BOOL consumed = NO;
+	// TUIView uses -performKeyAction: in -keyDown: to do its key equivalents. If none of our TUIViews consumed the key down as a key action, we want to give our view controller a chance to handle the key down as a key equivalent.
+	if([[self nextResponder] isKindOfClass:[NSViewController class]]) {
+		consumed = [[self nextResponder] performKeyEquivalent:event];
+	}
+	
+	if(!consumed) {
+		[super keyDown:event];
 	}
 }
 

@@ -33,7 +33,7 @@
 	
 	NSTrackingArea *_trackingArea;
 	
-	TUITextRenderer *_tempTextRendererForTextInputClient;
+	__weak TUITextRenderer *_tempTextRendererForTextInputClient; // weak, set temporarily while NSTextInputClient dicks around
 	
 	BOOL deliveringEvent;
 	BOOL inLiveResize;
@@ -61,6 +61,8 @@
 - (void)ab_setIsOpaque:(BOOL)o __attribute__((deprecated)); // don't use this
 
 - (void)tui_setOpaque:(BOOL)o;
+
+- (BOOL)isWindowKey;
 
 @end
 

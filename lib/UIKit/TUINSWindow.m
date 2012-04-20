@@ -167,7 +167,6 @@ NSInteger makeFirstResponderCount = 0;
 	return self;
 }
 
-
 - (void)drawBackground:(CGRect)rect
 {
 	// overridden by subclasses

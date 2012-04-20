@@ -16,6 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CAAnimation+TUIExtensions.h"
 #import "CoreText+Additions.h"
 #import "TUIActivityIndicatorView.h"
 #import "TUIAttributedString.h"
@@ -29,6 +30,7 @@
 #import "TUILabel.h"
 #import "TUINSView.h"
 #import "TUINSWindow.h"
+#import "TUIPopover.h"
 #import "TUIResponder.h"
 #import "TUIScrollView.h"
 #import "TUIStringDrawing.h"
@@ -70,5 +72,4 @@ extern TUIImage *TUIGraphicsDrawAsImage(CGSize size, void(^draw)(void));
  */
 extern NSData *TUIGraphicsDrawAsPDF(CGRect *optionalMediaBox, void(^draw)(CGContextRef));
 
-extern CGFloat Screen_Scale; // set this at launch for experimental hidpi support
 extern BOOL AtLeastLion; // set at launch
